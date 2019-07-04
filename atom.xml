@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-04T03:33:30.718Z</updated>
+    <updated>2019-07-04T05:56:37.193Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -66,6 +66,15 @@
 <p>以上兩個功能一開始原為搭載於Pixel 3的Google Camera 6.0時獨有，並使用Visual Core加速運算
 而隨著沒有Visual Core的Pixel 3A上市，以上功能不再局限Visual Core，也可執行於高通平台的Hexagon DSP上。
 而目前在Google Camera 6.2.030版之後這兩個也成功移植到其他使用高通處理器的手機上，讓感光元件性能羸弱的手機也能在黑夜發揮功用。</p>
+<h1 id="google-camera使用qa">Google Camera使用Q&amp;A</h1>
+<h2 id="我的手機到底能不能使用google-camera">我的手機到底能不能使用Google Camera？</h2>
+<p>Google Camera底層演算法的完全依託於Camera 2 API，所以若你的手機如果不支援Camera 2 API，則<strong>一定不可能</strong>可以使用Google Camera
+可不可使用Camera 2 API則可以使用<a href="https://play.google.com/store/apps/details?id=com.airbeat.device.inspector">這個APP</a>進行檢測。
+（如果沒有登入Google Play可使用APK Mirror<a href="https://www.apkmirror.com/apk/march-media-labs/camera2-api-probe/">連結</a>安裝）</p>
+<p>如果檢測結果為Level_3，那恭喜你，一般來說你的手機可以使用幾乎大部分的Google Camera移植版，趕快出門嘗試Google Camera帶來的強大夜拍效果吧。</p>
+<p>如果檢測結果為Full，那代表廠商的驅動對Camera 2 API的支援並不不完整。
+但還別放棄希望，如果下方欄位顯示你的手機有支援RAW Capture和Burst Capture的話，那你的手機有機會使用某一些特別為某款機型定制的移植版GCam。但前提是必須要有移植版GCAM開發者使用同樣型號或是廠牌的手機才有機會。當然如果你的手機檢測結果不支援RAW Capture，那麼就<strong>不可能</strong>有任何移植版Google Camera能夠在拍攝之後完成後續的HDR+合成步驟了，也就是你可能能進到GCAM觀景窗畫面，但是按下拍攝鈕之後不會有任何反應或是拍攝起來完全沒有HDR+多幀合成降噪的效果。</p>
+<h2 id=""></h2>
 ]]></content>
     </entry>
 </feed>
