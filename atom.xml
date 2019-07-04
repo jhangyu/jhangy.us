@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-04T15:19:06.200Z</updated>
+    <updated>2019-07-04T15:21:13.231Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -11,13 +11,12 @@
     <icon>http://blog.jhangy.us/favicon.ico</icon>
     <rights>All rights reserved 2019, Jhangyu</rights>
     <entry>
-        <title type="html"><![CDATA[Google Camera Q&A]]></title>
+        <title type="html"><![CDATA[ Google Camera使用Q&A]]></title>
         <id>http://blog.jhangy.us/post/google-camera-q&amp;a</id>
         <link href="http://blog.jhangy.us/post/google-camera-q&amp;a">
         </link>
         <updated>2019-07-04T15:16:39.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="google-camera使用qa">Google Camera使用Q&amp;A</h1>
-<h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
+        <content type="html"><![CDATA[<h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
 <p>A：如果你的手機的Camera 2 API支援到Level 3，那一定有很大的機率可以使用Google Camera</p>
 <p>Google Camera底層演算法的完全依託於Camera 2 API，所以若你的手機如果不支援Camera 2 API，則<strong>一定不可能</strong>可以使用Google Camera
 可不可使用Camera 2 API則可以使用<a href="https://play.google.com/store/apps/details?id=com.airbeat.device.inspector">這個APP</a>進行檢測。
