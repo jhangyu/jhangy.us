@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-04T05:56:37.193Z</updated>
+    <updated>2019-07-04T07:07:32.102Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -71,10 +71,24 @@
 <p>Google Camera底層演算法的完全依託於Camera 2 API，所以若你的手機如果不支援Camera 2 API，則<strong>一定不可能</strong>可以使用Google Camera
 可不可使用Camera 2 API則可以使用<a href="https://play.google.com/store/apps/details?id=com.airbeat.device.inspector">這個APP</a>進行檢測。
 （如果沒有登入Google Play可使用APK Mirror<a href="https://www.apkmirror.com/apk/march-media-labs/camera2-api-probe/">連結</a>安裝）</p>
+<p><img src="https://i.imgur.com/ni295US.png" alt="img"></p>
 <p>如果檢測結果為Level_3，那恭喜你，一般來說你的手機可以使用幾乎大部分的Google Camera移植版，趕快出門嘗試Google Camera帶來的強大夜拍效果吧。</p>
 <p>如果檢測結果為Full，那代表廠商的驅動對Camera 2 API的支援並不不完整。
-但還別放棄希望，如果下方欄位顯示你的手機有支援RAW Capture和Burst Capture的話，那你的手機有機會使用某一些特別為某款機型定制的移植版GCam。但前提是必須要有移植版GCAM開發者使用同樣型號或是廠牌的手機才有機會。當然如果你的手機檢測結果不支援RAW Capture，那麼就<strong>不可能</strong>有任何移植版Google Camera能夠在拍攝之後完成後續的HDR+合成步驟了，也就是你可能能進到GCAM觀景窗畫面，但是按下拍攝鈕之後不會有任何反應或是拍攝起來完全沒有HDR+多幀合成降噪的效果。</p>
-<h2 id=""></h2>
+但還別放棄希望，如果下方欄位顯示你的手機有支援RAW Capture和Burst Capture的話，那你的手機有機會使用某一些特別為某款機型定制的移植版GCam。但前提是必須要有移植版GCAM開發者使用同樣型號或是廠牌的手機才有機會。</p>
+<p>當然如果你的手機檢測結果不支援RAW Capture，那麼就<strong>不可能</strong>有任何移植版Google Camera能夠在拍攝之後完成後續的HDR+合成步驟了，也就是你可能能進到GCAM觀景窗畫面，但是按下拍攝鈕之後不會有任何反應或是拍攝起來完全沒有HDR+多幀合成降噪的效果。</p>
+<h2 id="可是我的手機檢測結果顯示legacy卻可以用某些版本的gcam">可是我的手機檢測結果顯示Legacy，卻可以用某些版本的GCAM？</h2>
+<p>這是早期那些移植GCAM開發者犯下的最大錯誤。</p>
+<p>早期那些開發者為了讓沒有支援C2API的手機開啟他們的APP之後不會因為不支援C2API而發生閃退，特意讓他們移植的GCAM也相容了傳統的Legacy模式。</p>
+<p>但這樣反而造成了大量的誤解，大量不明就裡的使用者的手機因為不支援Camera 2 API，安裝<strong>正常移植版</strong>的GCAM都一律發生閃退，東翻西找好不容易找到這些支援Legacy模式的移植版GCAM安裝後沒有發生閃退，以為自己也終於能使用HDR+的魔法為自己的照片添色.....</p>
+<p>然而結果是拍起來和<strong>任何</strong>一般的相機都沒啥兩樣，甚至還會遜於有稍微針對個別機型調教的原廠相機。</p>
+<p>而不幸的是這些不明究理的使用者，安裝了這些支援傳統Legacy模式的GCAM之後想當然耳，在並沒有使用到Google Camera的演算法情況下得到了大量比原廠相機還爛的照片。</p>
+<p>於是他們就在各地發表了Google Camera不如原廠相機或是和原廠相機沒差多少的<a href="https://www.google.com/search?q=gcam+%E6%B2%92%E5%B7%AE+%E5%8E%9F%E5%BB%A0+site%3Aptt.cc">感想</a>。</p>
+<blockquote>
+<pre><code>推 dant****11  : 我怎麼覺得s8沒有差很多，而且拍完一張照片app就掛   12/19 13:35
+→ dant****11  : 了                                                12/19 13:35
+</code></pre>
+</blockquote>
+<p>這種情形特別以Sony、Samsung使用者最常見，因為截至目前為止Sony沒有任何一台手機支援GCAM（直至Xperia 1依舊如此），而Samsung則是因為使用Exynos處理器讓其手機對GCAM支援度極度不佳。</p>
 ]]></content>
     </entry>
 </feed>
