@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-04T03:06:41.083Z</updated>
+    <updated>2019-07-04T03:26:04.307Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -11,12 +11,12 @@
     <icon>http://blog.jhangy.us/favicon.ico</icon>
     <rights>All rights reserved 2019, Jhangyu</rights>
     <entry>
-        <title type="html"><![CDATA[Google Camera Port (GCam) 資訊匯總及Q&A]]></title>
+        <title type="html"><![CDATA[Google Camera Port (GCam) 技術匯總及Q&A]]></title>
         <id>http://blog.jhangy.us/post/google-camera-port-gcam-q&amp;a</id>
         <link href="http://blog.jhangy.us/post/google-camera-port-gcam-q&amp;a">
         </link>
         <updated>2019-06-17T04:00:51.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="google-camera介紹">Google Camera介紹</h1>
+        <content type="html"><![CDATA[<h1 id="google-camera使用技術簡介">Google Camera使用技術簡介</h1>
 <p>Google Camera是目前演算法最先進的Android相機App，遠遠超過其他手機廠使用的演算法
 能夠讓任何使用了Google Camera (Port)的手機在夜拍上擁有極其出色的表現</p>
 <h2 id="hdr">HDR+</h2>
@@ -55,8 +55,14 @@
 <p>而新版的Google Camera(v6)釋出之前Google AI Blog發了<a href="https://ai.googleblog.com/2018/02/introducing-hdr-burst-photography.html">一篇</a>他們現在全程使用RAW檔進行Burst取樣，可以取得更寬的動態範圍和更深的色彩深度，有助於在極端環境之下透過深度學習將照片還原回更正確的白平衡和動態範圍。</p>
 <p><img src="https://1.bp.blogspot.com/-9WOxufm8vwQ/WoHl-3jTUnI/AAAAAAAACYE/b32B8BXpz8QMgxEVPQYt5ThBhwqD-egnQCLcBGAs/s1600/figure1.png" alt="img"></p>
 <p>但該篇文章中也提到由於處理連拍RAW檔的數據壓力非常大，單純使用一般的手機CPU (SoC)無法勝任此工作，所以為了減少拍攝的遲滯感，Google Camera使用了Qualcomm <strong>Hexagon DSP</strong> 和Pixel 3中的Visual Core專用晶片加速數據的處理。</p>
-<p>所以基本上可以說，如果你想使用移植版Google Camera，那麼最好必須有一支具有Hexagon DSP，使用高通處理器的手機。手機使用的高通處理器未必要使用到最高階的8XX系列處理器，個人使用經驗上在優化良好的系統上，即使使用低階的S430 SoC也可以以單張3秒的速度
-使用非高通系CPU如：聯發科MTK、三星 Exynos的手機（例如三星旗艦）往往無法正常的使用移植版Google Camera，或是往往有bug或是HDR+功能性缺失。當然，即使是使用高通CPU手機裝上移植版Google Camera，速度也不能比使用專用Visual Core晶片的Pixel 3鬼神加速還要快的。</p>
+<p>所以基本上可以說，如果你想使用移植版Google Camera，那麼最好必須有一支具有Hexagon DSP，使用高通處理器的手機。手機使用的高通處理器未必要使用到最高階的8XX系列處理器，個人使用經驗上在優化良好的系統上，即使使用低階的S430 SoC也可以以單張照片取樣3幀的條件下以正常速度拍攝。
+然而，如果使用非高通系CPU，如：聯發科MTK、三星 Exynos的手機（例如三星旗艦），往往無法正常的使用移植版Google Camera，往往有bug或是HDR+功能性缺失。當然，即使是使用高通CPU手機裝上移植版Google Camera，速度也不能比使用專用Visual Core晶片的Pixel 3鬼神加速還要快的。</p>
+<p>###NightSight
+Google Camera Night Sight又稱GCam夜視，是目前最強大的拍攝夜景的演算法。GCam NS除了同時結合了以上寬動態範圍、使用RAW檔多幀降噪的技術做為基礎之外，個人猜測還額外加入了
+1.利用深度學習校正白平衡，曝光度
+2.利用深度學習降低噪點
+以上兩個功能一開始原為搭載於Pixel 3的Google Camera 6.0時獨有，並使用Visual Core加速運算
+而隨著沒有Visual Core的Pixel 3A上市，以上功能不再局限Visual Core，也可執行於高通平台的Hexagon DSP上。而目前在Google Camera 6.2.030版之後也成功移植到其他使用高通處理器的手機上，讓感光元件性能羸弱的手機也能在黑夜發揮功用。</p>
 ]]></content>
     </entry>
 </feed>
