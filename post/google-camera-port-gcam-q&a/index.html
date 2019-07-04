@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Google Camera Port (GCam) 技術匯總及Q&amp;A | Jhangyu</title>
-<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1562210762746">
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1562210900572">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="http://blog.jhangy.us">
-  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1562210762746" alt="">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1562210900572" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
@@ -116,7 +116,7 @@
 <p><img src="https://3.bp.blogspot.com/-SRJfJyQcNRk/W8PAjDvVtdI/AAAAAAAADYE/tUfWIsw5HUEl3IXrLadqUPsMXdGWhSNIACLcBGAs/s640/image13.png" alt="img"></p>
 <p>而現在透過像素位移取得完整的2400萬像素的照片，其實就等同一般狀態下的4800萬畫素，也就是我們可以直接得到理論上清晰度相較傳統方法高兩倍的照片，足夠我們將他放大兩倍使用了。</p>
 <p>然而，要能夠做到像素位移的話感光元件也必須進行定制，所以基本上只有Pixel 3所使用的感光元件能夠達成此功能，其他使用移植版GCam的手機則無法使用。</p>
-<p>##Night Sight</p>
+<h2 id="night-sight">Night Sight</h2>
 <p>Night Sight是目前最新版的Google Camera (v6)所擁有的功能，此版Google Camera需要Android 9.0 Pie版本以上的手機才能使用。</p>
 <p>Night Sight功能非常強大，一般人可能無法理解這個演算法到底有多強。為了讓一般人能夠理解它到底有多強，我這裡先放一個錄影動畫讓大家看看Night Sight實際拍攝的情況。</p>
 <p>好的，所以基本上可以說有了Night Sight，其他廠的相機基本上可以都不用打了，縱使強如華為的超級夜景也得乖乖被按在地上。</p>
@@ -128,12 +128,14 @@
 <p>但該篇文章中也提到由於處理連拍RAW檔的數據壓力非常大，單純使用一般的手機CPU (SoC)無法勝任此工作，所以為了減少拍攝的遲滯感，Google Camera使用了Qualcomm <strong>Hexagon DSP</strong> 和Pixel 3中的Visual Core專用晶片加速數據的處理。</p>
 <p>所以基本上可以說，如果你想使用移植版Google Camera，那麼最好必須有一支具有Hexagon DSP，使用高通處理器的手機。手機使用的高通處理器未必要使用到最高階的8XX系列處理器，個人使用經驗上在優化良好的系統上，即使使用低階的S430 SoC也可以以單張照片取樣3幀的條件下以正常速度拍攝。
 然而，如果使用非高通系CPU，如：聯發科MTK、三星 Exynos的手機（例如三星旗艦），往往無法正常的使用移植版Google Camera，往往有bug或是HDR+功能性缺失。當然，即使是使用高通CPU手機裝上移植版Google Camera，速度也不能比使用專用Visual Core晶片的Pixel 3鬼神加速還要快的。</p>
-<p>###NightSight
-Google Camera Night Sight又稱GCam夜視，是目前最強大的拍攝夜景的演算法。GCam NS除了同時結合了以上寬動態範圍、使用RAW檔多幀降噪的技術做為基礎之外，個人猜測還額外加入了
-1.利用深度學習校正白平衡，曝光度
-2.利用深度學習降低噪點
+<h3 id="ai">AI</h3>
+<p>GCam NS除了同時結合了以上寬動態範圍、使用RAW檔多幀降噪的技術做為基礎之外，個人猜測還額外加入了</p>
+<ul>
+<li>利用深度學習校正白平衡，曝光度</li>
+<li>利用深度學習降低噪點
 以上兩個功能一開始原為搭載於Pixel 3的Google Camera 6.0時獨有，並使用Visual Core加速運算
-而隨著沒有Visual Core的Pixel 3A上市，以上功能不再局限Visual Core，也可執行於高通平台的Hexagon DSP上。而目前在Google Camera 6.2.030版之後也成功移植到其他使用高通處理器的手機上，讓感光元件性能羸弱的手機也能在黑夜發揮功用。</p>
+而隨著沒有Visual Core的Pixel 3A上市，以上功能不再局限Visual Core，也可執行於高通平台的Hexagon DSP上。而目前在Google Camera 6.2.030版之後也成功移植到其他使用高通處理器的手機上，讓感光元件性能羸弱的手機也能在黑夜發揮功用。</li>
+</ul>
 
             </div>
           </article>
