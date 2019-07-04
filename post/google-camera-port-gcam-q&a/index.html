@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Google Camera Port (GCam) 技術匯總及Q&amp;A | Jhangyu</title>
-<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1562238051978">
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1562238367324">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="http://blog.jhangy.us">
-  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1562238051978" alt="">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1562238367324" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
@@ -197,12 +197,14 @@
 <p>當然有些開發者偷懶或是不想一直被使用者問這些機型模式是差在哪裡，後續版本就乾脆拿掉了機型模式的選單，這可能就沒法度囉～</p>
 </li>
 <li>
-<p>AI白平衡：
-這應該是除了夜視之外另外一個能夠讓照片具有顯著不同的地方，手機羸弱的CMOS在夜晚中常常難以獲取足夠多的光線資訊讓手機系統能夠正確的校正白平衡，於是Google乾脆另闢蹊徑，直接用深度學習學習每個場景的「哪些物體」應該是白色，並用以校正白平衡。AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不會出現照片全部變成黃色而無法、或是難以後製校正的狀況（因為後期很多GCAM留下來的RAW檔都是壓縮DNG，經過壓縮而喪失的色彩資訊讓在極端環境下的白平衡校正變得困難）</p>
+<p>AI白平衡：</p>
+<p>這應該是除了夜視之外另外一個能夠讓照片具有顯著不同的地方，手機羸弱的CMOS在夜晚中常常難以獲取足夠多的光線資訊，讓手機系統能夠正確的校正白平衡。
+於是Google乾脆另闢蹊徑，直接用深度學習學習每個場景的「哪些物體」應該是白色，並用以校正白平衡。
+AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不會出現照片全部變成黃色而無法、或是難以後製校正的狀況（因為後期很多GCAM留下來的RAW檔都是壓縮DNG，經過壓縮而喪失的色彩資訊讓在極端環境下的白平衡校正變得困難）</p>
 </li>
 <li>
-<p>可自訂的曝光時間：
-GCAM使用多幀短曝光試圖以DSP算力暴力解決雜訊的問題，但是使用短曝光的嚴重缺陷在於：</p>
+<p>可自訂的曝光時間：</p>
+<p>GCAM使用多幀短曝光試圖以DSP算力暴力解決雜訊的問題，但是使用短曝光的嚴重缺陷在於：</p>
 <p>如果快門短到讓收到的光線資訊低於CMOS可產生「有意義的資訊」閾值，那麼這些多張「垃圾雜訊」再怎麼疊圖平均也不會疊出任何圖像（這個我在Canon入門DSLR機身上拍星空時很有經驗.....）</p>
 <p>而某些版本的移植版GCAM能夠強制將曝光時間訂在1秒、2秒、4秒甚至更長的秒數。如果手機的韌體端有支援較長秒數的快門，配上腳架之後，就可以讓手機在超低光源環境（如星空）下CMOS接受到的光線資訊量超越「能產生有意義的資訊」閾值，不再疊圖疊出大量無意義的熱雜訊紅紫斑。讓手機拍攝清晰、無光軌的銀河這個過往不太可能達成的任務成為可能！</p>
 </li>
