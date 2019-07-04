@@ -3,8 +3,8 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Google Camera Port (GCam) 技術匯總及Q&amp;A | Jhangyu</title>
-<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1562241494798">
+<title>Google Camera Q&amp;A | Jhangyu</title>
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1562253498623">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="http://blog.jhangy.us">
-  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1562241494798" alt="">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1562253498623" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
@@ -74,70 +74,17 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Google Camera Port (GCam) 技術匯總及Q&amp;A
+              Google Camera Q&amp;A
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-06-17 ·
+                · 2019-07-04 ·
               </time>
               
             </div>
             
-              <div class="post-feature-image" style="background-image: url('https://i.imgur.com/xkNjYBC.jpg')">
-              </div>
-            
             <div class="post-content">
-              <h1 id="google-camera使用技術簡介">Google Camera使用技術簡介</h1>
-<p>Google Camera是目前演算法最先進的Android相機App，遠遠超過其他手機廠使用的演算法
-能夠讓任何使用了Google Camera (Port)的手機在夜拍上擁有極其出色的表現</p>
-<h2 id="hdr">HDR+</h2>
-<p>支撐著Google Camera強大的夜拍效果的則是其被命名為「HDR+」的功能
-這功能其實有點名稱誤用，在Google Camera早期3.X版本(Nexus 5時期)此功能確實是 <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">只有HDR的效果</a>
-<img src="https://3.bp.blogspot.com/-utUr33f9l_Y/VE1iR-ApMkI/AAAAAAAAAZQ/N2UaHstq3Uw/s1600/HDR%2B2.png" alt="img">
-透過合成多張短曝光、曝光度不足的照片，除了能為照片帶來高動態範圍的好處、同時也能透過多幀照片中的色彩資訊「平均」，將畫面中的雜訊濾除。</p>
-<p><img src="https://2.bp.blogspot.com/-EQmUwsrM5Lo/VE26fr8w-sI/AAAAAAAAAZ0/nednky5nXMs/s1600/princeton-church-normal-with-inset.jpg" alt="img"></p>
-<p><img src="https://1.bp.blogspot.com/-qNiuoM3vy94/VE27Ed4kMKI/AAAAAAAAAZ8/HLzCuWByzSI/s1600/princeton-church-hdrp-with-inset.jpg" alt="img"></p>
-<p>而後隨著手機感光元件尺寸越來越大，手機廠是能夠購買的演算法（例如說ArcSoft）對動態範圍參數的改進，高動態範圍的照片反而越來越不是HDR+主要的特點，Google在<strong>多幀</strong>降噪算法上的各種改進，逐漸成為HDR+此功能的演算法主角。</p>
-<h2 id="super-zoom">Super Zoom</h2>
-<p>Google的相機算法工程師在多幀拍攝的改良上玩的出神入化，後期又在使用單鏡頭達成兩倍放大的效果，這是怎麼辦到的呢？</p>
-<p>具體原理是這樣的，這是我們一般相機感光元件所使用的RGB拜耳陣列：</p>
-<p><img src="https://2.bp.blogspot.com/-bsfbKQzqvB4/W8O_6vO0f0I/AAAAAAAADX0/W3rdX0hfiIwXoM2_Tfy08aHoPH3ZQyc1wCLcBGAs/s200/image14.png" alt="img"></p>
-<p>你可以觀察到每一個感光像素並不是同時偵測紅綠藍三種顏色，相反的拜耳陣列則是將感光像素分成紅綠藍三組，在每一組感光像素前面加上了濾光片，讓他們只能感知特定顏色的光。聰明的你可能發現兩個問題：</p>
-<ul>
-<li>這樣看起來要四個單色的感光像素才能還原我們一般照片中的一個全色像素，像素不是被稀釋了嗎？</li>
-<li>這些感光像素是完全間隔排列的，中間的像素空缺的像素要怎麼辦呢？</li>
-</ul>
-<p>第一個問題的答案是：沒錯，我們一般用的拜耳陣列CMOS像素是真的被稀釋成1/3的，所以實際解像力會不如像素量相同的Foveon結構感光元件。</p>
-<p>第二個問題的答案則是：中間缺失的像素資訊，是用猜的！</p>
-<p><img src="https://4.bp.blogspot.com/-E0Cobuog7Xg/W8PAJOS6CwI/AAAAAAAADX4/qRAoZLuzo4o6kf-KcmwaVm_Ji02jE_kmgCLcBGAs/s640/image1.png" alt="img"></p>
-<p>目前對於拜耳陣列的CMOS結構已經有成熟的猜色算法，基本上顏色不會失真太多，但是缺點就是當鏡頭光學校正能力不足時，會造成底片時代沒有的「摩爾紋」、「偽色」、和「紫邊」。</p>
-<p>講了半天CMOS，那這個SuperZoom是怎麼做到的呢？</p>
-<p>還記得我們一般使用的拜耳陣列CMOS像素量是灌水的嗎？一般相機常說的2400萬像素實際並不是2400萬像素，而是僅有800萬像素。而這個時候如果我們讓CMOS的連拍三幢讓像素位移，讓每個像素都分別對紅、綠、藍三個顏色進行感光，不就擁有完整的2400萬像素了嗎？</p>
-<p><img src="https://3.bp.blogspot.com/-SRJfJyQcNRk/W8PAjDvVtdI/AAAAAAAADYE/tUfWIsw5HUEl3IXrLadqUPsMXdGWhSNIACLcBGAs/s640/image13.png" alt="img"></p>
-<p>而現在透過像素位移取得完整的2400萬像素的照片，其實就等同一般狀態下的4800萬畫素，也就是我們可以直接得到理論上清晰度相較傳統方法高兩倍的照片，足夠我們將他放大兩倍使用了。</p>
-<p>然而，要能夠做到像素位移的話感光元件也必須進行定制，所以基本上只有Pixel 3所使用的感光元件能夠達成此功能，其他使用移植版GCam的手機則無法使用。</p>
-<h2 id="night-sight">Night Sight</h2>
-<p>Night Sight是目前最新版的Google Camera (v6)所擁有的功能，此版Google Camera需要Android 9.0 Pie版本以上的手機才能使用。</p>
-<p>Night Sight功能非常強大，一般人可能無法理解這個演算法到底有多強。為了讓一般人能夠理解它到底有多強，我這裡先放一個錄影動畫讓大家看看Night Sight實際拍攝的情況。</p>
-<p>好的，所以基本上可以說有了Night Sight，其他廠的相機基本上可以都不用打了，縱使強如華為的超級夜景也得乖乖被按在地上。</p>
-<p>那Night Sight到底做了什麼事呢？</p>
-<h3 id="使用raw檔進行多幀處理">使用RAW檔進行多幀處理</h3>
-<p>其實先前版本(v5)的Google Camera也有用到RAW堆幀的功能，不過個人觀察這個版本的Google Camera應該是使用第一張照片的RAW檔經過恢復亮部和暗部細節後做為主幀，其餘其他幀在抽去模糊的幀之後，<strong>可能</strong>是使用JPG進行後續多幀降噪的程序。（其實這我不太確定，請知情者指證）</p>
-<p>而新版的Google Camera(v6)釋出之前Google AI Blog發了<a href="https://ai.googleblog.com/2018/02/introducing-hdr-burst-photography.html">一篇</a>他們現在全程使用RAW檔進行Burst取樣，可以取得更寬的動態範圍和更深的色彩深度，有助於在極端環境之下透過深度學習將照片還原回更正確的白平衡和動態範圍。</p>
-<p><img src="https://1.bp.blogspot.com/-9WOxufm8vwQ/WoHl-3jTUnI/AAAAAAAACYE/b32B8BXpz8QMgxEVPQYt5ThBhwqD-egnQCLcBGAs/s1600/figure1.png" alt="img"></p>
-<p>但該篇文章中也提到由於處理連拍RAW檔的數據壓力非常大，單純使用一般的手機CPU (SoC)無法勝任此工作，所以為了減少拍攝的遲滯感，Google Camera使用了Qualcomm <strong>Hexagon DSP</strong> 和Pixel 3中的Visual Core專用晶片加速數據的處理。</p>
-<p>所以基本上可以說，如果你想使用移植版Google Camera，那麼最好必須有一支具有Hexagon DSP，使用高通處理器的手機。手機使用的高通處理器未必要使用到最高階的8XX系列處理器，個人使用經驗上在優化良好的系統上，即使使用低階的S430 SoC也可以以單張照片取樣3幀的條件下以正常速度拍攝。
-然而，如果使用非高通系CPU，如：聯發科MTK、三星 Exynos的手機（例如三星旗艦），往往無法正常的使用移植版Google Camera，往往有bug或是HDR+功能性缺失。當然，即使是使用高通CPU手機裝上移植版Google Camera，速度也不能比使用專用Visual Core晶片的Pixel 3鬼神加速還要快的。</p>
-<h3 id="ai">AI</h3>
-<p>GCam NS除了同時結合了以上寬動態範圍、使用RAW檔多幀降噪的技術做為基礎之外，個人猜測還額外加入了</p>
-<ul>
-<li>利用深度學習校正白平衡，曝光度</li>
-<li>利用深度學習降低噪點</li>
-</ul>
-<p>以上兩個功能一開始原為搭載於Pixel 3的Google Camera 6.0時獨有，並使用Visual Core加速運算
-而隨著沒有Visual Core的Pixel 3A上市，以上功能不再局限Visual Core，也可執行於高通平台的Hexagon DSP上。
-而目前在Google Camera 6.2.030版之後這兩個也成功移植到其他使用高通處理器的手機上，讓感光元件性能羸弱的手機也能在黑夜發揮功用。</p>
-<h1 id="google-camera使用qa">Google Camera使用Q&amp;A</h1>
+              <h1 id="google-camera使用qa">Google Camera使用Q&amp;A</h1>
 <h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
 <p>A：如果你的手機的Camera 2 API支援到Level 3，那一定有很大的機率可以使用Google Camera</p>
 <p>Google Camera底層演算法的完全依託於Camera 2 API，所以若你的手機如果不支援Camera 2 API，則<strong>一定不可能</strong>可以使用Google Camera
@@ -174,6 +121,8 @@
 <li>
 <p>拍攝完成後立刻點入右下角的相簿，會在右上角顯示照片正在合成，這代表APP有成功調用Google Camera演算法進行合成。</p>
 <img src="https://i.imgur.com/OLbtOQg.png" alt="HDR+ enhance" height="600"/>
+</li>
+</ol>
 <h2 id="q越新版的google-camera越好嗎">Q：越新版的Google Camera越好嗎？</h2>
 <p>A：越新版的Google Camera的確是功能越多，例如最近加入的夜視、AI白平衡、AI追焦、慢動作高速(240fps)攝影；還有之前的更改曝光時間、更改採樣幀數、人像模式。但是新加入的功能不一定能夠完全相容你目前手上手機的系統。</p>
 <p>由於GCAM移植版一大主要開發者：@BSG滿手小米家的手機，所以一般來說小米家的手機在舊版（Redmi Note7前發表的手機）只要使用Magisk或是Root開啟Camera2 API，則對移植的Google Camera相容度實測接近95%以上，甚至連老邁的紅米Note 3也能順利使用5.1版的移植版GCam提升拍攝性能。而在Redmi Note7之後發布的手機則全部都已經預設開啟C2API支援，直接安裝這些移植版Google Camera APK就可以使用Google演算法魔法了。</p>
@@ -208,16 +157,59 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 <p>可自訂的曝光時間：</p>
 <p>GCAM使用多幀短曝光試圖以DSP算力暴力解決雜訊的問題，但是使用短曝光的嚴重缺陷在於：</p>
 <p>如果快門短到讓收到的光線資訊低於CMOS可產生「有意義的資訊」閾值，那麼這些多張「垃圾雜訊」再怎麼疊圖平均也不會疊出任何圖像（這個我在早期使用Canon入門DSLR機身上拍星空時很有經驗.....）</p>
-<p>而某些版本的移植版GCAM能夠強制將曝光時間訂在1秒、2秒、4秒甚至更長的秒數。如果手機的韌體端有支援較長秒數的快門，配上腳架之後，就可以讓手機在超低光源環境（如星空）下CMOS接受到的光線資訊量超越「能產生有意義的資訊」閾值，不再疊圖疊出大量無意義的熱雜訊紅紫斑。讓手機拍攝清晰、無光軌的銀河這個過往不太可能達成的任務成為可能！</p>
+<p>而某些版本的移植版GCAM能夠強制將曝光時間訂在1秒、2秒、4秒甚至更長的秒數。如果手機的韌體端有支援較長秒數的快門，配上腳架之後，就可以在超低光源環境（如星空）下讓手機的CMOS接受到的光線資訊量超越「能產生有意義的資訊」閾值，不再疊圖疊出大量無意義的熱雜訊紅紫斑。讓手機拍攝清晰、無光軌的銀河這個過往不太可能達成的任務成為可能！</p>
 </li>
 </ol>
-</li>
+<h2 id="q如果同樣使用google-camera不同廠牌型號的手機表現會不一樣嗎">Q：如果同樣使用Google Camera，不同廠牌型號的手機表現會不一樣嗎？</h2>
+<p>A：<strong>當然會不一樣</strong>，雖然演算法能夠拉抬相機表現到很高一個臺階，不過各廠各型號的手機所使用的感光元件（CMOS）並不一樣。具體來說，一個CMOS能夠提供的畫質好壞決定於他的<strong>單位像素大小</strong>，而不是所謂的畫素。</p>
+<p>為什麼？這要談論到一個名詞叫做<strong>有效畫素</strong>。</p>
+<p>有效畫素是指給定的DB值（訊噪比）之下，其在不同ISO之下高於給定DB值的畫素量，即稱為有效畫素。</p>
+<p>講的跟外星語一樣，簡單講就是說：在ISO越高的情況之下，真正達到給定水準的畫素量會下降，而在高ISO條件之下所得真實無虛假無灌水的畫素，其實會比相機標示的畫素還要少很多！因為在高ISO之下很多畫素其實都變成沒有意義的雜訊了！</p>
+<p>而這個有效畫素，其實就是大家常常掛在嘴邊講的：<strong>畫質</strong>！</p>
+<p>OK，了解了有效畫素了之後我們可能會問，既然高ISO之下有效畫素會衰退，那到底會衰退多少呢？</p>
+<p>我們來中國知名相機評測網站<a href="https://www.irentals.cn/evaluations/database/compare">藍拓的資料庫</a>一探究竟。在這裡為了方便比較，我選擇了Sony A7一代系列S、M、R作為比較標準，剛好可以展示在技術代差不大下，<strong>相同感光元件大小</strong>在低、中、高三個不同畫素量的有效畫素表現如何（<a href="https://mp.weixin.qq.com/s/kDGkqeYYIJQaLFt-DTl4Kg">藍拓資料庫使用法</a>）</p>
+<img src="https://i.imgur.com/cgx3Ebc.png" alt="Qualify Pixel"/>
+<p>我們可以發現一件有趣的事：在ISO100的情況下，畫素量最高的A7R有效畫素可以達到3640萬畫素；標準型的A7則是2430萬畫素；為低光源拍攝而特化的A7S則僅有1220萬畫素，這樣看起來畫素最多的A7R贏面最大嗎？</p>
+<p>不，當進光量逐漸減低，我們必須使用到比較高的ISO拍攝時我們會發現，A7R的有效畫素量正在急遽衰退！到了ISO400的時候，A7S、A7、A7R的有效像素量已經相差無幾；而到了ISO800（這也是一般人夜拍可接受的ISO下限）的時候，三台機身的有效畫素量已經發生逆轉！A7S依然維持819萬的有效像素量，而A7R僅剩下679萬，A7則僅剩下區區532萬像素，也就是說在ISO800的時候，低畫素的A7S畫質已經高過了A7R和A7。</p>
+<p>結論：**高畫素機身在低光環境使用高ISO的時候很容易翻車！**表現差於低畫素機身！</p>
+<p>前面是固定感光元件大小，觀察不同畫素量的機身在不同ISO的畫質。如果現在我們固定畫素量，觀察不同感光元件大小的機身畫質的區別呢？</p>
+<p>這裡我們分別選擇畫素都在2000萬畫素附近，盡量在技術代差不大的條件下，感光元件面積分別為1-inch、M43、APS-C、Full-Frame的四台相機：Panosonic GH-5、Sony RX100M6、Sony A6400、Sony A7M3(我手上這台嘿)，在不同ISO下的畫質表現：</p>
+<img src="https://i.imgur.com/X5JEMq5.png" alt="Qualify Pixel"/>
+<p>我們可以發現，雖然每台相機都是2000萬畫素左右，但是在40DB條件下有效畫素量打從一開始ISO200就有明顯的區別，感光元件尺寸最小的RX100VI只有不到五百萬畫素，而感光元件最大的A7M3則是扎扎實實的2400萬畫素，利用感光元件尺寸優勢在畫質上暴力碾壓一票同輩。</p>
+<p>比對高檔相機對一般人可能比較無感，可能大家比較想問：手機到底表現得如何呢？我的前後兩千萬實際上的有效像素（畫質）相比相機到底差多少呢？</p>
+<p>很不幸的，藍拓的資料庫基本上沒有任何一台手機的資料可以比對，因此我只能選擇最接近的選項：大疆 Mavic Pro—感光元件1/2.3吋，1200萬像素的IMX377 CMOS進行比較，而這個規格也剛好是手機CMOS的頂規，與Pixel 2系列使用的CMOS相同。那結果如何呢？</p>
+<img src="https://i.imgur.com/xknLwIw.png" alt="Qualify Pixel IMX377 ISO100"/>
+<p>只能說，很慘烈
+在表現最好的ISO100下這顆1200萬像素的IMX377實際上的有效像素其實只有354萬像素。
+而到了ISO800則更慘：</p>
+<img src="https://i.imgur.com/wG54OWS.png" alt="Qualify Pixel IMX377 ISO800"/>
+<p>40DB下有效像素則剩下41萬像素...</p>
+<p>41萬！</p>
+<p>手機端上表現最好的CMOS 1200萬像素裡面，在ISO800下只有41萬是有效像素！
+更別說那些「前後兩千萬」的手機了， 那個單位像素大小只有IMX377的快一半，大概測出來都不勝唏噓...</p>
+<p>嘮嘮叨叨了拉了相機CMOS講那麼久，到底結論是什麼呢？
+其實就是：</p>
+<ol>
+<li>機身上標的畫素≠畫質，真正跟畫質相關的是測試得到的<strong>有效像素</strong></li>
+<li>同ISO下和有效像素（畫質）相關的是<strong>單位像素面積</strong></li>
+<li>手機CMOS&quot;體質&quot;就是看<strong>單位像素面積</strong>，這裡有<a href="https://en.wikipedia.org/wiki/Exmor">列表</a></li>
 </ol>
+<h5 id="體質爛的手機cmos例如前後兩千萬gcam也能救只是極限會比體質好的cmos差一點">體質爛的手機CMOS（例如前後兩千萬）GCAM也能救，只是極限會比體質好的CMOS差一點</h5>
+<h5 id="你技術再好也很難在晚上拍出驚為天人手機相機不分的照片">你技術再好也很難在晚上拍出驚為天人，手機相機不分的照片</h5>
 
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://blog.jhangy.us/post/google-camera-gcam-tech">
+              <h3 class="post-title">
+                Google Camera Port (GCam) 技術匯總
+              </h3>
+            </a>
+          </div>
         
 
         

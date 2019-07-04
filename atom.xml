@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-04T11:58:18.388Z</updated>
+    <updated>2019-07-04T15:19:06.200Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -11,9 +11,129 @@
     <icon>http://blog.jhangy.us/favicon.ico</icon>
     <rights>All rights reserved 2019, Jhangyu</rights>
     <entry>
-        <title type="html"><![CDATA[Google Camera Port (GCam) 技術匯總及Q&A]]></title>
-        <id>http://blog.jhangy.us/post/google-camera-port-gcam-q&amp;a</id>
-        <link href="http://blog.jhangy.us/post/google-camera-port-gcam-q&amp;a">
+        <title type="html"><![CDATA[Google Camera Q&A]]></title>
+        <id>http://blog.jhangy.us/post/google-camera-q&amp;a</id>
+        <link href="http://blog.jhangy.us/post/google-camera-q&amp;a">
+        </link>
+        <updated>2019-07-04T15:16:39.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="google-camera使用qa">Google Camera使用Q&amp;A</h1>
+<h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
+<p>A：如果你的手機的Camera 2 API支援到Level 3，那一定有很大的機率可以使用Google Camera</p>
+<p>Google Camera底層演算法的完全依託於Camera 2 API，所以若你的手機如果不支援Camera 2 API，則<strong>一定不可能</strong>可以使用Google Camera
+可不可使用Camera 2 API則可以使用<a href="https://play.google.com/store/apps/details?id=com.airbeat.device.inspector">這個APP</a>進行檢測。
+（如果沒有登入Google Play可使用APK Mirror<a href="https://www.apkmirror.com/apk/march-media-labs/camera2-api-probe/">連結</a>安裝）</p>
+<p><img src="https://i.imgur.com/ni295US.png" alt="img"></p>
+<p>如果檢測結果為Level_3，那恭喜你，一般來說你的手機可以使用幾乎大部分的Google Camera移植版，趕快出門嘗試Google Camera帶來的強大夜拍效果吧。</p>
+<p>如果檢測結果為Full，那代表廠商的驅動對Camera 2 API的支援並不不完整。
+但還別放棄希望，如果下方欄位顯示你的手機有支援RAW Capture和Burst Capture的話，那你的手機有機會使用某一些特別為某款機型定制的移植版GCam。但前提是必須要有移植版GCAM開發者使用同樣型號或是廠牌的手機才有機會。</p>
+<p>當然如果你的手機檢測結果不支援RAW Capture，那麼就<strong>不可能</strong>有任何移植版Google Camera能夠在拍攝之後完成後續的HDR+合成步驟了，也就是你可能能進到GCAM觀景窗畫面，但是按下拍攝鈕之後不會有任何反應或是拍攝起來完全沒有HDR+多幀合成降噪的效果。</p>
+<h2 id="q可是我的手機檢測結果顯示legacy卻可以用某些版本的gcam">Q：可是我的手機檢測結果顯示Legacy，卻可以用某些版本的GCAM？</h2>
+<p>A：這是早期那些移植GCAM開發者犯下的最大錯誤。</p>
+<p>早期那些開發者為了讓沒有支援C2API的手機開啟他們的APP之後不會因為不支援C2API而發生閃退，特意讓他們移植的GCAM也相容了傳統的Legacy模式。</p>
+<p>但這樣反而造成了大量的誤解，大量不明就裡的使用者的手機因為不支援Camera 2 API，安裝<strong>正常移植版</strong>的GCAM都一律發生閃退。</p>
+<p>東翻西找一番......好不容易找到這些支援Legacy模式的移植版GCAM，安裝後沒有發生閃退，以為自己也終於能使用HDR+的魔法為自己的照片添色.....</p>
+<p>然而結果是拍起來和<strong>任何</strong>一般的第三方相機都沒啥兩樣，甚至還會遜於有稍微針對個別機型調教的原廠相機。</p>
+<p>而不幸的是這些不明究理的使用者，安裝了這些支援傳統Legacy模式的GCAM之後......想當然耳，在並沒有使用到Google Camera的演算法情況下，得到了大量比原廠相機還爛的照片。</p>
+<p>於是他們就在各處發表了Google Camera不如原廠相機或是和原廠相機沒差多少的<a href="https://www.google.com/search?q=gcam+%E6%B2%92%E5%B7%AE+%E5%8E%9F%E5%BB%A0+site%3Aptt.cc">感想</a>。</p>
+<pre><code>推 dant****11  : 我怎麼覺得s8沒有差很多，而且拍完一張照片app就掛　　　　12/19 13:35
+推 dant****11  : 了　　　　　　　　　　　　　　　　　　　　　　　　　　　12/19 13:35
+</code></pre>
+<pre><code>→ kai***8　　　: https://imgur.com/Jy6rTKj 我拍是原廠比較好耶　　　　04/29 01:46
+→ kai***8　　　: 沒有夜間模式還是用原廠的就夠好了　　　　　　　　　　　　 04/29 01:47
+</code></pre>
+<p>這種情形特別以Sony、Samsung使用者最常見，因為截至目前為止Sony<strong>沒有任何一台手機</strong>支援GCAM（直至最近發表的Xperia 1依舊如此）；而Samsung則是因為使用Exynos處理器讓其手機對GCAM支援度<strong>極度不佳</strong>。</p>
+<p>而這兩家的旗艦機相機的CMOS其實都用的不差，然而因為不支援Camera 2 API反倒被其他CMOS體質較差、卻支援Camera 2 API的手機利用Google Camera移植版超越，就是相當可惜的了～</p>
+<h2 id="q我要怎麼確認我有使用到google-camera的演算法">Q：我要怎麼確認我有使用到Google Camera的演算法?</h2>
+<p>A：有幾樣最大的特徵可以看</p>
+<ol>
+<li>
+<p>在觀景窗畫面中將相機切到HDR+ enhance（強化），按下拍攝按鈕，如果畫面中有一個圓圈快速的轉過一圈，那麼表示你的手機有成功調用C2API進行拍攝。</p>
+<img src="https://i.imgur.com/t9MldsT.png" alt="HDR+ enhance" height="600"/>
+</li>
+<li>
+<p>拍攝完成後立刻點入右下角的相簿，會在右上角顯示照片正在合成，這代表APP有成功調用Google Camera演算法進行合成。</p>
+<img src="https://i.imgur.com/OLbtOQg.png" alt="HDR+ enhance" height="600"/>
+</li>
+</ol>
+<h2 id="q越新版的google-camera越好嗎">Q：越新版的Google Camera越好嗎？</h2>
+<p>A：越新版的Google Camera的確是功能越多，例如最近加入的夜視、AI白平衡、AI追焦、慢動作高速(240fps)攝影；還有之前的更改曝光時間、更改採樣幀數、人像模式。但是新加入的功能不一定能夠完全相容你目前手上手機的系統。</p>
+<p>由於GCAM移植版一大主要開發者：@BSG滿手小米家的手機，所以一般來說小米家的手機在舊版（Redmi Note7前發表的手機）只要使用Magisk或是Root開啟Camera2 API，則對移植的Google Camera相容度實測接近95%以上，甚至連老邁的紅米Note 3也能順利使用5.1版的移植版GCam提升拍攝性能。而在Redmi Note7之後發布的手機則全部都已經預設開啟C2API支援，直接安裝這些移植版Google Camera APK就可以使用Google演算法魔法了。</p>
+<p>但對於其他手機品牌來說，那可能就要碰運氣了，不一定最新的移植版GCam能夠和你的手機完全相容，所以可能還是要<strong>自行</strong>多加嘗試，在網路上詢問他牌手機使用者的心得就跟期待對方能夠隔空抓藥一樣啊！</p>
+<h2 id="q我該怎麼尋找我的手機品牌對應的版本下載安裝呢">Q：我該怎麼尋找我的手機品牌對應的版本下載安裝呢？</h2>
+<p>A：這通常要看移植版的開發者手上拿的是哪牌的手機，這裡有一個列表，可以參考各移植版開發者他們手上手機的對應品牌：</p>
+<p>https://www.xda-developers.com/google-camera-port-hub/</p>
+<p>由於上面這個列表更新速度較慢，因此建議參考開發者擁有的手機「品牌資訊」即可，如果要最新的版本請找這裡：</p>
+<p>https://www.celsoazevedo.com/files/android/google-camera/</p>
+<p>一樣，不同的機種的相容程度並不同，請自行測試囉！</p>
+<h2 id="q不同版本的移植版google-camera拍起來會有差嗎">Q：不同版本的移植版Google Camera拍起來會有差嗎？</h2>
+<p>A：簡單的說，只有功能性引進的時候不同版本的GCAM會有比較明顯的差異。主要影響有這幾類：</p>
+<ol>
+<li>
+<p>大版本之間功能性區別：</p>
+<p>例如3.X版疊圖後算出來的照片就會不如5.1版的疊圖後的成品噪點少，5.1版的HDR+功能性又不如6.X版引入夜視後在AI白平衡和AI降噪上的強大，這些是不同大版本間主要差異。</p>
+</li>
+<li>
+<p>不同機型的相機模式區別：</p>
+<p>另外還有使用不同相機模式的採樣幀的合成算法、以及APP內部由RAW矩陣轉換成JPG的調整參數：
+<img src="https://i.imgur.com/MmouELR.png" alt="Input Model"/></p>
+<p>也會在陰影和亮部校正還有色調曲線方面產生一些差異。如果前者選錯機型模式可能會直接在合成過程中APP直接閃退，後者選錯機型模式則會在成像的結果發現陰影偏綠、偏紫，或是細節對比過高的現象。</p>
+<p>當然有些開發者偷懶或是不想一直被使用者問這些機型模式是差在哪裡，後續版本就乾脆拿掉了機型模式的選單，這可能就沒法度囉～</p>
+</li>
+<li>
+<p>AI白平衡：</p>
+<p>這應該是除了夜視之外另外一個能夠讓照片具有顯著不同的地方，手機羸弱的CMOS在夜晚中常常難以獲取足夠多的光線資訊，讓手機系統能夠正確的校正白平衡。
+於是Google乾脆另闢蹊徑，直接用深度學習學習每個場景的「哪些物體」應該是白色，並用以校正白平衡。
+AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不會出現照片全部變成黃色而無法、或是難以後製校正的狀況（因為後期很多GCAM留下來的RAW檔都是壓縮DNG，經過壓縮而喪失的色彩資訊讓在極端環境下的白平衡校正變得困難）</p>
+</li>
+<li>
+<p>可自訂的曝光時間：</p>
+<p>GCAM使用多幀短曝光試圖以DSP算力暴力解決雜訊的問題，但是使用短曝光的嚴重缺陷在於：</p>
+<p>如果快門短到讓收到的光線資訊低於CMOS可產生「有意義的資訊」閾值，那麼這些多張「垃圾雜訊」再怎麼疊圖平均也不會疊出任何圖像（這個我在早期使用Canon入門DSLR機身上拍星空時很有經驗.....）</p>
+<p>而某些版本的移植版GCAM能夠強制將曝光時間訂在1秒、2秒、4秒甚至更長的秒數。如果手機的韌體端有支援較長秒數的快門，配上腳架之後，就可以在超低光源環境（如星空）下讓手機的CMOS接受到的光線資訊量超越「能產生有意義的資訊」閾值，不再疊圖疊出大量無意義的熱雜訊紅紫斑。讓手機拍攝清晰、無光軌的銀河這個過往不太可能達成的任務成為可能！</p>
+</li>
+</ol>
+<h2 id="q如果同樣使用google-camera不同廠牌型號的手機表現會不一樣嗎">Q：如果同樣使用Google Camera，不同廠牌型號的手機表現會不一樣嗎？</h2>
+<p>A：<strong>當然會不一樣</strong>，雖然演算法能夠拉抬相機表現到很高一個臺階，不過各廠各型號的手機所使用的感光元件（CMOS）並不一樣。具體來說，一個CMOS能夠提供的畫質好壞決定於他的<strong>單位像素大小</strong>，而不是所謂的畫素。</p>
+<p>為什麼？這要談論到一個名詞叫做<strong>有效畫素</strong>。</p>
+<p>有效畫素是指給定的DB值（訊噪比）之下，其在不同ISO之下高於給定DB值的畫素量，即稱為有效畫素。</p>
+<p>講的跟外星語一樣，簡單講就是說：在ISO越高的情況之下，真正達到給定水準的畫素量會下降，而在高ISO條件之下所得真實無虛假無灌水的畫素，其實會比相機標示的畫素還要少很多！因為在高ISO之下很多畫素其實都變成沒有意義的雜訊了！</p>
+<p>而這個有效畫素，其實就是大家常常掛在嘴邊講的：<strong>畫質</strong>！</p>
+<p>OK，了解了有效畫素了之後我們可能會問，既然高ISO之下有效畫素會衰退，那到底會衰退多少呢？</p>
+<p>我們來中國知名相機評測網站<a href="https://www.irentals.cn/evaluations/database/compare">藍拓的資料庫</a>一探究竟。在這裡為了方便比較，我選擇了Sony A7一代系列S、M、R作為比較標準，剛好可以展示在技術代差不大下，<strong>相同感光元件大小</strong>在低、中、高三個不同畫素量的有效畫素表現如何（<a href="https://mp.weixin.qq.com/s/kDGkqeYYIJQaLFt-DTl4Kg">藍拓資料庫使用法</a>）</p>
+<img src="https://i.imgur.com/cgx3Ebc.png" alt="Qualify Pixel"/>
+<p>我們可以發現一件有趣的事：在ISO100的情況下，畫素量最高的A7R有效畫素可以達到3640萬畫素；標準型的A7則是2430萬畫素；為低光源拍攝而特化的A7S則僅有1220萬畫素，這樣看起來畫素最多的A7R贏面最大嗎？</p>
+<p>不，當進光量逐漸減低，我們必須使用到比較高的ISO拍攝時我們會發現，A7R的有效畫素量正在急遽衰退！到了ISO400的時候，A7S、A7、A7R的有效像素量已經相差無幾；而到了ISO800（這也是一般人夜拍可接受的ISO下限）的時候，三台機身的有效畫素量已經發生逆轉！A7S依然維持819萬的有效像素量，而A7R僅剩下679萬，A7則僅剩下區區532萬像素，也就是說在ISO800的時候，低畫素的A7S畫質已經高過了A7R和A7。</p>
+<p>結論：**高畫素機身在低光環境使用高ISO的時候很容易翻車！**表現差於低畫素機身！</p>
+<p>前面是固定感光元件大小，觀察不同畫素量的機身在不同ISO的畫質。如果現在我們固定畫素量，觀察不同感光元件大小的機身畫質的區別呢？</p>
+<p>這裡我們分別選擇畫素都在2000萬畫素附近，盡量在技術代差不大的條件下，感光元件面積分別為1-inch、M43、APS-C、Full-Frame的四台相機：Panosonic GH-5、Sony RX100M6、Sony A6400、Sony A7M3(我手上這台嘿)，在不同ISO下的畫質表現：</p>
+<img src="https://i.imgur.com/X5JEMq5.png" alt="Qualify Pixel"/>
+<p>我們可以發現，雖然每台相機都是2000萬畫素左右，但是在40DB條件下有效畫素量打從一開始ISO200就有明顯的區別，感光元件尺寸最小的RX100VI只有不到五百萬畫素，而感光元件最大的A7M3則是扎扎實實的2400萬畫素，利用感光元件尺寸優勢在畫質上暴力碾壓一票同輩。</p>
+<p>比對高檔相機對一般人可能比較無感，可能大家比較想問：手機到底表現得如何呢？我的前後兩千萬實際上的有效像素（畫質）相比相機到底差多少呢？</p>
+<p>很不幸的，藍拓的資料庫基本上沒有任何一台手機的資料可以比對，因此我只能選擇最接近的選項：大疆 Mavic Pro—感光元件1/2.3吋，1200萬像素的IMX377 CMOS進行比較，而這個規格也剛好是手機CMOS的頂規，與Pixel 2系列使用的CMOS相同。那結果如何呢？</p>
+<img src="https://i.imgur.com/xknLwIw.png" alt="Qualify Pixel IMX377 ISO100"/>
+<p>只能說，很慘烈
+在表現最好的ISO100下這顆1200萬像素的IMX377實際上的有效像素其實只有354萬像素。
+而到了ISO800則更慘：</p>
+<img src="https://i.imgur.com/wG54OWS.png" alt="Qualify Pixel IMX377 ISO800"/>
+<p>40DB下有效像素則剩下41萬像素...</p>
+<p>41萬！</p>
+<p>手機端上表現最好的CMOS 1200萬像素裡面，在ISO800下只有41萬是有效像素！
+更別說那些「前後兩千萬」的手機了， 那個單位像素大小只有IMX377的快一半，大概測出來都不勝唏噓...</p>
+<p>嘮嘮叨叨了拉了相機CMOS講那麼久，到底結論是什麼呢？
+其實就是：</p>
+<ol>
+<li>機身上標的畫素≠畫質，真正跟畫質相關的是測試得到的<strong>有效像素</strong></li>
+<li>同ISO下和有效像素（畫質）相關的是<strong>單位像素面積</strong></li>
+<li>手機CMOS&quot;體質&quot;就是看<strong>單位像素面積</strong>，這裡有<a href="https://en.wikipedia.org/wiki/Exmor">列表</a></li>
+</ol>
+<h5 id="體質爛的手機cmos例如前後兩千萬gcam也能救只是極限會比體質好的cmos差一點">體質爛的手機CMOS（例如前後兩千萬）GCAM也能救，只是極限會比體質好的CMOS差一點</h5>
+<h5 id="你技術再好也很難在晚上拍出驚為天人手機相機不分的照片">你技術再好也很難在晚上拍出驚為天人，手機相機不分的照片</h5>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google Camera Port (GCam) 技術匯總]]></title>
+        <id>http://blog.jhangy.us/post/google-camera-gcam-tech</id>
+        <link href="http://blog.jhangy.us/post/google-camera-gcam-tech">
         </link>
         <updated>2019-06-17T04:00:51.000Z</updated>
         <content type="html"><![CDATA[<h1 id="google-camera使用技術簡介">Google Camera使用技術簡介</h1>
@@ -66,82 +186,6 @@
 <p>以上兩個功能一開始原為搭載於Pixel 3的Google Camera 6.0時獨有，並使用Visual Core加速運算
 而隨著沒有Visual Core的Pixel 3A上市，以上功能不再局限Visual Core，也可執行於高通平台的Hexagon DSP上。
 而目前在Google Camera 6.2.030版之後這兩個也成功移植到其他使用高通處理器的手機上，讓感光元件性能羸弱的手機也能在黑夜發揮功用。</p>
-<h1 id="google-camera使用qa">Google Camera使用Q&amp;A</h1>
-<h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
-<p>A：如果你的手機的Camera 2 API支援到Level 3，那一定有很大的機率可以使用Google Camera</p>
-<p>Google Camera底層演算法的完全依託於Camera 2 API，所以若你的手機如果不支援Camera 2 API，則<strong>一定不可能</strong>可以使用Google Camera
-可不可使用Camera 2 API則可以使用<a href="https://play.google.com/store/apps/details?id=com.airbeat.device.inspector">這個APP</a>進行檢測。
-（如果沒有登入Google Play可使用APK Mirror<a href="https://www.apkmirror.com/apk/march-media-labs/camera2-api-probe/">連結</a>安裝）</p>
-<p><img src="https://i.imgur.com/ni295US.png" alt="img"></p>
-<p>如果檢測結果為Level_3，那恭喜你，一般來說你的手機可以使用幾乎大部分的Google Camera移植版，趕快出門嘗試Google Camera帶來的強大夜拍效果吧。</p>
-<p>如果檢測結果為Full，那代表廠商的驅動對Camera 2 API的支援並不不完整。
-但還別放棄希望，如果下方欄位顯示你的手機有支援RAW Capture和Burst Capture的話，那你的手機有機會使用某一些特別為某款機型定制的移植版GCam。但前提是必須要有移植版GCAM開發者使用同樣型號或是廠牌的手機才有機會。</p>
-<p>當然如果你的手機檢測結果不支援RAW Capture，那麼就<strong>不可能</strong>有任何移植版Google Camera能夠在拍攝之後完成後續的HDR+合成步驟了，也就是你可能能進到GCAM觀景窗畫面，但是按下拍攝鈕之後不會有任何反應或是拍攝起來完全沒有HDR+多幀合成降噪的效果。</p>
-<h2 id="q可是我的手機檢測結果顯示legacy卻可以用某些版本的gcam">Q：可是我的手機檢測結果顯示Legacy，卻可以用某些版本的GCAM？</h2>
-<p>A：這是早期那些移植GCAM開發者犯下的最大錯誤。</p>
-<p>早期那些開發者為了讓沒有支援C2API的手機開啟他們的APP之後不會因為不支援C2API而發生閃退，特意讓他們移植的GCAM也相容了傳統的Legacy模式。</p>
-<p>但這樣反而造成了大量的誤解，大量不明就裡的使用者的手機因為不支援Camera 2 API，安裝<strong>正常移植版</strong>的GCAM都一律發生閃退。</p>
-<p>東翻西找一番......好不容易找到這些支援Legacy模式的移植版GCAM，安裝後沒有發生閃退，以為自己也終於能使用HDR+的魔法為自己的照片添色.....</p>
-<p>然而結果是拍起來和<strong>任何</strong>一般的第三方相機都沒啥兩樣，甚至還會遜於有稍微針對個別機型調教的原廠相機。</p>
-<p>而不幸的是這些不明究理的使用者，安裝了這些支援傳統Legacy模式的GCAM之後......想當然耳，在並沒有使用到Google Camera的演算法情況下，得到了大量比原廠相機還爛的照片。</p>
-<p>於是他們就在各處發表了Google Camera不如原廠相機或是和原廠相機沒差多少的<a href="https://www.google.com/search?q=gcam+%E6%B2%92%E5%B7%AE+%E5%8E%9F%E5%BB%A0+site%3Aptt.cc">感想</a>。</p>
-<pre><code>推 dant****11  : 我怎麼覺得s8沒有差很多，而且拍完一張照片app就掛　　　　12/19 13:35
-推 dant****11  : 了　　　　　　　　　　　　　　　　　　　　　　　　　　　12/19 13:35
-</code></pre>
-<pre><code>→ kai***8　　　: https://imgur.com/Jy6rTKj 我拍是原廠比較好耶　　　　04/29 01:46
-→ kai***8　　　: 沒有夜間模式還是用原廠的就夠好了　　　　　　　　　　　　 04/29 01:47
-</code></pre>
-<p>這種情形特別以Sony、Samsung使用者最常見，因為截至目前為止Sony<strong>沒有任何一台手機</strong>支援GCAM（直至最近發表的Xperia 1依舊如此）；而Samsung則是因為使用Exynos處理器讓其手機對GCAM支援度<strong>極度不佳</strong>。</p>
-<p>而這兩家的旗艦機相機的CMOS其實都用的不差，然而因為不支援Camera 2 API反倒被其他CMOS體質較差、卻支援Camera 2 API的手機利用Google Camera移植版超越，就是相當可惜的了～</p>
-<h2 id="q我要怎麼確認我有使用到google-camera的演算法">Q：我要怎麼確認我有使用到Google Camera的演算法?</h2>
-<p>A：有幾樣最大的特徵可以看</p>
-<ol>
-<li>
-<p>在觀景窗畫面中將相機切到HDR+ enhance（強化），按下拍攝按鈕，如果畫面中有一個圓圈快速的轉過一圈，那麼表示你的手機有成功調用C2API進行拍攝。</p>
-<img src="https://i.imgur.com/t9MldsT.png" alt="HDR+ enhance" height="600"/>
-</li>
-<li>
-<p>拍攝完成後立刻點入右下角的相簿，會在右上角顯示照片正在合成，這代表APP有成功調用Google Camera演算法進行合成。</p>
-<img src="https://i.imgur.com/OLbtOQg.png" alt="HDR+ enhance" height="600"/>
-<h2 id="q越新版的google-camera越好嗎">Q：越新版的Google Camera越好嗎？</h2>
-<p>A：越新版的Google Camera的確是功能越多，例如最近加入的夜視、AI白平衡、AI追焦、慢動作高速(240fps)攝影；還有之前的更改曝光時間、更改採樣幀數、人像模式。但是新加入的功能不一定能夠完全相容你目前手上手機的系統。</p>
-<p>由於GCAM移植版一大主要開發者：@BSG滿手小米家的手機，所以一般來說小米家的手機在舊版（Redmi Note7前發表的手機）只要使用Magisk或是Root開啟Camera2 API，則對移植的Google Camera相容度實測接近95%以上，甚至連老邁的紅米Note 3也能順利使用5.1版的移植版GCam提升拍攝性能。而在Redmi Note7之後發布的手機則全部都已經預設開啟C2API支援，直接安裝這些移植版Google Camera APK就可以使用Google演算法魔法了。</p>
-<p>但對於其他手機品牌來說，那可能就要碰運氣了，不一定最新的移植版GCam能夠和你的手機完全相容，所以可能還是要<strong>自行</strong>多加嘗試，在網路上詢問他牌手機使用者的心得就跟期待對方能夠隔空抓藥一樣啊！</p>
-<h2 id="q我該怎麼尋找我的手機品牌對應的版本下載安裝呢">Q：我該怎麼尋找我的手機品牌對應的版本下載安裝呢？</h2>
-<p>A：這通常要看移植版的開發者手上拿的是哪牌的手機，這裡有一個列表，可以參考各移植版開發者他們手上手機的對應品牌：</p>
-<p>https://www.xda-developers.com/google-camera-port-hub/</p>
-<p>由於上面這個列表更新速度較慢，因此建議參考開發者擁有的手機「品牌資訊」即可，如果要最新的版本請找這裡：</p>
-<p>https://www.celsoazevedo.com/files/android/google-camera/</p>
-<p>一樣，不同的機種的相容程度並不同，請自行測試囉！</p>
-<h2 id="q不同版本的移植版google-camera拍起來會有差嗎">Q：不同版本的移植版Google Camera拍起來會有差嗎？</h2>
-<p>A：簡單的說，只有功能性引進的時候不同版本的GCAM會有比較明顯的差異。主要影響有這幾類：</p>
-<ol>
-<li>
-<p>大版本之間功能性區別：</p>
-<p>例如3.X版疊圖後算出來的照片就會不如5.1版的疊圖後的成品噪點少，5.1版的HDR+功能性又不如6.X版引入夜視後在AI白平衡和AI降噪上的強大，這些是不同大版本間主要差異。</p>
-</li>
-<li>
-<p>不同機型的相機模式區別：</p>
-<p>另外還有使用不同相機模式的採樣幀的合成算法、以及APP內部由RAW矩陣轉換成JPG的調整參數：
-<img src="https://i.imgur.com/MmouELR.png" alt="Input Model"/></p>
-<p>也會在陰影和亮部校正還有色調曲線方面產生一些差異。如果前者選錯機型模式可能會直接在合成過程中APP直接閃退，後者選錯機型模式則會在成像的結果發現陰影偏綠、偏紫，或是細節對比過高的現象。</p>
-<p>當然有些開發者偷懶或是不想一直被使用者問這些機型模式是差在哪裡，後續版本就乾脆拿掉了機型模式的選單，這可能就沒法度囉～</p>
-</li>
-<li>
-<p>AI白平衡：</p>
-<p>這應該是除了夜視之外另外一個能夠讓照片具有顯著不同的地方，手機羸弱的CMOS在夜晚中常常難以獲取足夠多的光線資訊，讓手機系統能夠正確的校正白平衡。
-於是Google乾脆另闢蹊徑，直接用深度學習學習每個場景的「哪些物體」應該是白色，並用以校正白平衡。
-AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不會出現照片全部變成黃色而無法、或是難以後製校正的狀況（因為後期很多GCAM留下來的RAW檔都是壓縮DNG，經過壓縮而喪失的色彩資訊讓在極端環境下的白平衡校正變得困難）</p>
-</li>
-<li>
-<p>可自訂的曝光時間：</p>
-<p>GCAM使用多幀短曝光試圖以DSP算力暴力解決雜訊的問題，但是使用短曝光的嚴重缺陷在於：</p>
-<p>如果快門短到讓收到的光線資訊低於CMOS可產生「有意義的資訊」閾值，那麼這些多張「垃圾雜訊」再怎麼疊圖平均也不會疊出任何圖像（這個我在早期使用Canon入門DSLR機身上拍星空時很有經驗.....）</p>
-<p>而某些版本的移植版GCAM能夠強制將曝光時間訂在1秒、2秒、4秒甚至更長的秒數。如果手機的韌體端有支援較長秒數的快門，配上腳架之後，就可以讓手機在超低光源環境（如星空）下CMOS接受到的光線資訊量超越「能產生有意義的資訊」閾值，不再疊圖疊出大量無意義的熱雜訊紅紫斑。讓手機拍攝清晰、無光軌的銀河這個過往不太可能達成的任務成為可能！</p>
-</li>
-</ol>
-</li>
-</ol>
 ]]></content>
     </entry>
 </feed>
