@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-08T06:46:29.308Z</updated>
+    <updated>2019-07-08T06:49:28.846Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -17,7 +17,7 @@
         </link>
         <updated>2019-07-08T06:26:52.000Z</updated>
         <content type="html"><![CDATA[<p>先說結論：以畫質來說，手機的畫素<strong>越低越好</strong>，前後兩千萬就是一個噱頭無誤！</p>
-<p>要談論到一個名詞叫做<strong>有效畫素</strong>。
+<p>要了解原因，我們要先談論到一個名詞叫做<strong>有效畫素</strong>。
 有效畫素是指給定的DB值（訊噪比）之下，其在不同ISO之下高於給定DB值的畫素量，即稱為有效畫素。</p>
 <p>講的跟外星語一樣，簡單講就是說：在ISO越高的情況之下，真正達到給定水準的畫素量會下降，而在高ISO條件之下所得真實無虛假無灌水的畫素，其實會比相機標示的畫素還要少很多！因為在高ISO之下很多畫素其實都變成沒有意義的雜訊了！</p>
 <p>而這個有效畫素，其實就是大家常常掛在嘴邊講的：<strong>畫質</strong>！</p>
