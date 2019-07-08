@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-06T03:45:40.334Z</updated>
+    <updated>2019-07-08T06:19:19.561Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -182,9 +182,20 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 <li>利用深度學習校正白平衡，曝光度</li>
 <li>利用深度學習降低噪點</li>
 </ul>
-<p>以上兩個功能一開始原為搭載於Pixel 3的Google Camera 6.0時獨有，並使用Visual Core加速運算
-而隨著沒有Visual Core的Pixel 3A上市，以上功能不再局限Visual Core，也可執行於高通平台的Hexagon DSP上。
-而目前在Google Camera 6.2.030版之後這兩個也成功移植到其他使用高通處理器的手機上，讓感光元件性能羸弱的手機也能在黑夜發揮功用。</p>
+<p>以上兩個功能一開始原為搭載於Pixel 3的Google Camera 6.0時獨有，並使用Visual Core加速運算。</p>
+<p>而隨著沒有Visual Core的Pixel 3A上市，以上功能不再局限Visual Core，Google也將這Night Sight降噪所需的運算轉移至高通平台的Hexagon DSP上執行。而這兩個功能也在第三方的Google Camera 6.2.030版之後成功完成移植，間接使所有使用高通平台的手機受惠，讓感光元件性能羸弱的手機也能在黑夜發揮功用。</p>
+<h3 id="自動追焦">自動追焦</h3>
+<p>這應該是最近版本才新增的功能，個人覺得這個追焦「咬住」對焦物的能力甚至更勝過手上Sony A7M3在3.00版韌體更新過後的自動追焦（雖然手機這麼小的片幅景深深到爆，也沒什麼好「對焦」的）。</p>
+<p>至於效果呢？我改天放一個示意圖展示一下好了。</p>
+<h2 id="結語">結語</h2>
+<p>Google成功的將過去一些影像理論以自身的演算法功底優化，在極大的降低時間與計算複雜度的情況下，成功在手機這種效能貧弱的終端設備上以程式碼實作，達成一般人以過去仰賴硬體效能的線性思維上難以想像的成就————讓手機指甲大的CMOS也能在一片漆黑中拍出稍微能看的夜景。</p>
+<p>Google Camera的出現讓我們理解不只是硬體，軟體後面的演算法也至關重要。在優秀的演算法下，我們甚至可以用貧弱的CMOS硬體（1/2.6吋）越級打怪，「<strong>堆出</strong>」超越更高一級規格CMOS（1吋）所能拍出的照片。</p>
+<p>當然，身為手上拿著正規微單的使用者來說，當然也期待這些能夠提升畫質的功能功能能夠被相機廠採用，進一步提升手上相機的畫質。</p>
+<p>至於Google相機未來還會再引入什麼功能呢？我想可能是自動以RAW檔資訊完成AI調色修圖吧？
+畢竟現在Google相機白天直出的照片其實都挺爛的，色彩曲線整個不太對，還有很大的改進空間。</p>
+<p>另外還有可能改善的點大概是開放用第二顆長鏡頭或是景深鏡頭，搭配AI更有效率的辨識照片中物體深度，從而產生更自然的景深，這點從Pixel 4流出圖中已經可以看出端倪：</p>
+<p><img src="https://i.imgur.com/H5pU033.jpg" alt="img"></p>
+<p>至於下一版的Google Camera到底會不會實現這兩個功能呢？就讓我們期待一下吧～</p>
 ]]></content>
     </entry>
 </feed>
