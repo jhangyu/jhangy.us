@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-13T08:45:23.909Z</updated>
+    <updated>2019-07-13T10:00:18.476Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -10,6 +10,46 @@
     <logo>http://blog.jhangy.us/images/avatar.png</logo>
     <icon>http://blog.jhangy.us/favicon.ico</icon>
     <rights>All rights reserved 2019, Jhangyu</rights>
+    <entry>
+        <title type="html"><![CDATA[小米 9T 夜拍分享]]></title>
+        <id>http://blog.jhangy.us/post/xiao-mi-9t-nightshot</id>
+        <link href="http://blog.jhangy.us/post/xiao-mi-9t-nightshot">
+        </link>
+        <updated>2019-07-13T09:10:48.000Z</updated>
+        <content type="html"><![CDATA[<p>小米9T 的長焦鏡頭應該是第一個可以使用Google Camera多幀降噪強化的等效50mm鏡頭。
+相對於OPPO Reno和華為的P30 Pro的長焦，後製調整空間大了很多，以手機鏡頭來說算是一大突破。
+那究竟拍攝效果如何呢？以下是小米9T長焦的範例，使用<a href="https://f.celsoazevedo.com/file/cfiles/gcm1/MGC_6.1.021_MI8_V2e-fu24_Aux2way_4Lens-03g-snapcam.apk">此版本</a>移植版GCAM拍攝：
+（建議各位數毛黨可以把照片放大最大，這些照片不怕1：1檢視，所以我都不縮圖）
+1.</p>
+<p>Google Camera JPG直出：</p>
+<p><img src="https://i.imgur.com/f3oz9YZ.jpg" alt="Google Camera JPG"></p>
+<p>Google Camera DNG RAW 後製（水平校正、調色）：</p>
+<p><img src="https://i.imgur.com/8FNui4O.jpg" alt="Google Camera DNG RAW"></p>
+<ol start="2">
+<li></li>
+</ol>
+<p>Google Camera JPG直出：</p>
+<p><img src="https://i.imgur.com/4DMPFK9.jpg" alt="Google Camera JPG"></p>
+<p>Google Camera DNG RAW 後製（水平校正、調色）：</p>
+<p><img src="https://i.imgur.com/poYzq45.jpg" alt="Google Camera DNG RAW"></p>
+<ol start="3">
+<li></li>
+</ol>
+<p>Google Camera JPG直出：</p>
+<p><img src="https://i.imgur.com/INM636x.jpg" alt="Google Camera JPG"></p>
+<p>Google Camera DNG RAW 後製（水平校正、調色）：</p>
+<p><img src="https://i.imgur.com/pGljKRX.jpg" alt="Google Camera DNG RAW"></p>
+<p>至於這樣的水準到底如何呢？就用一張同時以Sony A7M3 50mm鏡頭拍攝的照片做比較吧～
+<img src="https://i.imgur.com/tqxWZtT.jpg" alt="Sony A7M3 Nigtshot">
+來看看細節差距：
+<img src="https://i.imgur.com/Cvycdgu.jpg" alt="detail 1">
+<img src="https://i.imgur.com/Nt8U84a.jpg" alt="detail 2">
+即使不看畫素量，看看那個畫面的純淨度和鏡頭解析力，差距依然是天與地般的巨大。
+不過作為一個手機上超級超級小的長焦鏡頭，夜拍的畫質能拉到能夠站上台一起比較的程度已非易事，其他手機的長焦鏡頭因為沒有多幀降噪，也沒有後製空間，應該就沒有這個可能性了。</p>
+<p>手機是幫老媽買的，測試完就還她了，應該近期無法再進行測試這台手機了，畢竟我不是有能力讓廠商請Model來拍攝各種美美的寫手 ：）
+接下來就等等看Pixel 4到底有沒有長焦鏡頭囉！！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[手機的像素越高越好嗎？前後兩千萬到底是不是一個噱頭？]]></title>
         <id>http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality</id>
@@ -183,7 +223,7 @@
 推 dant****11  : 了　　　　　　　　　　　　　　　　　　　　　　　　　　　12/19 13:35
 </code></pre>
 <pre><code>→ kai***8　　　: https://imgur.com/Jy6rTKj 我拍是原廠比較好耶　　　　04/29 01:46
-→ kai***8　　　: 沒有夜間模式還是用原廠的就夠好了　　　　　　　　　　　　 04/29 01:47
+→ kai***8　　　: 沒有夜間模式還是用原廠的就夠好了　　　　　　　　　　　　  04/29 01:47
 </code></pre>
 <p>這種情形特別以Sony、Samsung使用者最常見，因為截至目前為止Sony<strong>沒有任何一台手機</strong>支援GCAM（直至最近發表的Xperia 1依舊如此）；而Samsung則是因為使用Exynos處理器讓其手機對GCAM支援度<strong>極度不佳</strong>。</p>
 <p>而這兩家的旗艦機相機的CMOS其實都用的不差，然而因為不支援Camera 2 API反倒被其他CMOS體質較差、卻支援Camera 2 API的手機利用Google Camera移植版超越，就是相當可惜的了～</p>
