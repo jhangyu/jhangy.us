@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-13T10:16:54.410Z</updated>
+    <updated>2019-07-13T10:18:19.296Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -17,10 +17,13 @@
         </link>
         <updated>2019-07-13T09:10:48.000Z</updated>
         <content type="html"><![CDATA[<p>小米9T 的長焦鏡頭應該是第一個可以使用Google Camera多幀降噪強化的等效50mm鏡頭。
-相對於OPPO Reno和華為的P30 Pro的長焦，後製調整空間大了很多，以手機鏡頭來說算是一大突破。
-那究竟拍攝效果如何呢？以下是小米9T長焦的範例，使用<a href="https://f.celsoazevedo.com/file/cfiles/gcm1/MGC_6.1.021_MI8_V2e-fu24_Aux2way_4Lens-03g-snapcam.apk">此版本</a>移植版GCAM上腳架拍攝：
-（建議各位數毛黨可以把照片放大最大，這些照片不怕1：1檢視，所以我都不縮圖）
-1.</p>
+相對於OPPO Reno和華為的P30 Pro的長焦，後製調整空間大了很多，以手機鏡頭來說算是一大突破。</p>
+<p>那究竟拍攝效果如何呢？</p>
+<p>以下是小米9T長焦的範例，使用<a href="https://f.celsoazevedo.com/file/cfiles/gcm1/MGC_6.1.021_MI8_V2e-fu24_Aux2way_4Lens-03g-snapcam.apk">此版本</a>移植版GCAM上腳架拍攝：</p>
+<p>（建議各位數毛黨可以把照片放大最大，這些照片不怕1：1檢視，所以我都不縮圖）</p>
+<ol>
+<li></li>
+</ol>
 <p>Google Camera JPG直出：</p>
 <p><img src="https://i.imgur.com/f3oz9YZ.jpg" alt="Google Camera JPG"></p>
 <p>Google Camera DNG RAW 後製（水平校正、調色）：</p>
@@ -53,9 +56,11 @@ IMX586表現稍微好那麼一點</p>
 來看看細節差距：
 <img src="https://i.imgur.com/Cvycdgu.jpg" alt="detail 1">
 <img src="https://i.imgur.com/Nt8U84a.jpg" alt="detail 2">
-即使不看畫素量，看看那個畫面的純淨度和鏡頭解析力，差距依然是天與地般的巨大。
-不過作為一個手機上超級超級小的長焦鏡頭，夜拍的畫質能拉到能夠站上台一起比較的程度已非易事，其他手機的長焦鏡頭因為沒有多幀降噪，也沒有後製空間，應該就沒有這個可能性了。</p>
-<p>手機是幫老媽買的，測試完就還她了，應該近期無法再進行測試這台手機了，畢竟我不是有能力讓廠商請Model來拍攝各種美美照片的寫手 ：）（我已經打聽到業內的價格XD）</p>
+即使不看畫素量，看看那個畫面的純淨度和鏡頭解析力，差距依然是天與地般的巨大。</p>
+<p>不過作為一個手機上超級超級小的長焦鏡頭，夜拍的畫質能拉到能夠站上台一起比較的程度已非易事，
+其他手機的長焦鏡頭因為沒有多幀降噪，也沒有後製空間，應該就沒有這個可能性了。</p>
+<p>手機是幫老媽買的，測試完就還她了，應該近期無法再進行測試這台手機了。
+畢竟我不是有能力讓廠商請Model來拍攝各種美美照片的寫手 ：）（我已經打聽到業內的價格XD）</p>
 <p>接下來就等等看Pixel 4到底有沒有長焦鏡頭囉！！</p>
 ]]></content>
     </entry>
