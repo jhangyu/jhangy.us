@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title> Google Camera使用Q&amp;A | Jhangyu</title>
-<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1562999395476">
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1563004974192">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
@@ -20,13 +20,13 @@
       <div class="main-content">
         <div class="site-header">
   <a href="http://blog.jhangy.us">
-  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1562999395476" alt="">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1563004974192" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
   </h1>
   <p class="site-description">
-    記錄冷門的技術資訊，打擊商業公司的虛假宣傳
+    記錄冷門的技術資訊，揭露商業公司的虛假宣傳
   </p>
   <div class="menu-container">
     
@@ -82,6 +82,9 @@
               </time>
               
             </div>
+            
+              <div class="post-feature-image" style="background-image: url('http://blog.jhangy.us/post-images/google-camera-q&amp;a.svg')">
+              </div>
             
             <div class="post-content">
               <h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
@@ -156,7 +159,8 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 <li>
 <p>可自訂的曝光時間：</p>
 <p>GCAM使用多幀短曝光試圖以DSP算力暴力解決雜訊的問題，但是使用短曝光的嚴重缺陷在於：</p>
-<p>如果快門短到讓收到的光線資訊低於CMOS可產生「有意義的資訊」閾值，那麼這些多張「垃圾雜訊」再怎麼疊圖平均也不會疊出任何圖像（這個我在早期使用Canon入門DSLR機身上拍星空時很有經驗.....）</p>
+<p>如果快門短到讓收到的光線資訊低於CMOS可產生「有意義的資訊」閾值，那麼這些多張「垃圾雜訊」再怎麼疊圖平均也不會疊出任何圖像，或是造成明顯的「紫光」（這個我在早期使用Canon入門DSLR機身上拍星空時很有經驗.....）</p>
+<p><img src="https://i.imgur.com/9ZM477E.jpg" alt="img"></p>
 <p>而某些版本的移植版GCAM能夠強制將曝光時間訂在1秒、2秒、4秒甚至更長的秒數。</p>
 <p><img src="https://i.imgur.com/8o0xG3w.png" alt="img"></p>
 <p>如果手機的韌體端API有支援較長秒數的快門，配上腳架之後，就可以在超低光源環境（如星空）下讓手機的CMOS接受到的光線資訊量超越「能產生有意義的資訊」閾值，不再疊圖疊出大量無意義的熱雜訊紅紫斑。讓手機拍攝清晰、無光軌的銀河這個過往不太可能達成的任務成為可能！</p>
@@ -181,9 +185,11 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 <p>一般來說這一項也是必須使用RAW檔後製重新提取更多的細節才能感受到的區別。
 手機的效能不比電腦，無法做與電腦運算規模相同的影像運算處理，只能透過取巧的方式例如：
 <strong>銳利化</strong>（例如三星和華為）和<strong>抹成油畫</strong>（例如Sony和小米）以降低手機的影像運算量來得到常人可以接受的運算時間，然而這樣的做法其實就會喪失許多影像細節。所以如果在手機端拍攝RAW檔，再後續使用電腦端軟體解RAW就可以得到更多豐富多解析度細節和色彩細節，當然影像缺陷也會同時被一起凸顯。</p>
-<p>紫邊是一個在解完RAW之後最常被發現到的缺陷，當手機鏡頭模組用的太爛的時候，即使在拍攝遠方點光源而不是亮暗差異明顯的區域，也會發現點光源周圍多出了一圈色環，這就是紫邊。而紫邊問題雖然可以透過Lightroom手動調整盡量的消除，但想要希望Google後續的自動化調整就是不可能了，因為每顆鏡頭的光學特性不同，Google是不可能對這些「第三方」鏡頭有任何調整的。</p>
+<p>紫邊是一個在解完RAW之後最常被發現到的缺陷，當手機鏡頭模組用的太爛的時候，即使在拍攝遠方點光源而不是亮暗差異明顯的區域，也會發現點光源周圍多出了一圈色環，這就是紫邊。</p>
+<p><img src="https://i.imgur.com/fqYnkO7.jpg" alt="img"></p>
+<p>而紫邊問題雖然可以透過Lightroom手動調整盡量的消除，但想要希望Google後續的自動化調整就是不可能了，因為每顆鏡頭的光學特性不同，Google是不可能對這些「第三方」鏡頭有任何調整的。</p>
 <p>除紫邊之外，鏡頭解析力也是一個必須要靠解RAW檔才能體會區別的項目，因為在JPG直出的情況下大家的解析力都一樣爛，感受不到區別。而且比較有趣的是CMOS像素較高的機種（Zenfone Max Pro M1）配上爛鏡頭的話，解RAW之後的實際解析力會比CMOS像素較低的機種（紅米Note 5）還要低。</p>
-<p>這側面體現像素量在手機這種超小的CMOS上其實不是畫質的決定因素，使用到算法、CMOS單位像素面積和鏡頭模組的優劣才是真正會對手機畫質產生影響因素。（只是這十幾年來，宣傳畫素=畫質一直是一個很有效的行銷手段）</p>
+<p>這側面體現像素量在手機這種超小的CMOS上其實不是畫質的決定因素，使用到的演算法、CMOS單位像素面積和鏡頭模組的優劣才是真正會對手機畫質產生影響因素。（只是這十幾年來，宣傳畫素=畫質一直是一個很有效的行銷手段）。</p>
 </li>
 </ol>
 
