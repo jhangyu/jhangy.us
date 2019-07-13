@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-07-13T08:33:30.583Z</updated>
+    <updated>2019-07-13T08:44:58.127Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -312,7 +312,7 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 <h2 id="night-sight">Night Sight</h2>
 <p>Night Sight是目前最新版的Google Camera (v6)所擁有的功能，此版Google Camera需要Android 9.0 Pie版本以上的手機才能使用。</p>
 <p>Night Sight功能非常強大，一般人可能無法理解這個演算法到底有多強。為了讓一般人能夠理解它到底有多強，我這裡先放一個錄影動畫讓大家看看Night Sight實際拍攝的情況。</p>
-<iframe width="315" height="560" src="https://www.youtube.com/embed/uYiLa64i1GU" frameborder="0" align="middle" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="315" height="560" src="https://www.youtube.com/embed/uYiLa64i1GU?showinfo=0" frameborder="0" align="middle" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p><strong>成品：</strong>
 <img src="https://i.imgur.com/mh2ljFC.jpg" alt="img"></p>
 <p>好的，所以基本上可以說有了Night Sight，其他廠的相機基本上可以都不用打了，縱使強如華為的超級夜景也得乖乖被按在地上。</p>
