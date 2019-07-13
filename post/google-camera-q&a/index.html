@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title> Google Camera使用Q&amp;A | Jhangyu</title>
-<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1563004974192">
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1563005786981">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="http://blog.jhangy.us">
-  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1563004974192" alt="">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1563005786981" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
@@ -186,12 +186,18 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 手機的效能不比電腦，無法做與電腦運算規模相同的影像運算處理，只能透過取巧的方式例如：
 <strong>銳利化</strong>（例如三星和華為）和<strong>抹成油畫</strong>（例如Sony和小米）以降低手機的影像運算量來得到常人可以接受的運算時間，然而這樣的做法其實就會喪失許多影像細節。所以如果在手機端拍攝RAW檔，再後續使用電腦端軟體解RAW就可以得到更多豐富多解析度細節和色彩細節，當然影像缺陷也會同時被一起凸顯。</p>
 <p>紫邊是一個在解完RAW之後最常被發現到的缺陷，當手機鏡頭模組用的太爛的時候，即使在拍攝遠方點光源而不是亮暗差異明顯的區域，也會發現點光源周圍多出了一圈色環，這就是紫邊。</p>
-<p><img src="https://i.imgur.com/fqYnkO7.jpg" alt="img"></p>
+<p><img src="https://i.imgur.com/fqYnkO7.jpg" alt="照片使用紅米Note4X拍攝"></p>
 <p>而紫邊問題雖然可以透過Lightroom手動調整盡量的消除，但想要希望Google後續的自動化調整就是不可能了，因為每顆鏡頭的光學特性不同，Google是不可能對這些「第三方」鏡頭有任何調整的。</p>
 <p>除紫邊之外，鏡頭解析力也是一個必須要靠解RAW檔才能體會區別的項目，因為在JPG直出的情況下大家的解析力都一樣爛，感受不到區別。而且比較有趣的是CMOS像素較高的機種（Zenfone Max Pro M1）配上爛鏡頭的話，解RAW之後的實際解析力會比CMOS像素較低的機種（紅米Note 5）還要低。</p>
 <p>這側面體現像素量在手機這種超小的CMOS上其實不是畫質的決定因素，使用到的演算法、CMOS單位像素面積和鏡頭模組的優劣才是真正會對手機畫質產生影響因素。（只是這十幾年來，宣傳畫素=畫質一直是一個很有效的行銷手段）。</p>
 </li>
+<li>
+<p>移植版Google Camera Library對手機CMOS支援度不同</p>
+<p>其實這是最常遇到的問題，不過我最後才想到所以寫在下面。如果移植版GCAM Library對你手機的CMOS支援度不佳，造成紅綠藍原色偏移，最常看到的就是拍攝出來的畫面陰影會偏綠、偏紅、偏藍，或是前鏡頭乾脆無法開啟。這點可能就要去尋找有沒有其他的移植版本有針對你的手機CMOS修正Library，或是你只能透過拍RAW檔回去自行修正三原色偏移了。</p>
+</li>
 </ol>
+<h2 id="結語">結語</h2>
+<p>以上是大家使用第三方Google Camera時最常遇到的幾個問題，在這裡統一對一些常見的以訛傳訛的錯誤觀念做澄清和解答，如果之後遇到還有其他問題還會補充在這裡供大家參考，希望大家能夠在使用這個強大的移植版Google 相機少走一點歪路。</p>
 
             </div>
           </article>
