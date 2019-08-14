@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>在macOS (OSX)上建立APFS的高性能Ramdisk | Jhangyu</title>
-<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1565768370676">
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1565772475041">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="http://blog.jhangy.us">
-  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1565768370676" alt="">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1565772475041" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
@@ -87,7 +87,8 @@
               </div>
             
             <div class="post-content">
-              <p>之前也有在macOS裡面弄過Ramdisk，可惜之前檔案沒有保留好，重灌電腦的時候弄丟了。</p>
+              <p>我對Ramdisk的用途主要在轉移暫存檔案和一些不重要的零碎檔案，使用Ramdisk可以降低SSD讀寫次數，增加SSD磁碟壽命。再來Ramdisk也有關機後檔案即消失的特性，我可以不必費心每次都要定期刪除一些零碎檔案，保持資料夾乾淨整齊。（當然壞處是如果重要檔案放在Ramdisk重開機就救不回來了Orz）</p>
+<p>當然，最重要的是Ramdisk驚人的小檔案讀寫速率，遠遠超過目前的任何固態硬碟，這點在處理大量密集小檔的程式碼特別有用，光是解壓縮一些程式碼Source Code包就有明顯地區別，而Compile的時候速度提升就更明顯（雖然以SSD做為系統碟情況下，大部分速度瓶頸都在CPU性能上）。</p>
 <p>今天趁著有時間重弄了一下，程式碼參考來自於[<a href="https://enihsyou.com/2018/10/08/47/">1</a>],[<a href="http://blog.yourtion.com/mac-use-ramdisk-accelerate.html">2</a>],[<a href="https://blog.longwin.com.tw/2012/05/macos-ramdisk-applescript-2012/">3</a>]。</p>
 <p>先前的文章建立的Ramdisk磁碟格式都是HFS+。不是說不好，只是Apple最近推的APFS(蘋果檔案格式)磁碟格式是專為SSD設計的，讀寫速度又更快，更適合我們用來建立MAC Ramdisk的磁碟格式。</p>
 <p>於是我就照著參考的幾篇文章的方法，把他寫成完整的Code，提供給大家參考用：</p>
@@ -148,7 +149,6 @@ do
 	create_empty_folder ${EMPTY_FOLDER}
 done
 </code></pre>
-<p>我對Ramdisk的用途主要在轉移暫存檔案和一些不重要的零碎檔案，使用Ramdisk可以降低SSD讀寫次數，增加SSD磁碟壽命。再來Ramdisk也有關機後檔案即消失的特性，我可以不必費心每次都要定期刪除一些零碎檔案，保持資料夾乾淨整齊。（當然壞處是如果重要檔案放在Ramdisk重開機就救不回來了Orz）</p>
 <p>如果要設定開機啟動的話先把上面的程式碼存成.sh檔案之後放到你想放的位置，例如說我是放到<code>~/Library/Ramdisk/createRamdisk.sh</code></p>
 <p>記得將<code>createRamdisk.sh</code>權限設定成可執行：</p>
 <p><img src="https://i.imgur.com/AeCeMAO.png" alt="img"></p>
@@ -178,6 +178,11 @@ done
 </code></pre>
 <p>這樣就可以在開機自動啟動Ramdisk了～</p>
 <p><img src="https://i.imgur.com/LG99jcg.png" alt="img"></p>
+<p>最後來測一下速度：</p>
+<p><img src="https://i.imgur.com/w3i4Pp2.png" alt="img"></p>
+<p><img src="https://i.imgur.com/fJljZDt.png" alt="img"></p>
+<p><img src="https://i.imgur.com/SopoU3S.png" alt="img"></p>
+<p>對上現在新的有SLC快取的SSD似乎是沒啥勝算，不過對於一台2013的機器來說，速度已經很快了～</p>
 
             </div>
           </article>
