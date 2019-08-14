@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-08-14T07:35:18.555Z</updated>
+    <updated>2019-08-14T07:38:31.495Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -82,7 +82,7 @@ done
 <p>記得將<code>createRamdisk.sh</code>權限設定成可執行：</p>
 <p><img src="https://i.imgur.com/AeCeMAO.png" alt="img"></p>
 <p>然後將以下程式碼複製:</p>
-<pre><code class="language-xml-dtd">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+<pre><code class="language-xml">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
 &lt;plist version=&quot;1.0&quot;&gt;
 	&lt;dict&gt;
 		&lt;key&gt;Label&lt;/key&gt;
