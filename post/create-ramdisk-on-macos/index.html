@@ -1,0 +1,211 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>在macOS (OSX)上建立APFS的高性能Ramdisk | Jhangyu</title>
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1565768112496">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://blog.jhangy.us">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1565768112496" alt="">
+  </a>
+  <h1 class="site-title">
+    Jhangyu
+  </h1>
+  <p class="site-description">
+    記錄冷門的技術資訊，揭露商業公司的虛假宣傳
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首頁
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          封存
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          標籤
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          關於
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              在macOS (OSX)上建立APFS的高性能Ramdisk
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-08-14 ·
+              </time>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://i.imgur.com/LG99jcg.png')">
+              </div>
+            
+            <div class="post-content">
+              <p>之前也有在macOS裡面弄過Ramdisk，可惜之前檔案沒有保留好，重灌電腦的時候弄丟了。</p>
+<p>今天趁著有時間重弄了一下，程式碼參考來自於[<a href="https://enihsyou.com/2018/10/08/47/">1</a>],[<a href="http://blog.yourtion.com/mac-use-ramdisk-accelerate.html">2</a>],[<a href="https://blog.longwin.com.tw/2012/05/macos-ramdisk-applescript-2012/">3</a>]。</p>
+<p>先前的文章建立的Ramdisk磁碟格式都是HFS+。不是說不好，只是Apple最近推的APFS磁碟格式是專為SSD設計的，讀寫速度又更快，更適合我們用來建立MAC Ramdisk的磁碟格式。</p>
+<p>於是我就照著參考的幾篇文章的方法，把他寫成完整的Code，提供給大家參考用：</p>
+<pre><code class="language-bash">###設定Ramdisk大小，單位(MB)###
+SIZE=2048
+####磁碟名稱###
+DISKNAME=Ramdisk
+###取得Home資料夾路徑##
+HOME_DIR=$(cd ~;pwd)
+###要轉移到Ramdisk的資料夾清單###
+declare -a PATH_LIST=('Library/Caches/Google' 'Library/Caches/Microsoft Edge Dev' \
+&quot;Library/Caches/Adobe Camera Raw 2&quot; &quot;Library/Caches/Homebrew&quot; &quot;Downloads&quot;)
+###要建立的空資料夾清單###
+declare -a EMPTY_PATH_LIST=('Picture' 'Screenshot' \
+&quot;Codes&quot; &quot;Documents&quot; &quot;Photo&quot; &quot;TEMP&quot;)
+
+###當Ramdisk不存在時建立他###
+if [[ ! -d /Volumes/${DISKNAME} ]]; then
+	DISK_ID=`hdiutil attach -nomount ram://$(( ${SIZE} * 1024 * 1024 / 512 ))`
+	diskutil partitionDisk $DISK_ID GPT APFS &quot;${DISKNAME}&quot; 0
+fi
+###把轉移資料夾的過程寫成function###
+create_symbolic_link(){
+	if [[ ! -d /Volumes/${DISKNAME}/${LINK_PATH} ]]; then
+		echo &quot;    Create /Volumes/${DISKNAME}/${LINK_PATH} Directory&quot;
+		mkdir -p &quot;/Volumes/${DISKNAME}/${LINK_PATH}&quot;
+	fi
+	if [[ -d ${HOME_DIR}/${LINK_PATH} ]] &amp;&amp; [[ ! -h ${HOME_DIR}/${LINK_PATH} ]];then
+		echo &quot;    Delete ${HOME_DIR}/${LINK_PATH}&quot;
+		rm -rf &quot;${HOME_DIR}/${LINK_PATH}&quot;
+	fi
+	if [[ ! -h ${HOME_DIR}/${LINK_PATH} ]];then
+		ln -s &quot;/Volumes/${DISKNAME}/${LINK_PATH}&quot; &quot;${HOME_DIR}/${LINK_PATH}&quot;
+		echo &quot;    ...finish linking ${LINK_PATH}\n&quot;
+	fi
+}
+###把建立空資料夾的過程寫成function###
+create_empty_folder(){
+	if [[ ! -d /Volumes/${DISKNAME}/${EMPTY_FOLDER} ]]; then
+		echo &quot;    Create /Volumes/${DISKNAME}/${EMPTY_FOLDER} Directory&quot;
+		mkdir -p &quot;/Volumes/${DISKNAME}/${EMPTY_FOLDER}&quot;
+	fi
+}
+
+###移動到Ramdisk磁碟###
+cd /Volumes/${DISKNAME}
+###依照清單內容轉移資料夾###
+for LINK_PATH in &quot;${PATH_LIST[@]}&quot;;
+do
+	echo &quot;linking ${LINK_PATH}&quot;
+	create_symbolic_link ${LINK_PATH}
+done
+echo &quot;&quot;
+###依照清單內容建立空資料夾###
+for EMPTY_FOLDER in &quot;${EMPTY_PATH_LIST[@]}&quot;;
+do
+	echo &quot;linking ${EMPTY_FOLDER}&quot;
+	create_empty_folder ${EMPTY_FOLDER}
+done
+</code></pre>
+<p>我對Ramdisk的用途主要在轉移暫存檔案和一些不重要的零碎檔案，使用Ramdisk可以降低SSD讀寫次數，增加SSD磁碟壽命。再來Ramdisk也有關機後檔案即消失的特性，我可以不必費心每次都要定期刪除一些零碎檔案，保持資料夾乾淨整齊。（當然壞處是如果重要檔案放在Ramdisk重開機就救不回來了Orz）</p>
+<p>如果要設定開機啟動的話先把上面的程式碼存成.sh檔案之後放到你想放的位置，例如說我是放到<code>~/Library/Ramdisk/createRamdisk.sh</code></p>
+<p>記得將<code>createRamdisk.sh</code>權限設定成可執行：</p>
+<p><img src="https://i.imgur.com/AeCeMAO.png" alt="img"></p>
+<p>然後將以下程式碼複製:</p>
+<pre><code class="language-xml-dtd">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+	&lt;dict&gt;
+		&lt;key&gt;Label&lt;/key&gt;
+		&lt;string&gt;local.ramdisk&lt;/string&gt;
+		&lt;key&gt;ProgramArguments&lt;/key&gt;
+		&lt;array&gt;
+            &lt;string&gt;/Users/${your_user_name}/Library/Ramdisk/createRamdisk.sh&lt;/string&gt;
+        &lt;/array&gt;
+		&lt;key&gt;RunAtLoad&lt;/key&gt;
+		&lt;true/&gt;
+	&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre>
+<p>儲存成<code>local.ramdisk.plist</code>，丟到<code>~/Library/LaunchAgents/</code>，然後修改檔案權限成644：</p>
+<pre><code class="language-bash">chmod 644 ~/Library/LaunchAgents/local.ramdisk.plist
+</code></pre>
+<p>然後增加到自動啟動項目：</p>
+<pre><code class="language-bash">launchctl load ~/Library/LaunchAgents/local.ramdisk.plist
+</code></pre>
+<p>啟動自動啟動項目：</p>
+<pre><code class="language-bash">launchctl start local.ramdisk
+</code></pre>
+<p>這樣就可以在開機自動啟動Ramdisk了～</p>
+<p><img src="https://i.imgur.com/LG99jcg.png" alt="img"></p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://blog.jhangy.us/post/xiao-mi-9t-nightshot">
+              <h3 class="post-title">
+                小米 9T 夜拍分享
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="http://blog.jhangy.us/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
