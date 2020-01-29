@@ -4,10 +4,10 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>最快速簡便解鎖小米（紅米）並完成刷機的方式 | Jhangyu</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1580308431299">
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1580310791963">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+<link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.js"></script>
@@ -19,8 +19,8 @@
     <div class="main">
       <div class="main-content">
         <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1580308431299" alt="">
+  <a href="http://blog.jhangy.us">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1580310791963" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
@@ -81,11 +81,11 @@
                 · 2020-01-29 ·
               </time>
               
-                <a href="http://localhost:4000/tag/l1rCw1K3O" class="post-tag">
+                <a href="http://blog.jhangy.us/tag/l1rCw1K3O" class="post-tag">
                   # xiaomi
                 </a>
               
-                <a href="http://localhost:4000/tag/jWzgPVaTJw" class="post-tag">
+                <a href="http://blog.jhangy.us/tag/jWzgPVaTJw" class="post-tag">
                   # redmi
                 </a>
               
@@ -152,6 +152,46 @@ http://www.miui.com/unlock/done.html</p>
 我們直接依照以下指令安裝即可，一鍵完成：<br>
 <code>choco install universal-adb-drivers adb -y</code><br>
 完成之後一樣重開命令提示字元視窗</p>
+<h4 id="正式進行解鎖">正式進行解鎖</h4>
+<p>基本上經過168小時的漫長等待之後，請先將手機進行關機<br>
+等待20秒，等手機真正完成關機之後同時按下手機的<strong>音量下</strong>鍵、電源鍵（訣竅：電源鍵請按兩秒後就放開）<br>
+開機進入小米兔維修機器人畫面的Fastboot模式</p>
+<p>然後將手機使用USB線連接上電腦，打開之前下載的<strong>小米解鎖工具</strong>（請注意，不是小米刷機工具）<br>
+按照工具的提示步驟一步步完成就可以完成刷機<br>
+刷機之後工具會直接格式化手機的<code>/data</code>分區，也就是將整隻手機重設，<strong>你之前解鎖之前的資料都將會不見</strong><br>
+之後手機會自動重開機進入歡迎畫面，完成解鎖的步驟</p>
+<h2 id="刷機">刷機</h2>
+<p>完成解鎖動作之後，我們終於可以對這台手機為所欲為了<br>
+接下來就是準備來完成我們喜聞樂見的刷機的部分啦，基本上分成以下兩個步驟：</p>
+<ol>
+<li>刷入TWRP替換原廠功能受限的Recovery</li>
+<li>使用TWRP刷入其他系統</li>
+</ol>
+<h3 id="刷入twrp">刷入TWRP</h3>
+<p>還記得我們剛剛有通過Chocolatey安裝ADB、Fastboot工具嗎？<br>
+接下來我們將會使用Fastboot工具為手機刷入TWRP啦</p>
+<p>當然一樣把手機關機後，按音量下和電源鍵進入Fastboot模式<br>
+用USB接上電腦，打開命令提示字元<code>CMD</code>（這個時候不用使用系統管理員權限執行也可以）<br>
+然後先用以下指令檢測手機是否有連線上電腦：<br>
+<code>fastboot devices</code><br>
+如果手機有連線上的話就會顯示類似以下內容：<br>
+<img src="https://i.imgur.com/Wig4cWa.png" alt="img" style="zoom:50%;" /><br>
+接下來我們先去下載你手機型號對應的TWRP：<br>
+https://twrp.me/Devices/</p>
+<p>找到對應機型後按「Download Link」下面的<a href="https://dl.twrp.me/raphael">連結</a>就可以下載</p>
+<p>這邊很有趣，其實每台手機基本上都會有一個第三方共用的<strong>綽號</strong>（有點類似學名）<br>
+像是小米的9T Pro綽號就是<strong>raphael</strong>，可以避免各品牌出了一堆相似的名稱造成的混淆</p>
+<p>下載完後假設我把下載到img檔案放到R槽根目錄<br>
+我就先在命令提示字元視窗中將自己移動到R槽根目錄：<br>
+<code>cd /d R:</code><br>
+<img src="https://i.imgur.com/IWdyt5H.png" alt="img" style="zoom:50%;" /><br>
+然後使用fastboot命令將剛剛下載的TWRP .img檔案刷入手機的Recovery分區<br>
+（<strong>請注意！twrp-3.3.1-0-davinci.img 名稱請替換成你下載的.img檔案名稱！</strong>）<br>
+<code>fastboot flash recovery twrp-3.3.1-0-davinci.img</code><br>
+<img src="https://i.imgur.com/ohhhq1l.png" alt="img" style="zoom:50%;" /><br>
+然後將手機重開到剛剛刷寫的TWRP系統以繼續完成刷機步驟（接下來沒有截圖囉）<br>
+<code>fastboot boot twrp-3.3.1-0-davinci.img</code></p>
+<h3 id="刷入第三方系統">刷入第三方系統</h3>
 
             </div>
           </article>
@@ -160,7 +200,7 @@ http://www.miui.com/unlock/done.html</p>
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/create-ramdisk-on-macos">
+            <a href="http://blog.jhangy.us/post/create-ramdisk-on-macos">
               <h3 class="post-title">
                 在macOS (OSX)上建立APFS的高性能Ramdisk
               </h3>
@@ -172,7 +212,7 @@ http://www.miui.com/unlock/done.html</p>
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
+  <a class="rss" href="http://blog.jhangy.us/atom.xml" target="_blank">RSS</a>
 </div>
 
 <script>

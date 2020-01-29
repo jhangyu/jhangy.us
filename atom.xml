@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-01-29T14:33:55.980Z</updated>
+    <updated>2020-01-29T15:13:14.556Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="http://blog.jhangy.us"/>
+    <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
     <subtitle>記錄冷門的技術資訊，揭露商業公司的虛假宣傳</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>http://blog.jhangy.us/images/avatar.png</logo>
+    <icon>http://blog.jhangy.us/favicon.ico</icon>
     <rights>All rights reserved 2020, Jhangyu</rights>
     <entry>
         <title type="html"><![CDATA[最快速簡便解鎖小米（紅米）並完成刷機的方式]]></title>
-        <id>http://localhost:4000/post/unlock-and-flash-xiaomi-redmi-phones</id>
-        <link href="http://localhost:4000/post/unlock-and-flash-xiaomi-redmi-phones">
+        <id>http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones</id>
+        <link href="http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones">
         </link>
         <updated>2020-01-29T13:19:52.000Z</updated>
         <content type="html"><![CDATA[<p>小米手機最吸引人的一點對我來說一直都不是價格<br>
@@ -73,12 +73,52 @@ http://www.miui.com/unlock/done.html</p>
 我們直接依照以下指令安裝即可，一鍵完成：<br>
 <code>choco install universal-adb-drivers adb -y</code><br>
 完成之後一樣重開命令提示字元視窗</p>
+<h4 id="正式進行解鎖">正式進行解鎖</h4>
+<p>基本上經過168小時的漫長等待之後，請先將手機進行關機<br>
+等待20秒，等手機真正完成關機之後同時按下手機的<strong>音量下</strong>鍵、電源鍵（訣竅：電源鍵請按兩秒後就放開）<br>
+開機進入小米兔維修機器人畫面的Fastboot模式</p>
+<p>然後將手機使用USB線連接上電腦，打開之前下載的<strong>小米解鎖工具</strong>（請注意，不是小米刷機工具）<br>
+按照工具的提示步驟一步步完成就可以完成刷機<br>
+刷機之後工具會直接格式化手機的<code>/data</code>分區，也就是將整隻手機重設，<strong>你之前解鎖之前的資料都將會不見</strong><br>
+之後手機會自動重開機進入歡迎畫面，完成解鎖的步驟</p>
+<h2 id="刷機">刷機</h2>
+<p>完成解鎖動作之後，我們終於可以對這台手機為所欲為了<br>
+接下來就是準備來完成我們喜聞樂見的刷機的部分啦，基本上分成以下兩個步驟：</p>
+<ol>
+<li>刷入TWRP替換原廠功能受限的Recovery</li>
+<li>使用TWRP刷入其他系統</li>
+</ol>
+<h3 id="刷入twrp">刷入TWRP</h3>
+<p>還記得我們剛剛有通過Chocolatey安裝ADB、Fastboot工具嗎？<br>
+接下來我們將會使用Fastboot工具為手機刷入TWRP啦</p>
+<p>當然一樣把手機關機後，按音量下和電源鍵進入Fastboot模式<br>
+用USB接上電腦，打開命令提示字元<code>CMD</code>（這個時候不用使用系統管理員權限執行也可以）<br>
+然後先用以下指令檢測手機是否有連線上電腦：<br>
+<code>fastboot devices</code><br>
+如果手機有連線上的話就會顯示類似以下內容：<br>
+<img src="https://i.imgur.com/Wig4cWa.png" alt="img" style="zoom:50%;" /><br>
+接下來我們先去下載你手機型號對應的TWRP：<br>
+https://twrp.me/Devices/</p>
+<p>找到對應機型後按「Download Link」下面的<a href="https://dl.twrp.me/raphael">連結</a>就可以下載</p>
+<p>這邊很有趣，其實每台手機基本上都會有一個第三方共用的<strong>綽號</strong>（有點類似學名）<br>
+像是小米的9T Pro綽號就是<strong>raphael</strong>，可以避免各品牌出了一堆相似的名稱造成的混淆</p>
+<p>下載完後假設我把下載到img檔案放到R槽根目錄<br>
+我就先在命令提示字元視窗中將自己移動到R槽根目錄：<br>
+<code>cd /d R:</code><br>
+<img src="https://i.imgur.com/IWdyt5H.png" alt="img" style="zoom:50%;" /><br>
+然後使用fastboot命令將剛剛下載的TWRP .img檔案刷入手機的Recovery分區<br>
+（<strong>請注意！twrp-3.3.1-0-davinci.img 名稱請替換成你下載的.img檔案名稱！</strong>）<br>
+<code>fastboot flash recovery twrp-3.3.1-0-davinci.img</code><br>
+<img src="https://i.imgur.com/ohhhq1l.png" alt="img" style="zoom:50%;" /><br>
+然後將手機重開到剛剛刷寫的TWRP系統以繼續完成刷機步驟（接下來沒有截圖囉）<br>
+<code>fastboot boot twrp-3.3.1-0-davinci.img</code></p>
+<h3 id="刷入第三方系統">刷入第三方系統</h3>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[在macOS (OSX)上建立APFS的高性能Ramdisk]]></title>
-        <id>http://localhost:4000/post/create-ramdisk-on-macos</id>
-        <link href="http://localhost:4000/post/create-ramdisk-on-macos">
+        <id>http://blog.jhangy.us/post/create-ramdisk-on-macos</id>
+        <link href="http://blog.jhangy.us/post/create-ramdisk-on-macos">
         </link>
         <updated>2019-08-14T07:34:10.000Z</updated>
         <content type="html"><![CDATA[<p>我對Ramdisk的用途主要在轉移暫存檔案和一些不重要的零碎檔案，使用Ramdisk可以降低SSD讀寫次數，增加SSD磁碟壽命。再來Ramdisk也有關機後檔案即消失的特性，我可以不必費心每次都要定期刪除一些零碎檔案，保持資料夾乾淨整齊。（當然壞處是如果重要檔案放在Ramdisk重開機就救不回來了Orz）</p>
@@ -181,8 +221,8 @@ done
     </entry>
     <entry>
         <title type="html"><![CDATA[小米 9T 夜拍分享]]></title>
-        <id>http://localhost:4000/post/xiao-mi-9t-nightshot</id>
-        <link href="http://localhost:4000/post/xiao-mi-9t-nightshot">
+        <id>http://blog.jhangy.us/post/xiao-mi-9t-nightshot</id>
+        <link href="http://blog.jhangy.us/post/xiao-mi-9t-nightshot">
         </link>
         <updated>2019-07-13T09:10:48.000Z</updated>
         <content type="html"><![CDATA[<p>小米9T 的長焦鏡頭應該是第一個可以使用Google Camera多幀降噪強化的等效50mm鏡頭。<br>
@@ -235,8 +275,8 @@ IMX586表現稍微好那麼一點</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[手機的像素越高越好嗎？前後兩千萬到底是不是一個噱頭？]]></title>
-        <id>http://localhost:4000/post/does_pixel_amount_correspond_to_image_quality</id>
-        <link href="http://localhost:4000/post/does_pixel_amount_correspond_to_image_quality">
+        <id>http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality</id>
+        <link href="http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality">
         </link>
         <updated>2019-07-08T06:26:52.000Z</updated>
         <content type="html"><![CDATA[<p>先說結論：以畫質來說，手機的畫素<strong>越低越好</strong>，前後兩千萬就是一個噱頭無誤！</p>
@@ -380,8 +420,8 @@ IMX586表現稍微好那麼一點</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[ Google Camera使用Q&A]]></title>
-        <id>http://localhost:4000/post/google-camera-q&amp;a</id>
-        <link href="http://localhost:4000/post/google-camera-q&amp;a">
+        <id>http://blog.jhangy.us/post/google-camera-q&amp;a</id>
+        <link href="http://blog.jhangy.us/post/google-camera-q&amp;a">
         </link>
         <updated>2019-07-04T15:16:39.000Z</updated>
         <content type="html"><![CDATA[<h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
@@ -499,8 +539,8 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Camera Port (GCam) 技術匯總]]></title>
-        <id>http://localhost:4000/post/google-camera-gcam-tech</id>
-        <link href="http://localhost:4000/post/google-camera-gcam-tech">
+        <id>http://blog.jhangy.us/post/google-camera-gcam-tech</id>
+        <link href="http://blog.jhangy.us/post/google-camera-gcam-tech">
         </link>
         <updated>2019-06-17T04:00:51.000Z</updated>
         <content type="html"><![CDATA[<h1 id="google-camera使用技術簡介">Google Camera使用技術簡介</h1>
