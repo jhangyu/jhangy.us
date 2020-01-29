@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2019-08-14T08:47:56.601Z</updated>
+    <updated>2020-01-29T13:19:29.220Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
     <subtitle>記錄冷門的技術資訊，揭露商業公司的虛假宣傳</subtitle>
     <logo>http://blog.jhangy.us/images/avatar.png</logo>
     <icon>http://blog.jhangy.us/favicon.ico</icon>
-    <rights>All rights reserved 2019, Jhangyu</rights>
+    <rights>All rights reserved 2020, Jhangyu</rights>
     <entry>
         <title type="html"><![CDATA[在macOS (OSX)上建立APFS的高性能Ramdisk]]></title>
         <id>http://blog.jhangy.us/post/create-ramdisk-on-macos</id>
@@ -80,7 +80,7 @@ done
 </code></pre>
 <p>如果要設定開機啟動的話先把上面的程式碼存成.sh檔案之後放到你想放的位置，例如說我是放到<code>~/Library/Ramdisk/createRamdisk.sh</code></p>
 <p>記得將<code>createRamdisk.sh</code>權限設定成可執行：</p>
-<p><img src="https://i.imgur.com/AeCeMAO.png" alt="img"></p>
+<figure data-type="image" tabindex="1"><img src="https://i.imgur.com/AeCeMAO.png" alt="img" loading="lazy"></figure>
 <p>然後將以下程式碼複製:</p>
 <pre><code class="language-xml">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
 &lt;plist version=&quot;1.0&quot;&gt;
@@ -106,11 +106,11 @@ done
 <pre><code class="language-bash">launchctl start local.ramdisk
 </code></pre>
 <p>這樣就可以在開機自動啟動Ramdisk了～</p>
-<p><img src="https://i.imgur.com/LG99jcg.png" alt="img"></p>
+<figure data-type="image" tabindex="2"><img src="https://i.imgur.com/LG99jcg.png" alt="img" loading="lazy"></figure>
 <p>最後來測一下速度：</p>
-<p><img src="https://i.imgur.com/w3i4Pp2.png" alt="img"></p>
-<p><img src="https://i.imgur.com/fJljZDt.png" alt="img"></p>
-<p><img src="https://i.imgur.com/SopoU3S.png" alt="img"></p>
+<figure data-type="image" tabindex="3"><img src="https://i.imgur.com/w3i4Pp2.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://i.imgur.com/fJljZDt.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://i.imgur.com/SopoU3S.png" alt="img" loading="lazy"></figure>
 <p>對上現在新的有SLC快取的SSD似乎是沒啥勝算，不過對於一台2013的機器來說，速度已經很快了～</p>
 ]]></content>
     </entry>
@@ -120,7 +120,7 @@ done
         <link href="http://blog.jhangy.us/post/xiao-mi-9t-nightshot">
         </link>
         <updated>2019-07-13T09:10:48.000Z</updated>
-        <content type="html"><![CDATA[<p>小米9T 的長焦鏡頭應該是第一個可以使用Google Camera多幀降噪強化的等效50mm鏡頭。
+        <content type="html"><![CDATA[<p>小米9T 的長焦鏡頭應該是第一個可以使用Google Camera多幀降噪強化的等效50mm鏡頭。<br>
 相對於OPPO Reno和華為的P30 Pro的長焦，後製調整空間大了很多，以手機鏡頭來說算是一大突破。</p>
 <p>那究竟拍攝效果如何呢？</p>
 <p>以下是小米9T長焦的範例，使用<a href="https://f.celsoazevedo.com/file/cfiles/gcm1/MGC_6.1.021_MI8_V2e-fu24_Aux2way_4Lens-03g-snapcam.apk">此版本</a>移植版GCAM上腳架拍攝：</p>
@@ -129,41 +129,41 @@ done
 <li></li>
 </ol>
 <p>Google Camera JPG直出：</p>
-<p><img src="https://i.imgur.com/f3oz9YZ.jpg" alt="Google Camera JPG"></p>
+<figure data-type="image" tabindex="1"><img src="https://i.imgur.com/f3oz9YZ.jpg" alt="Google Camera JPG" loading="lazy"></figure>
 <p>Google Camera DNG RAW 後製（水平校正、調色）：</p>
-<p><img src="https://i.imgur.com/8FNui4O.jpg" alt="Google Camera DNG RAW"></p>
+<figure data-type="image" tabindex="2"><img src="https://i.imgur.com/8FNui4O.jpg" alt="Google Camera DNG RAW" loading="lazy"></figure>
 <ol start="2">
 <li></li>
 </ol>
 <p>Google Camera JPG直出：</p>
-<p><img src="https://i.imgur.com/4DMPFK9.jpg" alt="Google Camera JPG"></p>
+<figure data-type="image" tabindex="3"><img src="https://i.imgur.com/4DMPFK9.jpg" alt="Google Camera JPG" loading="lazy"></figure>
 <p>Google Camera DNG RAW 後製（水平校正、調色）：</p>
-<p><img src="https://i.imgur.com/poYzq45.jpg" alt="Google Camera DNG RAW"></p>
+<figure data-type="image" tabindex="4"><img src="https://i.imgur.com/poYzq45.jpg" alt="Google Camera DNG RAW" loading="lazy"></figure>
 <ol start="3">
 <li></li>
 </ol>
 <p>Google Camera JPG直出：</p>
-<p><img src="https://i.imgur.com/INM636x.jpg" alt="Google Camera JPG"></p>
+<figure data-type="image" tabindex="5"><img src="https://i.imgur.com/INM636x.jpg" alt="Google Camera JPG" loading="lazy"></figure>
 <p>Google Camera DNG RAW 後製（水平校正、調色）：</p>
-<p><img src="https://i.imgur.com/pGljKRX.jpg" alt="Google Camera DNG RAW"></p>
-<p>這支手機還有一個有趣的一點，就是它三顆不同焦段鏡頭都可以使用Google Camera多幀降噪功能，我們可以順便來比較一下：
-超廣角(Sony IMX481，F/2.4，124.8°)：
-<img src="https://i.imgur.com/lqHAB9y.jpg" alt="wideangle lens">
+<figure data-type="image" tabindex="6"><img src="https://i.imgur.com/pGljKRX.jpg" alt="Google Camera DNG RAW" loading="lazy"></figure>
+<p>這支手機還有一個有趣的一點，就是它三顆不同焦段鏡頭都可以使用Google Camera多幀降噪功能，我們可以順便來比較一下：<br>
+超廣角(Sony IMX481，F/2.4，124.8°)：<br>
+<img src="https://i.imgur.com/lqHAB9y.jpg" alt="wideangle lens" loading="lazy"><br>
 因為光圈太小，即使有用Google Camera多幀降噪雜訊一整個爆炸多</p>
-<p>標準(Sony IMX586，F/1.75，23.6mm)：
-<img src="https://i.imgur.com/aFKvmmw.jpg" alt="standard lens">
+<p>標準(Sony IMX586，F/1.75，23.6mm)：<br>
+<img src="https://i.imgur.com/aFKvmmw.jpg" alt="standard lens" loading="lazy"><br>
 IMX586表現稍微好那麼一點</p>
-<p>望遠(SAMSUNG S5K3M5，F/2.4，50mm)：
-<img src="https://i.imgur.com/v9s2WDu.jpg" alt="tele lens"></p>
-<p>至於這樣的水準到底如何呢？就用一張同時以Sony A7M3 50mm鏡頭拍攝的照片做比較吧～
-<img src="https://i.imgur.com/tqxWZtT.jpg" alt="Sony A7M3 Nigtshot">
-來看看細節差距：
-<img src="https://i.imgur.com/Cvycdgu.jpg" alt="detail 1">
-<img src="https://i.imgur.com/Nt8U84a.jpg" alt="detail 2">
+<p>望遠(SAMSUNG S5K3M5，F/2.4，50mm)：<br>
+<img src="https://i.imgur.com/v9s2WDu.jpg" alt="tele lens" loading="lazy"></p>
+<p>至於這樣的水準到底如何呢？就用一張同時以Sony A7M3 50mm鏡頭拍攝的照片做比較吧～<br>
+<img src="https://i.imgur.com/tqxWZtT.jpg" alt="Sony A7M3 Nigtshot" loading="lazy"><br>
+來看看細節差距：<br>
+<img src="https://i.imgur.com/Cvycdgu.jpg" alt="detail 1" loading="lazy"><br>
+<img src="https://i.imgur.com/Nt8U84a.jpg" alt="detail 2" loading="lazy"><br>
 即使不看畫素量，看看那個畫面的純淨度和鏡頭解析力，差距依然是天與地般的巨大。</p>
-<p>不過作為一個手機上超級超級小的長焦鏡頭，夜拍的畫質能拉到能夠站上台一起比較的程度已非易事，
+<p>不過作為一個手機上超級超級小的長焦鏡頭，夜拍的畫質能拉到能夠站上台一起比較的程度已非易事，<br>
 其他手機的長焦鏡頭因為沒有多幀降噪，也沒有後製空間，應該就沒有這個可能性了。</p>
-<p>手機是幫老媽買的，測試完就還她了，應該近期無法再進行測試這台手機了。
+<p>手機是幫老媽買的，測試完就還她了，應該近期無法再進行測試這台手機了。<br>
 畢竟我不是有能力讓廠商請Model來拍攝各種美美照片的寫手 ：）（我已經打聽到業內的價格XD）</p>
 <p>接下來就等等看Pixel 4到底有沒有長焦鏡頭囉！！</p>
 ]]></content>
@@ -175,7 +175,7 @@ IMX586表現稍微好那麼一點</p>
         </link>
         <updated>2019-07-08T06:26:52.000Z</updated>
         <content type="html"><![CDATA[<p>先說結論：以畫質來說，手機的畫素<strong>越低越好</strong>，前後兩千萬就是一個噱頭無誤！</p>
-<p>要了解原因，我們要先談論到一個名詞叫做<strong>有效畫素</strong>。
+<p>要了解原因，我們要先談論到一個名詞叫做<strong>有效畫素</strong>。<br>
 有效畫素是指給定的DB值（訊噪比）之下，其在不同ISO之下高於給定DB值的畫素量，即稱為有效畫素。</p>
 <p>講的跟外星語一樣，簡單講就是說：在ISO越高的情況之下，真正達到給定水準的畫素量會下降，而在高ISO條件之下所得真實無虛假無灌水的畫素，其實會比相機標示的畫素還要少很多！因為在高ISO之下很多畫素其實都變成沒有意義的雜訊了！</p>
 <p>而這個有效畫素，其實就是大家常常掛在嘴邊講的：<strong>畫質</strong>！</p>
@@ -294,15 +294,15 @@ IMX586表現稍微好那麼一點</p>
 </tbody>
 </table>
 <img src="https://i.imgur.com/xknLwIw.png" alt="Qualify Pixel IMX377 ISO100"/>
-<p>只能說，很慘烈
-在表現最好的ISO100下這顆1200萬像素的IMX377實際上的有效像素其實只有354萬像素。
+<p>只能說，很慘烈<br>
+在表現最好的ISO100下這顆1200萬像素的IMX377實際上的有效像素其實只有354萬像素。<br>
 而到了ISO800則更慘：</p>
 <img src="https://i.imgur.com/wG54OWS.png" alt="Qualify Pixel IMX377 ISO800"/>
 <p>40DB下有效像素則剩下41萬像素...</p>
 <p>41萬！</p>
-<p>手機端上表現最好的CMOS 1200萬像素裡面，在ISO800下只有41萬是有效像素！
+<p>手機端上表現最好的CMOS 1200萬像素裡面，在ISO800下只有41萬是有效像素！<br>
 更別說那些「前後兩千萬」的手機了， 那個單位像素大小只有IMX377的快一半，大概測出來都不勝唏噓...</p>
-<p>嘮嘮叨叨了拉了相機CMOS講那麼久，到底結論是什麼呢？
+<p>嘮嘮叨叨了拉了相機CMOS講那麼久，到底結論是什麼呢？<br>
 其實就是：</p>
 <ol>
 <li>機身上標的畫素≠畫質，真正跟畫質相關的是測試得到的<strong>有效像素</strong></li>
@@ -321,12 +321,12 @@ IMX586表現稍微好那麼一點</p>
         <updated>2019-07-04T15:16:39.000Z</updated>
         <content type="html"><![CDATA[<h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
 <p>A：如果你的手機的Camera 2 API支援到Level 3，那一定有很大的機率可以使用Google Camera</p>
-<p>Google Camera底層演算法的完全依託於Camera 2 API，所以若你的手機如果不支援Camera 2 API，則<strong>一定不可能</strong>可以使用Google Camera
-可不可使用Camera 2 API則可以使用<a href="https://play.google.com/store/apps/details?id=com.airbeat.device.inspector">這個APP</a>進行檢測。
+<p>Google Camera底層演算法的完全依託於Camera 2 API，所以若你的手機如果不支援Camera 2 API，則<strong>一定不可能</strong>可以使用Google Camera<br>
+可不可使用Camera 2 API則可以使用<a href="https://play.google.com/store/apps/details?id=com.airbeat.device.inspector">這個APP</a>進行檢測。<br>
 （如果沒有登入Google Play可使用APK Mirror<a href="https://www.apkmirror.com/apk/march-media-labs/camera2-api-probe/">連結</a>安裝）</p>
-<p><img src="https://i.imgur.com/ni295US.png" alt="img"></p>
+<figure data-type="image" tabindex="1"><img src="https://i.imgur.com/ni295US.png" alt="img" loading="lazy"></figure>
 <p>如果檢測結果為Level_3，那恭喜你，一般來說你的手機可以使用幾乎大部分的Google Camera移植版，趕快出門嘗試Google Camera帶來的強大夜拍效果吧。</p>
-<p>如果檢測結果為Full，那代表廠商的驅動對Camera 2 API的支援並不不完整。
+<p>如果檢測結果為Full，那代表廠商的驅動對Camera 2 API的支援並不不完整。<br>
 但還別放棄希望，如果下方欄位顯示你的手機有支援RAW Capture和Burst Capture的話，那你的手機有機會使用某一些特別為某款機型定制的移植版GCam。但前提是必須要有移植版GCAM開發者使用同樣型號或是廠牌的手機才有機會。</p>
 <p>當然如果你的手機檢測結果不支援RAW Capture，那麼就<strong>不可能</strong>有任何移植版Google Camera能夠在拍攝之後完成後續的HDR+合成步驟了，也就是你可能能進到GCAM觀景窗畫面，但是按下拍攝鈕之後不會有任何反應或是拍攝起來完全沒有HDR+多幀合成降噪的效果。</p>
 <h2 id="q可是我的手機檢測結果顯示legacy卻可以用某些版本的gcam">Q：可是我的手機檢測結果顯示Legacy，卻可以用某些版本的GCAM？</h2>
@@ -376,25 +376,25 @@ IMX586表現稍微好那麼一點</p>
 </li>
 <li>
 <p>不同機型的相機模式區別：</p>
-<p>另外還有使用不同相機模式的採樣幀的合成算法、以及APP內部由RAW矩陣轉換成JPG的調整參數：
+<p>另外還有使用不同相機模式的採樣幀的合成算法、以及APP內部由RAW矩陣轉換成JPG的調整參數：<br>
 <img src="https://i.imgur.com/MmouELR.png" alt="Input Model"/></p>
 <p>也會在陰影和亮部校正還有色調曲線方面產生一些差異。如果前者選錯機型模式可能會直接在合成過程中APP直接閃退，後者選錯機型模式則會在成像的結果發現陰影偏綠、偏紫，或是細節對比過高的現象。</p>
 <p>當然有些開發者偷懶或是不想一直被使用者問這些機型模式是差在哪裡，後續版本就乾脆拿掉了機型模式的選單，這可能就沒法度囉～</p>
 </li>
 <li>
 <p>AI白平衡：</p>
-<p><img src="https://i.imgur.com/nXux78q.png" alt="img"></p>
-<p>這應該是除了夜視之外另外一個能夠讓照片具有顯著不同的地方，手機羸弱的CMOS在夜晚中常常難以獲取足夠多的光線資訊，讓手機系統能夠正確的校正白平衡。
-於是Google乾脆另闢蹊徑，直接用深度學習學習每個場景的「哪些物體」應該是白色，並用以校正白平衡。
+<figure data-type="image" tabindex="2"><img src="https://i.imgur.com/nXux78q.png" alt="img" loading="lazy"></figure>
+<p>這應該是除了夜視之外另外一個能夠讓照片具有顯著不同的地方，手機羸弱的CMOS在夜晚中常常難以獲取足夠多的光線資訊，讓手機系統能夠正確的校正白平衡。<br>
+於是Google乾脆另闢蹊徑，直接用深度學習學習每個場景的「哪些物體」應該是白色，並用以校正白平衡。<br>
 AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不會出現照片全部變成黃色而無法、或是難以後製校正的狀況（因為後期很多GCAM留下來的RAW檔都是壓縮DNG，經過壓縮而喪失的色彩資訊讓在極端環境下的白平衡校正變得困難）</p>
 </li>
 <li>
 <p>可自訂的曝光時間：</p>
 <p>GCAM使用多幀短曝光試圖以DSP算力暴力解決雜訊的問題，但是使用短曝光的嚴重缺陷在於：</p>
 <p>如果快門短到讓收到的光線資訊低於CMOS可產生「有意義的資訊」閾值，那麼這些多張「垃圾雜訊」再怎麼疊圖平均也不會疊出任何圖像，或是造成明顯的「紫光」（這個我在早期使用Canon入門DSLR機身上拍星空時很有經驗.....）</p>
-<p><img src="https://i.imgur.com/9ZM477E.jpg" alt="img"></p>
+<figure data-type="image" tabindex="3"><img src="https://i.imgur.com/9ZM477E.jpg" alt="img" loading="lazy"></figure>
 <p>而某些版本的移植版GCAM能夠強制將曝光時間訂在1秒、2秒、4秒甚至更長的秒數。</p>
-<p><img src="https://i.imgur.com/8o0xG3w.png" alt="img"></p>
+<figure data-type="image" tabindex="4"><img src="https://i.imgur.com/8o0xG3w.png" alt="img" loading="lazy"></figure>
 <p>如果手機的韌體端API有支援較長秒數的快門，配上腳架之後，就可以在超低光源環境（如星空）下讓手機的CMOS接受到的光線資訊量超越「能產生有意義的資訊」閾值，不再疊圖疊出大量無意義的熱雜訊紅紫斑。讓手機拍攝清晰、無光軌的銀河這個過往不太可能達成的任務成為可能！</p>
 </li>
 </ol>
@@ -404,7 +404,7 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 <li>
 <p>畫質表現不同</p>
 <p>具體來說，一個CMOS能夠提供的畫質好壞決定於他的<strong>單位像素大小</strong>，而不是所謂的畫素。</p>
-<p>單位像素越大，在光線不足的時候有效畫素（畫質）越高，像素越高的手機相機，<strong>夜拍越爛</strong>，詳情可以看這篇：
+<p>單位像素越大，在光線不足的時候有效畫素（畫質）越高，像素越高的手機相機，<strong>夜拍越爛</strong>，詳情可以看這篇：<br>
 <a href="http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality/">手機的像素越高越好嗎？前後兩千萬到底是不是一個噱頭？</a></p>
 </li>
 <li>
@@ -414,11 +414,11 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 </li>
 <li>
 <p>鏡頭解析力、變形、紫邊表現不同</p>
-<p>一般來說這一項也是必須使用RAW檔後製重新提取更多的細節才能感受到的區別。
-手機的效能不比電腦，無法做與電腦運算規模相同的影像運算處理，只能透過取巧的方式例如：
+<p>一般來說這一項也是必須使用RAW檔後製重新提取更多的細節才能感受到的區別。<br>
+手機的效能不比電腦，無法做與電腦運算規模相同的影像運算處理，只能透過取巧的方式例如：<br>
 <strong>銳利化</strong>（例如三星和華為）和<strong>抹成油畫</strong>（例如Sony和小米）以降低手機的影像運算量來得到常人可以接受的運算時間，然而這樣的做法其實就會喪失許多影像細節。所以如果在手機端拍攝RAW檔，再後續使用電腦端軟體解RAW就可以得到更多豐富多解析度細節和色彩細節，當然影像缺陷也會同時被一起凸顯。</p>
 <p>紫邊是一個在解完RAW之後最常被發現到的缺陷，當手機鏡頭模組用的太爛的時候，即使在拍攝遠方點光源而不是亮暗差異明顯的區域，也會發現點光源周圍多出了一圈色環，這就是紫邊。</p>
-<p><img src="https://i.imgur.com/fqYnkO7.jpg" alt="照片使用紅米Note4X拍攝"></p>
+<figure data-type="image" tabindex="5"><img src="https://i.imgur.com/fqYnkO7.jpg" alt="照片使用紅米Note4X拍攝" loading="lazy"></figure>
 <p>而紫邊問題雖然可以透過Lightroom手動調整盡量的消除，但想要希望Google後續的自動化調整就是不可能了，因為每顆鏡頭的光學特性不同，Google是不可能對這些「第三方」鏡頭有任何調整的。</p>
 <p>除紫邊之外，鏡頭解析力也是一個必須要靠解RAW檔才能體會區別的項目，因為在JPG直出的情況下大家的解析力都一樣爛，感受不到區別。而且比較有趣的是CMOS像素較高的機種（Zenfone Max Pro M1）配上爛鏡頭的話，解RAW之後的實際解析力會比CMOS像素較低的機種（紅米Note 5）還要低。</p>
 <p>這側面體現像素量在手機這種超小的CMOS上其實不是畫質的決定因素，使用到的演算法、CMOS單位像素面積和鏡頭模組的優劣才是真正會對手機畫質產生影響因素。（只是這十幾年來，宣傳畫素=畫質一直是一個很有效的行銷手段）。</p>
@@ -439,20 +439,20 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
         </link>
         <updated>2019-06-17T04:00:51.000Z</updated>
         <content type="html"><![CDATA[<h1 id="google-camera使用技術簡介">Google Camera使用技術簡介</h1>
-<p>Google Camera是目前演算法最先進的Android相機App，遠遠超過其他手機廠使用的演算法
+<p>Google Camera是目前演算法最先進的Android相機App，遠遠超過其他手機廠使用的演算法<br>
 能夠讓任何使用了Google Camera (Port)的手機在夜拍上擁有極其出色的表現</p>
 <h2 id="hdr">HDR+</h2>
-<p>支撐著Google Camera強大的夜拍效果的則是其被命名為「HDR+」的功能
-這功能其實有點名稱誤用，在Google Camera早期3.X版本(Nexus 5時期)此功能確實是 <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">只有HDR的效果</a>
-<img src="https://3.bp.blogspot.com/-utUr33f9l_Y/VE1iR-ApMkI/AAAAAAAAAZQ/N2UaHstq3Uw/s1600/HDR%2B2.png" alt="img">
+<p>支撐著Google Camera強大的夜拍效果的則是其被命名為「HDR+」的功能<br>
+這功能其實有點名稱誤用，在Google Camera早期3.X版本(Nexus 5時期)此功能確實是 <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">只有HDR的效果</a><br>
+<img src="https://3.bp.blogspot.com/-utUr33f9l_Y/VE1iR-ApMkI/AAAAAAAAAZQ/N2UaHstq3Uw/s1600/HDR%2B2.png" alt="img" loading="lazy"><br>
 透過合成多張短曝光、曝光度不足的照片，除了能為照片帶來高動態範圍的好處、同時也能透過多幀照片中的色彩資訊「平均」，將畫面中的雜訊濾除。</p>
-<p><img src="https://2.bp.blogspot.com/-EQmUwsrM5Lo/VE26fr8w-sI/AAAAAAAAAZ0/nednky5nXMs/s1600/princeton-church-normal-with-inset.jpg" alt="img"></p>
-<p><img src="https://1.bp.blogspot.com/-qNiuoM3vy94/VE27Ed4kMKI/AAAAAAAAAZ8/HLzCuWByzSI/s1600/princeton-church-hdrp-with-inset.jpg" alt="img"></p>
+<figure data-type="image" tabindex="1"><img src="https://2.bp.blogspot.com/-EQmUwsrM5Lo/VE26fr8w-sI/AAAAAAAAAZ0/nednky5nXMs/s1600/princeton-church-normal-with-inset.jpg" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://1.bp.blogspot.com/-qNiuoM3vy94/VE27Ed4kMKI/AAAAAAAAAZ8/HLzCuWByzSI/s1600/princeton-church-hdrp-with-inset.jpg" alt="img" loading="lazy"></figure>
 <p>而後隨著手機感光元件尺寸越來越大，手機廠是能夠購買的演算法（例如說ArcSoft）對動態範圍參數的改進，高動態範圍的照片反而越來越不是HDR+主要的特點，Google在<strong>多幀</strong>降噪算法上的各種改進，逐漸成為HDR+此功能的演算法主角。</p>
 <h2 id="super-zoom">Super Zoom</h2>
 <p>Google的相機算法工程師在多幀拍攝的改良上玩的出神入化，後期又在使用單鏡頭達成兩倍放大的效果，這是怎麼辦到的呢？</p>
 <p>具體原理是這樣的，這是我們一般相機感光元件所使用的RGB拜耳陣列：</p>
-<p><img src="https://2.bp.blogspot.com/-bsfbKQzqvB4/W8O_6vO0f0I/AAAAAAAADX0/W3rdX0hfiIwXoM2_Tfy08aHoPH3ZQyc1wCLcBGAs/s200/image14.png" alt="img"></p>
+<figure data-type="image" tabindex="3"><img src="https://2.bp.blogspot.com/-bsfbKQzqvB4/W8O_6vO0f0I/AAAAAAAADX0/W3rdX0hfiIwXoM2_Tfy08aHoPH3ZQyc1wCLcBGAs/s200/image14.png" alt="img" loading="lazy"></figure>
 <p>你可以觀察到每一個感光像素並不是同時偵測紅綠藍三種顏色，相反的拜耳陣列則是將感光像素分成紅綠藍三組，在每一組感光像素前面加上了濾光片，讓他們只能感知特定顏色的光。聰明的你可能發現兩個問題：</p>
 <ul>
 <li>這樣看起來要四個單色的感光像素才能還原我們一般照片中的一個全色像素，像素不是被稀釋了嗎？</li>
@@ -460,27 +460,27 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 </ul>
 <p>第一個問題的答案是：沒錯，我們一般用的拜耳陣列CMOS像素是真的被稀釋成1/3的，所以實際解像力會不如像素量相同的Foveon結構感光元件。</p>
 <p>第二個問題的答案則是：中間缺失的像素資訊，是用猜的！</p>
-<p><img src="https://4.bp.blogspot.com/-E0Cobuog7Xg/W8PAJOS6CwI/AAAAAAAADX4/qRAoZLuzo4o6kf-KcmwaVm_Ji02jE_kmgCLcBGAs/s640/image1.png" alt="img"></p>
+<figure data-type="image" tabindex="4"><img src="https://4.bp.blogspot.com/-E0Cobuog7Xg/W8PAJOS6CwI/AAAAAAAADX4/qRAoZLuzo4o6kf-KcmwaVm_Ji02jE_kmgCLcBGAs/s640/image1.png" alt="img" loading="lazy"></figure>
 <p>目前對於拜耳陣列的CMOS結構已經有成熟的猜色算法，基本上顏色不會失真太多，但是缺點就是當鏡頭光學校正能力不足時，會造成底片時代沒有的「摩爾紋」、「偽色」、和「紫邊」。</p>
 <p>講了半天CMOS，那這個SuperZoom是怎麼做到的呢？</p>
 <p>還記得我們一般使用的拜耳陣列CMOS像素量是灌水的嗎？一般相機常說的2400萬像素實際並不是2400萬像素，而是僅有800萬像素。而這個時候如果我們讓CMOS的連拍三幢讓像素位移，讓每個像素都分別對紅、綠、藍三個顏色進行感光，不就擁有完整的2400萬像素了嗎？</p>
-<p><img src="https://3.bp.blogspot.com/-SRJfJyQcNRk/W8PAjDvVtdI/AAAAAAAADYE/tUfWIsw5HUEl3IXrLadqUPsMXdGWhSNIACLcBGAs/s640/image13.png" alt="img"></p>
+<figure data-type="image" tabindex="5"><img src="https://3.bp.blogspot.com/-SRJfJyQcNRk/W8PAjDvVtdI/AAAAAAAADYE/tUfWIsw5HUEl3IXrLadqUPsMXdGWhSNIACLcBGAs/s640/image13.png" alt="img" loading="lazy"></figure>
 <p>而現在透過像素位移取得完整的2400萬像素的照片，其實就等同一般狀態下的4800萬畫素，也就是我們可以直接得到理論上清晰度相較傳統方法高兩倍的照片，足夠我們將他放大兩倍使用了。</p>
 <p>然而，要能夠做到像素位移的話感光元件也必須進行定制，所以基本上只有Pixel 3所使用的感光元件能夠達成此功能，其他使用移植版GCam的手機則無法使用。</p>
 <h2 id="night-sight">Night Sight</h2>
 <p>Night Sight是目前最新版的Google Camera (v6)所擁有的功能，此版Google Camera需要Android 9.0 Pie版本以上的手機才能使用。</p>
 <p>Night Sight功能非常強大，一般人可能無法理解這個演算法到底有多強。為了讓一般人能夠理解它到底有多強，我這裡先放一個錄影動畫讓大家看看Night Sight實際拍攝的情況。</p>
 <iframe width="315" height="560" src="https://www.youtube.com/embed/uYiLa64i1GU?showinfo=0" frameborder="0" align="middle" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p><strong>成品：</strong>
-<img src="https://i.imgur.com/mh2ljFC.jpg" alt="img"></p>
+<p><strong>成品：</strong><br>
+<img src="https://i.imgur.com/mh2ljFC.jpg" alt="img" loading="lazy"></p>
 <p>好的，所以基本上可以說有了Night Sight，其他廠的相機基本上可以都不用打了，縱使強如華為的超級夜景也得乖乖被按在地上。</p>
 <p>那Night Sight到底做了什麼事呢？</p>
 <h3 id="使用raw檔進行多幀處理">使用RAW檔進行多幀處理</h3>
 <p>其實先前版本(v5)的Google Camera也有用到RAW堆幀的功能，不過個人觀察這個版本的Google Camera應該是使用第一張照片的RAW檔經過恢復亮部和暗部細節後做為主幀，其餘其他幀在抽去模糊的幀之後，<strong>可能</strong>是使用JPG進行後續多幀降噪的程序。（其實這我不太確定，請知情者指證）</p>
 <p>而新版的Google Camera(v6)釋出之前Google AI Blog發了<a href="https://ai.googleblog.com/2018/02/introducing-hdr-burst-photography.html">一篇</a>他們現在全程使用RAW檔進行Burst取樣，可以取得更寬的動態範圍和更深的色彩深度，有助於在極端環境之下透過深度學習將照片還原回更正確的白平衡和動態範圍。</p>
-<p><img src="https://1.bp.blogspot.com/-9WOxufm8vwQ/WoHl-3jTUnI/AAAAAAAACYE/b32B8BXpz8QMgxEVPQYt5ThBhwqD-egnQCLcBGAs/s1600/figure1.png" alt="img"></p>
+<figure data-type="image" tabindex="6"><img src="https://1.bp.blogspot.com/-9WOxufm8vwQ/WoHl-3jTUnI/AAAAAAAACYE/b32B8BXpz8QMgxEVPQYt5ThBhwqD-egnQCLcBGAs/s1600/figure1.png" alt="img" loading="lazy"></figure>
 <p>但該篇文章中也提到由於處理連拍RAW檔的數據壓力非常大，單純使用一般的手機CPU (SoC)無法勝任此工作，所以為了減少拍攝的遲滯感，Google Camera使用了Qualcomm <strong>Hexagon DSP</strong> 和Pixel 3中的Visual Core專用晶片加速數據的處理。</p>
-<p>所以基本上可以說，如果你想使用移植版Google Camera，那麼最好必須有一支具有Hexagon DSP，使用高通處理器的手機。手機使用的高通處理器未必要使用到最高階的8XX系列處理器，個人使用經驗上在優化良好的系統上，即使使用低階的S430 SoC也可以以單張照片取樣3幀的條件下以正常速度拍攝。
+<p>所以基本上可以說，如果你想使用移植版Google Camera，那麼最好必須有一支具有Hexagon DSP，使用高通處理器的手機。手機使用的高通處理器未必要使用到最高階的8XX系列處理器，個人使用經驗上在優化良好的系統上，即使使用低階的S430 SoC也可以以單張照片取樣3幀的條件下以正常速度拍攝。<br>
 然而，如果使用非高通系CPU，如：聯發科MTK、三星 Exynos的手機（例如三星旗艦），往往無法正常的使用移植版Google Camera，往往有bug或是HDR+功能性缺失。當然，即使是使用高通CPU手機裝上移植版Google Camera，速度也不能比使用專用Visual Core晶片的Pixel 3鬼神加速還要快的。</p>
 <h3 id="ai">AI</h3>
 <p>GCam NS除了同時結合了以上寬動態範圍、使用RAW檔多幀降噪的技術做為基礎之外，個人猜測還額外加入了</p>
@@ -497,10 +497,10 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
 <p>Google成功的將過去一些影像理論以自身的演算法功底優化，在極大的降低時間與計算複雜度的情況下，成功在手機這種效能貧弱的終端設備上以程式碼實作，達成一般人以過去仰賴硬體效能的線性思維上難以想像的成就————讓手機指甲大的CMOS也能在一片漆黑中拍出稍微能看的夜景。</p>
 <p>Google Camera的出現讓我們理解不只是硬體，軟體後面的演算法也至關重要。在優秀的演算法下，我們甚至可以用貧弱的CMOS硬體（1/2.6吋）越級打怪，「<strong>堆出</strong>」超越更高一級規格CMOS（1吋）所能拍出的照片。</p>
 <p>當然，身為手上拿著正規微單的使用者來說，當然也期待這些能夠提升畫質的功能功能能夠被相機廠採用，進一步提升手上相機的畫質。</p>
-<p>至於Google相機未來還會再引入什麼功能呢？我想可能是自動以RAW檔資訊完成AI調色修圖吧？
+<p>至於Google相機未來還會再引入什麼功能呢？我想可能是自動以RAW檔資訊完成AI調色修圖吧？<br>
 畢竟現在Google相機白天直出的照片其實都挺爛的，色彩曲線整個不太對，還有很大的改進空間。</p>
 <p>另外還有可能改善的點大概是開放用第二顆長鏡頭或是景深鏡頭，搭配AI更有效率的辨識照片中物體深度，從而產生更自然的景深，這點從Pixel 4流出圖中已經可以看出端倪：</p>
-<p><img src="https://i.imgur.com/H5pU033.jpg" alt="img"></p>
+<figure data-type="image" tabindex="7"><img src="https://i.imgur.com/H5pU033.jpg" alt="img" loading="lazy"></figure>
 <p>至於下一版的Google Camera到底會不會實現這兩個功能呢？就讓我們期待一下吧～</p>
 ]]></content>
     </entry>

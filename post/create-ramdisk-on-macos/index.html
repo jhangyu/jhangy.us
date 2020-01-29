@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>在macOS (OSX)上建立APFS的高性能Ramdisk | Jhangyu</title>
-<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1565772475041">
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1580303965183">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="http://blog.jhangy.us">
-  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1565772475041" alt="">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1580303965183" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
@@ -151,7 +151,7 @@ done
 </code></pre>
 <p>如果要設定開機啟動的話先把上面的程式碼存成.sh檔案之後放到你想放的位置，例如說我是放到<code>~/Library/Ramdisk/createRamdisk.sh</code></p>
 <p>記得將<code>createRamdisk.sh</code>權限設定成可執行：</p>
-<p><img src="https://i.imgur.com/AeCeMAO.png" alt="img"></p>
+<figure data-type="image" tabindex="1"><img src="https://i.imgur.com/AeCeMAO.png" alt="img" loading="lazy"></figure>
 <p>然後將以下程式碼複製:</p>
 <pre><code class="language-xml">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
 &lt;plist version=&quot;1.0&quot;&gt;
@@ -177,11 +177,11 @@ done
 <pre><code class="language-bash">launchctl start local.ramdisk
 </code></pre>
 <p>這樣就可以在開機自動啟動Ramdisk了～</p>
-<p><img src="https://i.imgur.com/LG99jcg.png" alt="img"></p>
+<figure data-type="image" tabindex="2"><img src="https://i.imgur.com/LG99jcg.png" alt="img" loading="lazy"></figure>
 <p>最後來測一下速度：</p>
-<p><img src="https://i.imgur.com/w3i4Pp2.png" alt="img"></p>
-<p><img src="https://i.imgur.com/fJljZDt.png" alt="img"></p>
-<p><img src="https://i.imgur.com/SopoU3S.png" alt="img"></p>
+<figure data-type="image" tabindex="3"><img src="https://i.imgur.com/w3i4Pp2.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://i.imgur.com/fJljZDt.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://i.imgur.com/SopoU3S.png" alt="img" loading="lazy"></figure>
 <p>對上現在新的有SLC快取的SSD似乎是沒啥勝算，不過對於一台2013的機器來說，速度已經很快了～</p>
 
             </div>

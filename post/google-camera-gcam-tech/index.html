@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Google Camera Port (GCam) 技術匯總 | Jhangyu</title>
-<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1565772475041">
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1580303965183">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="http://blog.jhangy.us">
-  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1565772475041" alt="">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1580303965183" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
@@ -88,20 +88,20 @@
             
             <div class="post-content">
               <h1 id="google-camera使用技術簡介">Google Camera使用技術簡介</h1>
-<p>Google Camera是目前演算法最先進的Android相機App，遠遠超過其他手機廠使用的演算法
+<p>Google Camera是目前演算法最先進的Android相機App，遠遠超過其他手機廠使用的演算法<br>
 能夠讓任何使用了Google Camera (Port)的手機在夜拍上擁有極其出色的表現</p>
 <h2 id="hdr">HDR+</h2>
-<p>支撐著Google Camera強大的夜拍效果的則是其被命名為「HDR+」的功能
-這功能其實有點名稱誤用，在Google Camera早期3.X版本(Nexus 5時期)此功能確實是 <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">只有HDR的效果</a>
-<img src="https://3.bp.blogspot.com/-utUr33f9l_Y/VE1iR-ApMkI/AAAAAAAAAZQ/N2UaHstq3Uw/s1600/HDR%2B2.png" alt="img">
+<p>支撐著Google Camera強大的夜拍效果的則是其被命名為「HDR+」的功能<br>
+這功能其實有點名稱誤用，在Google Camera早期3.X版本(Nexus 5時期)此功能確實是 <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">只有HDR的效果</a><br>
+<img src="https://3.bp.blogspot.com/-utUr33f9l_Y/VE1iR-ApMkI/AAAAAAAAAZQ/N2UaHstq3Uw/s1600/HDR%2B2.png" alt="img" loading="lazy"><br>
 透過合成多張短曝光、曝光度不足的照片，除了能為照片帶來高動態範圍的好處、同時也能透過多幀照片中的色彩資訊「平均」，將畫面中的雜訊濾除。</p>
-<p><img src="https://2.bp.blogspot.com/-EQmUwsrM5Lo/VE26fr8w-sI/AAAAAAAAAZ0/nednky5nXMs/s1600/princeton-church-normal-with-inset.jpg" alt="img"></p>
-<p><img src="https://1.bp.blogspot.com/-qNiuoM3vy94/VE27Ed4kMKI/AAAAAAAAAZ8/HLzCuWByzSI/s1600/princeton-church-hdrp-with-inset.jpg" alt="img"></p>
+<figure data-type="image" tabindex="1"><img src="https://2.bp.blogspot.com/-EQmUwsrM5Lo/VE26fr8w-sI/AAAAAAAAAZ0/nednky5nXMs/s1600/princeton-church-normal-with-inset.jpg" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://1.bp.blogspot.com/-qNiuoM3vy94/VE27Ed4kMKI/AAAAAAAAAZ8/HLzCuWByzSI/s1600/princeton-church-hdrp-with-inset.jpg" alt="img" loading="lazy"></figure>
 <p>而後隨著手機感光元件尺寸越來越大，手機廠是能夠購買的演算法（例如說ArcSoft）對動態範圍參數的改進，高動態範圍的照片反而越來越不是HDR+主要的特點，Google在<strong>多幀</strong>降噪算法上的各種改進，逐漸成為HDR+此功能的演算法主角。</p>
 <h2 id="super-zoom">Super Zoom</h2>
 <p>Google的相機算法工程師在多幀拍攝的改良上玩的出神入化，後期又在使用單鏡頭達成兩倍放大的效果，這是怎麼辦到的呢？</p>
 <p>具體原理是這樣的，這是我們一般相機感光元件所使用的RGB拜耳陣列：</p>
-<p><img src="https://2.bp.blogspot.com/-bsfbKQzqvB4/W8O_6vO0f0I/AAAAAAAADX0/W3rdX0hfiIwXoM2_Tfy08aHoPH3ZQyc1wCLcBGAs/s200/image14.png" alt="img"></p>
+<figure data-type="image" tabindex="3"><img src="https://2.bp.blogspot.com/-bsfbKQzqvB4/W8O_6vO0f0I/AAAAAAAADX0/W3rdX0hfiIwXoM2_Tfy08aHoPH3ZQyc1wCLcBGAs/s200/image14.png" alt="img" loading="lazy"></figure>
 <p>你可以觀察到每一個感光像素並不是同時偵測紅綠藍三種顏色，相反的拜耳陣列則是將感光像素分成紅綠藍三組，在每一組感光像素前面加上了濾光片，讓他們只能感知特定顏色的光。聰明的你可能發現兩個問題：</p>
 <ul>
 <li>這樣看起來要四個單色的感光像素才能還原我們一般照片中的一個全色像素，像素不是被稀釋了嗎？</li>
@@ -109,27 +109,27 @@
 </ul>
 <p>第一個問題的答案是：沒錯，我們一般用的拜耳陣列CMOS像素是真的被稀釋成1/3的，所以實際解像力會不如像素量相同的Foveon結構感光元件。</p>
 <p>第二個問題的答案則是：中間缺失的像素資訊，是用猜的！</p>
-<p><img src="https://4.bp.blogspot.com/-E0Cobuog7Xg/W8PAJOS6CwI/AAAAAAAADX4/qRAoZLuzo4o6kf-KcmwaVm_Ji02jE_kmgCLcBGAs/s640/image1.png" alt="img"></p>
+<figure data-type="image" tabindex="4"><img src="https://4.bp.blogspot.com/-E0Cobuog7Xg/W8PAJOS6CwI/AAAAAAAADX4/qRAoZLuzo4o6kf-KcmwaVm_Ji02jE_kmgCLcBGAs/s640/image1.png" alt="img" loading="lazy"></figure>
 <p>目前對於拜耳陣列的CMOS結構已經有成熟的猜色算法，基本上顏色不會失真太多，但是缺點就是當鏡頭光學校正能力不足時，會造成底片時代沒有的「摩爾紋」、「偽色」、和「紫邊」。</p>
 <p>講了半天CMOS，那這個SuperZoom是怎麼做到的呢？</p>
 <p>還記得我們一般使用的拜耳陣列CMOS像素量是灌水的嗎？一般相機常說的2400萬像素實際並不是2400萬像素，而是僅有800萬像素。而這個時候如果我們讓CMOS的連拍三幢讓像素位移，讓每個像素都分別對紅、綠、藍三個顏色進行感光，不就擁有完整的2400萬像素了嗎？</p>
-<p><img src="https://3.bp.blogspot.com/-SRJfJyQcNRk/W8PAjDvVtdI/AAAAAAAADYE/tUfWIsw5HUEl3IXrLadqUPsMXdGWhSNIACLcBGAs/s640/image13.png" alt="img"></p>
+<figure data-type="image" tabindex="5"><img src="https://3.bp.blogspot.com/-SRJfJyQcNRk/W8PAjDvVtdI/AAAAAAAADYE/tUfWIsw5HUEl3IXrLadqUPsMXdGWhSNIACLcBGAs/s640/image13.png" alt="img" loading="lazy"></figure>
 <p>而現在透過像素位移取得完整的2400萬像素的照片，其實就等同一般狀態下的4800萬畫素，也就是我們可以直接得到理論上清晰度相較傳統方法高兩倍的照片，足夠我們將他放大兩倍使用了。</p>
 <p>然而，要能夠做到像素位移的話感光元件也必須進行定制，所以基本上只有Pixel 3所使用的感光元件能夠達成此功能，其他使用移植版GCam的手機則無法使用。</p>
 <h2 id="night-sight">Night Sight</h2>
 <p>Night Sight是目前最新版的Google Camera (v6)所擁有的功能，此版Google Camera需要Android 9.0 Pie版本以上的手機才能使用。</p>
 <p>Night Sight功能非常強大，一般人可能無法理解這個演算法到底有多強。為了讓一般人能夠理解它到底有多強，我這裡先放一個錄影動畫讓大家看看Night Sight實際拍攝的情況。</p>
 <iframe width="315" height="560" src="https://www.youtube.com/embed/uYiLa64i1GU?showinfo=0" frameborder="0" align="middle" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p><strong>成品：</strong>
-<img src="https://i.imgur.com/mh2ljFC.jpg" alt="img"></p>
+<p><strong>成品：</strong><br>
+<img src="https://i.imgur.com/mh2ljFC.jpg" alt="img" loading="lazy"></p>
 <p>好的，所以基本上可以說有了Night Sight，其他廠的相機基本上可以都不用打了，縱使強如華為的超級夜景也得乖乖被按在地上。</p>
 <p>那Night Sight到底做了什麼事呢？</p>
 <h3 id="使用raw檔進行多幀處理">使用RAW檔進行多幀處理</h3>
 <p>其實先前版本(v5)的Google Camera也有用到RAW堆幀的功能，不過個人觀察這個版本的Google Camera應該是使用第一張照片的RAW檔經過恢復亮部和暗部細節後做為主幀，其餘其他幀在抽去模糊的幀之後，<strong>可能</strong>是使用JPG進行後續多幀降噪的程序。（其實這我不太確定，請知情者指證）</p>
 <p>而新版的Google Camera(v6)釋出之前Google AI Blog發了<a href="https://ai.googleblog.com/2018/02/introducing-hdr-burst-photography.html">一篇</a>他們現在全程使用RAW檔進行Burst取樣，可以取得更寬的動態範圍和更深的色彩深度，有助於在極端環境之下透過深度學習將照片還原回更正確的白平衡和動態範圍。</p>
-<p><img src="https://1.bp.blogspot.com/-9WOxufm8vwQ/WoHl-3jTUnI/AAAAAAAACYE/b32B8BXpz8QMgxEVPQYt5ThBhwqD-egnQCLcBGAs/s1600/figure1.png" alt="img"></p>
+<figure data-type="image" tabindex="6"><img src="https://1.bp.blogspot.com/-9WOxufm8vwQ/WoHl-3jTUnI/AAAAAAAACYE/b32B8BXpz8QMgxEVPQYt5ThBhwqD-egnQCLcBGAs/s1600/figure1.png" alt="img" loading="lazy"></figure>
 <p>但該篇文章中也提到由於處理連拍RAW檔的數據壓力非常大，單純使用一般的手機CPU (SoC)無法勝任此工作，所以為了減少拍攝的遲滯感，Google Camera使用了Qualcomm <strong>Hexagon DSP</strong> 和Pixel 3中的Visual Core專用晶片加速數據的處理。</p>
-<p>所以基本上可以說，如果你想使用移植版Google Camera，那麼最好必須有一支具有Hexagon DSP，使用高通處理器的手機。手機使用的高通處理器未必要使用到最高階的8XX系列處理器，個人使用經驗上在優化良好的系統上，即使使用低階的S430 SoC也可以以單張照片取樣3幀的條件下以正常速度拍攝。
+<p>所以基本上可以說，如果你想使用移植版Google Camera，那麼最好必須有一支具有Hexagon DSP，使用高通處理器的手機。手機使用的高通處理器未必要使用到最高階的8XX系列處理器，個人使用經驗上在優化良好的系統上，即使使用低階的S430 SoC也可以以單張照片取樣3幀的條件下以正常速度拍攝。<br>
 然而，如果使用非高通系CPU，如：聯發科MTK、三星 Exynos的手機（例如三星旗艦），往往無法正常的使用移植版Google Camera，往往有bug或是HDR+功能性缺失。當然，即使是使用高通CPU手機裝上移植版Google Camera，速度也不能比使用專用Visual Core晶片的Pixel 3鬼神加速還要快的。</p>
 <h3 id="ai">AI</h3>
 <p>GCam NS除了同時結合了以上寬動態範圍、使用RAW檔多幀降噪的技術做為基礎之外，個人猜測還額外加入了</p>
@@ -146,10 +146,10 @@
 <p>Google成功的將過去一些影像理論以自身的演算法功底優化，在極大的降低時間與計算複雜度的情況下，成功在手機這種效能貧弱的終端設備上以程式碼實作，達成一般人以過去仰賴硬體效能的線性思維上難以想像的成就————讓手機指甲大的CMOS也能在一片漆黑中拍出稍微能看的夜景。</p>
 <p>Google Camera的出現讓我們理解不只是硬體，軟體後面的演算法也至關重要。在優秀的演算法下，我們甚至可以用貧弱的CMOS硬體（1/2.6吋）越級打怪，「<strong>堆出</strong>」超越更高一級規格CMOS（1吋）所能拍出的照片。</p>
 <p>當然，身為手上拿著正規微單的使用者來說，當然也期待這些能夠提升畫質的功能功能能夠被相機廠採用，進一步提升手上相機的畫質。</p>
-<p>至於Google相機未來還會再引入什麼功能呢？我想可能是自動以RAW檔資訊完成AI調色修圖吧？
+<p>至於Google相機未來還會再引入什麼功能呢？我想可能是自動以RAW檔資訊完成AI調色修圖吧？<br>
 畢竟現在Google相機白天直出的照片其實都挺爛的，色彩曲線整個不太對，還有很大的改進空間。</p>
 <p>另外還有可能改善的點大概是開放用第二顆長鏡頭或是景深鏡頭，搭配AI更有效率的辨識照片中物體深度，從而產生更自然的景深，這點從Pixel 4流出圖中已經可以看出端倪：</p>
-<p><img src="https://i.imgur.com/H5pU033.jpg" alt="img"></p>
+<figure data-type="image" tabindex="7"><img src="https://i.imgur.com/H5pU033.jpg" alt="img" loading="lazy"></figure>
 <p>至於下一版的Google Camera到底會不會實現這兩個功能呢？就讓我們期待一下吧～</p>
 
             </div>
