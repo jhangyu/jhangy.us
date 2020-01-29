@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-01-29T13:19:29.220Z</updated>
+    <updated>2020-01-29T14:32:34.750Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -10,6 +10,71 @@
     <logo>http://blog.jhangy.us/images/avatar.png</logo>
     <icon>http://blog.jhangy.us/favicon.ico</icon>
     <rights>All rights reserved 2020, Jhangyu</rights>
+    <entry>
+        <title type="html"><![CDATA[最快速簡便解鎖小米（紅米）並完成刷機的方式]]></title>
+        <id>http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones</id>
+        <link href="http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones">
+        </link>
+        <updated>2020-01-29T13:19:52.000Z</updated>
+        <content type="html"><![CDATA[<p>小米手機最吸引人的一點對我來說一直都不是價格<br>
+而是它即使解鎖刷機後依然擁有保固的特色<br>
+<u>（因為對我而言Xposed框架和擁有Root權限在我使用手機非常重要，</u><br>
+<u>而要能夠使用Xposed框架就必須解鎖）</u></p>
+<p>網路上有很多解鎖或是刷機的方式，基本上都寫的很片面或是觀念根本就是錯誤的<br>
+導致很多剛入坑的新手因為概念混淆而踩了不少坑</p>
+<p>這篇就為各位統整一下整個刷機的思路和簡化整體的步驟</p>
+<h1 id="解鎖">解鎖</h1>
+<p>解鎖是小米手機刷機的必須步驟，由於2019年之後所有中國版手機都已經禁止中國國際版跨版互刷<br>
+所以在刷機前必然的需要解鎖，否則你會重演某位通訊版版友的慘劇——得到一塊高科技磚頭</p>
+<h2 id="解鎖必備條件">解鎖必備條件</h2>
+<ol>
+<li>擁有解鎖小米手機的帳號權限</li>
+<li>將該帳號綁定至小米手機，並等待<strong>168</strong>小時（也就是7天）</li>
+</ol>
+<h3 id="申請解鎖帳號權限">申請解鎖帳號權限</h3>
+<p>基本上很簡單，如果你原本沒有一個小米帳號的話，先去註冊一個<br>
+但是你原本已經有的話就用原本的帳號就好，基本上越老的帳號等級越高，越有機會等待的時間越少<br>
+然後到這個網址申請解鎖：<br>
+http://www.miui.com/unlock/apply.php</p>
+<h3 id="將帳號綁定至小米手機">將帳號綁定至小米手機</h3>
+<p>這部是一般人最容易犯錯的地方<br>
+因為將帳號綁定至小米手機<strong>並不是在手機裡面登入小米帳號</strong>的意思<br>
+你登入了小米帳號，並不是完成綁定的動作，真正的綁定的動作請按照以下步驟：</p>
+<ol>
+<li>在 <strong>設定</strong> &gt; <strong>我的裝置</strong> &gt; <strong>全部參數</strong> &gt; <strong>MIUI版本</strong> 連點8下開啟開發者模式<br>
+<img src="https://i.imgur.com/cA8Fyg8.png" alt="img" style="zoom:30%;" /><br>
+<img src="https://i.imgur.com/pBx40A4.png" alt="img" style="zoom:30%;" /><br>
+<img src="https://i.imgur.com/3XNC6Pt.png" alt="img" style="zoom:30%;" /><br>
+<img src="https://i.imgur.com/idMjDxG.png" alt="img" style="zoom:30%;" /><br>
+<img src="https://i.imgur.com/pxuQYj3.png" alt="img" style="zoom:30%;" /><br>
+<img src="https://i.imgur.com/idMjDxG.png" alt="img" style="zoom:30%;" /><br>
+<img src="https://i.imgur.com/pxuQYj3.png" alt="img" style="zoom:30%;" /></li>
+<li>回設定，在 <strong>更多設定</strong> 裡面進入開發者模式，點擊 <strong>裝置解鎖狀態</strong> 並使用4G LTE網路連線的狀態下登入小米帳戶，才能真正完成綁定動作</li>
+<li>等待168小時</li>
+</ol>
+<h3 id="下載小米解鎖工具">下載小米解鎖工具</h3>
+<p>請直接至以下網址<a href="http://miuirom.xiaomi.com/rom/u1106245679/3.5.1108.44/miflash_unlock-3.5.1108.44.zip">下載</a>：<br>
+http://www.miui.com/unlock/done.html</p>
+<h3 id="安裝fastboot工具和android驅動程式">安裝Fastboot工具和Android驅動程式</h3>
+<p>這部很多教學弄的很繁雜，一不小心驅動程式裝錯還會導致各種悲劇發生<br>
+其實如果常常在摸程式相關的東西的話一定知道Windows下有個類似Ubuntu套件管理程式apt的chocolatey<br>
+我們直接透過Chocolatey安裝Android驅動和Fastboot、ADB工具就好</p>
+<h4 id="安裝chocolatey">安裝Chocolatey</h4>
+<p>按照官網說明安裝，首先在開始視窗搜尋<code>CMD</code><br>
+得到結果後先別急著按下去，請按右邊的「以系統管理員身份執行」<br>
+<img src="https://i.imgur.com/gerknGN.png" alt="以系統管理員身份執行" loading="lazy"><br>
+開啟之後再將以下程式碼貼上（Windows 10內的命令提示字元可以Ctrl+V）：</p>
+<p><code>@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</code></p>
+<img src="https://i.imgur.com/bagGDFw.png" alt="img" style="zoom:80%;" />
+然後按下Enter執行Chocolatey的安裝
+安裝完成後請關閉命令提示字元的視窗，並重新再以系統管理員身份執行一次
+<h4 id="安裝adb-android-universal-driver">安裝ADB、Android Universal Driver</h4>
+<p>重新再以系統管理員身份執行一次命令提示字元視窗之後，就可以開始用Chocolatey安裝套件了<br>
+我們直接依照以下指令安裝即可，一鍵完成：<br>
+<code>choco install universal-adb-drivers adb -y</code><br>
+完成之後一樣重開命令提示字元視窗</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[在macOS (OSX)上建立APFS的高性能Ramdisk]]></title>
         <id>http://blog.jhangy.us/post/create-ramdisk-on-macos</id>
