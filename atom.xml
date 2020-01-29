@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-01-29T15:17:09.611Z</updated>
+    <updated>2020-01-29T15:18:30.851Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -24,7 +24,7 @@
 導致很多剛入坑的新手因為概念混淆而踩了不少坑</p>
 <p>這篇就為各位統整一下整個刷機的思路和簡化整體的步驟</p>
 <h1 id="解鎖">解鎖</h1>
-<p>解鎖是小米手機刷機的必須步驟，由於2019年之後所有中國版手機都已經禁止中國國際版跨版互刷<br>
+<p>解鎖是小米手機刷機的必須步驟，由於2019年之後所有中國版手機都已經禁中國\國際版跨版互刷<br>
 所以在刷機前必然的需要解鎖，否則你會重演某位通訊版版友的慘劇——得到一塊高科技磚頭</p>
 <h2 id="解鎖必備條件">解鎖必備條件</h2>
 <ol>
