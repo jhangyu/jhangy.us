@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-01-30T03:19:04.453Z</updated>
+    <updated>2020-01-30T03:30:53.988Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -41,20 +41,12 @@ http://www.miui.com/unlock/apply.php</p>
 因為將帳號綁定至小米手機<strong>並不是在手機裡面登入小米帳號</strong>的意思<br>
 你登入了小米帳號，並不是完成綁定的動作，真正的綁定的動作請按照以下步驟：</p>
 <ol>
-<li>
-<p>在 <strong>設定</strong> &gt; <strong>我的裝置</strong> &gt; <strong>全部參數</strong> &gt; <strong>MIUI版本</strong> 連點8下開啟開發者模式<br>
-<img src="https://i.imgur.com/zEwA9ef.png" alt="img" style="zoom: 50%;" /></p>
-</li>
-<li>
-<p>回設定，在 <strong>更多設定</strong> 裡面進入開發者模式<br>
-<img src="https://i.imgur.com/YnMiIDK.png" alt="img" style="zoom:50%;" /></p>
-</li>
-<li>
-<p>點擊 <strong>裝置解鎖狀態</strong> 並使用4G LTE網路連線的狀態下登入小米帳戶，才能真正完成綁定動作</p>
-</li>
-<li>
-<p>等待168小時</p>
-</li>
+<li>在 <strong>設定</strong> &gt; <strong>我的裝置</strong> &gt; <strong>全部參數</strong> &gt; <strong>MIUI版本</strong> 連點8下開啟開發者模式<br>
+<img src="https://i.imgur.com/zEwA9ef.png" alt="img" style="zoom: 50%;" /></li>
+<li>回設定，在 <strong>更多設定</strong> 裡面進入開發者模式<br>
+<img src="https://i.imgur.com/YnMiIDK.png" alt="img" style="zoom:50%;" /></li>
+<li>點擊 <strong>裝置解鎖狀態</strong> 並使用4G LTE網路連線的狀態下登入小米帳戶，才能真正完成綁定動作</li>
+<li>等待168小時</li>
 </ol>
 <h3 id="下載小米解鎖工具">下載小米解鎖工具</h3>
 <p>請直接至以下網址<a href="http://miuirom.xiaomi.com/rom/u1106245679/3.5.1108.44/miflash_unlock-3.5.1108.44.zip">下載</a>：<br>
@@ -169,6 +161,7 @@ https://twrp.me/Devices/</p>
 <img src="https://i.imgur.com/ZxLujKC.png" alt="img" style="zoom:50%;" />
 <p>當TWRP跳出刷機已完成的時候，先不要急著重啟到系統，為了避免升級遇到的各種奇奇怪怪的問題，我們最好還是先手動清除<code>\data</code>、<code>\cache</code>、<code>\dalvik_cache</code>分區比較好（也就是重設設定，俗稱的三清）：</p>
 <img src="https://i.imgur.com/vTmFwHQ.png" alt="img" style="zoom:50%;" />
+<p>（可以點選清除 -&gt; 滑動按鈕確認恢復出廠；或是點選高級清除，點選以上三個分區後滑動按鈕確認清除）</p>
 <p>最後就可以重啟進入系統了，大約等待5~10分鐘左右就可以進入刷機後的系統啦！</p>
 ]]></content>
     </entry>
