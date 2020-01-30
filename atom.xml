@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-01-30T03:36:36.852Z</updated>
+    <updated>2020-01-30T03:38:49.359Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -113,7 +113,7 @@ https://twrp.me/Devices/</p>
 <p>如果你是一般的使用者，想要一般順順用的話，可以直接下載官方的國際版系統就好</p>
 <p>由於官網下載的連結實在有點混亂，我有找到一個台灣人整理出來的官方韌體下載網站：</p>
 <p>連結如下：</p>
-<p>https://mirom.ezbox.idv.tw/phone/</p>
+<p><a href="https://mirom.ezbox.idv.tw/phone/">https://mirom.ezbox.idv.tw/phone/</a></p>
 <p>(<a href="https://mirom.ezbox.idv.tw/phone/raphael/">K20 Pro\小米9T Pro下載點</a>)</p>
 <p>如果你要小米官網的線刷工具刷，而不是透過TWRP刷機的話請下載<code>.tgz</code>檔案<br>
 <em>（線刷是更徹底的刷機工具，會把整個手機所有的分區重做，而不是只刷入<code>\system</code>分區</em><br>
