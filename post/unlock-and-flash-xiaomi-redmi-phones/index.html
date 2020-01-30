@@ -4,10 +4,10 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>最快速簡便解鎖小米（紅米）並完成刷機的方式 | Jhangyu</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1580311384006">
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1580353955052">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+<link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.js"></script>
@@ -19,8 +19,8 @@
     <div class="main">
       <div class="main-content">
         <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1580311384006" alt="">
+  <a href="http://blog.jhangy.us">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1580353955052" alt="">
   </a>
   <h1 class="site-title">
     Jhangyu
@@ -81,11 +81,11 @@
                 · 2020-01-29 ·
               </time>
               
-                <a href="http://localhost:4000/tag/l1rCw1K3O" class="post-tag">
+                <a href="http://blog.jhangy.us/tag/l1rCw1K3O" class="post-tag">
                   # xiaomi
                 </a>
               
-                <a href="http://localhost:4000/tag/jWzgPVaTJw" class="post-tag">
+                <a href="http://blog.jhangy.us/tag/jWzgPVaTJw" class="post-tag">
                   # redmi
                 </a>
               
@@ -192,6 +192,59 @@ https://twrp.me/Devices/</p>
 然後將手機重開到剛剛刷寫的TWRP系統以繼續完成刷機步驟（接下來沒有截圖囉）<br>
 <code>fastboot boot twrp-3.3.1-0-davinci.img</code></p>
 <h3 id="刷入第三方系統">刷入第三方系統</h3>
+<h4 id="下載國際版rom">下載國際版ROM</h4>
+<p>如果你是一般的使用者，想要一般順順用的話，可以直接下載官方的國際版系統就好</p>
+<p>由於官網下載的連結實在有點混亂，我有找到一個台灣人整理出來的官方韌體下載網站：</p>
+<p>連結如下：</p>
+<p>https://mirom.ezbox.idv.tw/phone/</p>
+<p>(<a href="https://mirom.ezbox.idv.tw/phone/raphael/">K20 Pro\小米9T Pro下載點</a>)</p>
+<p>如果你要小米官網的線刷工具刷，而不是透過TWRP刷機的話請下載<code>.tgz</code>檔案</p>
+<p><em>（線刷是更徹底的刷機工具，會把整個手機所有的分區重做，而不是只刷入<code>\system</code>分區</em><br>
+<em>進行跨版線刷請千萬記得不要把手機鎖<code>lock</code>回去，<strong>會磚</strong>）</em></p>
+<h4 id="下載第三方rom">下載第三方ROM</h4>
+<p>第三方ROM一般分為兩種，一種是MIUI的修改版，一種是LinageOS Based的原生系統</p>
+<p>一般我的使用經驗來說，原生系統因為缺少對應的高效率驅動和Kernel以及MIUI的省電調度機制，相比MIUI Based的ROM會更加耗電，所以一般來說我還是會使用MIUI Based的ROM</p>
+<p>MIUI Based的ROM最主流的就是<a href="https://xiaomi.eu/community/">MIUI.EU</a>，他自己有個論壇，但我們只要下載ROM的話，其實可以去他的下載頁面就好：</p>
+<ul>
+<li>穩定版：
+<ul>
+<li><a href="https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-STABLE-RELEASES/">SourceForage</a> <a href="https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-STABLE-RELEASES/MIUIv11/xiaomi.eu_multi_HMK20ProMI9TPro_V11.0.5.0.QFKCNXM_v11-10.zip/download">9T Pro載點</a></li>
+<li><a href="https://androidfilehost.com/?w=files&amp;flid=36337">Android File Host</a></li>
+</ul>
+</li>
+<li>開發版
+<ul>
+<li><a href="https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-WEEKLY-RELEASES/">SourceForge</a></li>
+<li><a href="https://androidfilehost.com/?w=files&amp;flid=18823">Android File Host</a> （找最大的版本號）</li>
+</ul>
+</li>
+</ul>
+<p>還有另一個俄國人做的MIUI.EU Based的第三方版本：MIROOM，下載點在此：</p>
+<ul>
+<li>
+<p><a href="https://sourceforge.net/projects/miroom/files/stable/">穩定版</a></p>
+</li>
+<li>
+<p><a href="https://sourceforge.net/projects/miroom/files/">開發版</a></p>
+</li>
+</ul>
+<p>下載完後，請將手機重開進入TWRP，然後用USB接上電腦，將<code>.zip</code>檔案丟入手機的儲存空間，準備開始刷機</p>
+<h2 id="開始刷機">開始刷機</h2>
+<p>剛剛的步驟我們已經透過在關機狀態下按「音量下」+「電源鍵」進入TWRP Recovery系統<br>
+（秘訣：電源鍵只按3秒，音量鍵不放開直到出現TWRP藍色畫面）</p>
+<p>接下來簡單幾步就可以刷機啦！</p>
+<p>首先如果英文介面看不慣的話，可以按以下步驟設定成繁體中文介面：</p>
+<img src="https://i.imgur.com/JH114cu.png" alt="img" style="zoom:50%;" />
+<p>接下來簡單三步驟完成刷機：</p>
+<ol>
+<li>點選「安裝」進入安裝介面</li>
+<li>點選你剛剛從電腦下載、丟入手機的<code>.zip</code>檔案（請不要自作聰明的把ZIP檔案解壓縮）</li>
+<li>把拉桿往右滑，開始刷機啦～</li>
+</ol>
+<img src="https://i.imgur.com/ZxLujKC.png" alt="img" style="zoom:50%;" />
+<p>當TWRP跳出刷機已完成的時候，先不要急著重啟到系統，為了避免升級遇到的各種奇奇怪怪的問題，我們最好還是先手動清除<code>\data</code>、<code>\cache</code>、<code>\dalvik_cache</code>分區比較好（也就是重設設定，俗稱的三清）：</p>
+<img src="https://i.imgur.com/vTmFwHQ.png" alt="img" style="zoom:50%;" />
+<p>最後就可以重啟進入系統了，大約等待5~10分鐘左右就可以進入刷機後的系統啦！</p>
 
             </div>
           </article>
@@ -200,7 +253,7 @@ https://twrp.me/Devices/</p>
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="http://localhost:4000/post/create-ramdisk-on-macos">
+            <a href="http://blog.jhangy.us/post/create-ramdisk-on-macos">
               <h3 class="post-title">
                 在macOS (OSX)上建立APFS的高性能Ramdisk
               </h3>
@@ -212,7 +265,7 @@ https://twrp.me/Devices/</p>
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
+  <a class="rss" href="http://blog.jhangy.us/atom.xml" target="_blank">RSS</a>
 </div>
 
 <script>

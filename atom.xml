@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-01-29T15:23:08.693Z</updated>
+    <updated>2020-01-30T03:12:42.534Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="http://blog.jhangy.us"/>
+    <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
     <subtitle>記錄冷門的技術資訊，揭露商業公司的虛假宣傳</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>http://blog.jhangy.us/images/avatar.png</logo>
+    <icon>http://blog.jhangy.us/favicon.ico</icon>
     <rights>All rights reserved 2020, Jhangyu</rights>
     <entry>
         <title type="html"><![CDATA[最快速簡便解鎖小米（紅米）並完成刷機的方式]]></title>
-        <id>http://localhost:4000/post/unlock-and-flash-xiaomi-redmi-phones</id>
-        <link href="http://localhost:4000/post/unlock-and-flash-xiaomi-redmi-phones">
+        <id>http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones</id>
+        <link href="http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones">
         </link>
         <updated>2020-01-29T13:19:52.000Z</updated>
         <content type="html"><![CDATA[<p>小米手機最吸引人的一點對我來說一直都不是價格<br>
@@ -113,12 +113,65 @@ https://twrp.me/Devices/</p>
 然後將手機重開到剛剛刷寫的TWRP系統以繼續完成刷機步驟（接下來沒有截圖囉）<br>
 <code>fastboot boot twrp-3.3.1-0-davinci.img</code></p>
 <h3 id="刷入第三方系統">刷入第三方系統</h3>
+<h4 id="下載國際版rom">下載國際版ROM</h4>
+<p>如果你是一般的使用者，想要一般順順用的話，可以直接下載官方的國際版系統就好</p>
+<p>由於官網下載的連結實在有點混亂，我有找到一個台灣人整理出來的官方韌體下載網站：</p>
+<p>連結如下：</p>
+<p>https://mirom.ezbox.idv.tw/phone/</p>
+<p>(<a href="https://mirom.ezbox.idv.tw/phone/raphael/">K20 Pro\小米9T Pro下載點</a>)</p>
+<p>如果你要小米官網的線刷工具刷，而不是透過TWRP刷機的話請下載<code>.tgz</code>檔案</p>
+<p><em>（線刷是更徹底的刷機工具，會把整個手機所有的分區重做，而不是只刷入<code>\system</code>分區</em><br>
+<em>進行跨版線刷請千萬記得不要把手機鎖<code>lock</code>回去，<strong>會磚</strong>）</em></p>
+<h4 id="下載第三方rom">下載第三方ROM</h4>
+<p>第三方ROM一般分為兩種，一種是MIUI的修改版，一種是LinageOS Based的原生系統</p>
+<p>一般我的使用經驗來說，原生系統因為缺少對應的高效率驅動和Kernel以及MIUI的省電調度機制，相比MIUI Based的ROM會更加耗電，所以一般來說我還是會使用MIUI Based的ROM</p>
+<p>MIUI Based的ROM最主流的就是<a href="https://xiaomi.eu/community/">MIUI.EU</a>，他自己有個論壇，但我們只要下載ROM的話，其實可以去他的下載頁面就好：</p>
+<ul>
+<li>穩定版：
+<ul>
+<li><a href="https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-STABLE-RELEASES/">SourceForage</a> <a href="https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-STABLE-RELEASES/MIUIv11/xiaomi.eu_multi_HMK20ProMI9TPro_V11.0.5.0.QFKCNXM_v11-10.zip/download">9T Pro載點</a></li>
+<li><a href="https://androidfilehost.com/?w=files&amp;flid=36337">Android File Host</a></li>
+</ul>
+</li>
+<li>開發版
+<ul>
+<li><a href="https://sourceforge.net/projects/xiaomi-eu-multilang-miui-roms/files/xiaomi.eu/MIUI-WEEKLY-RELEASES/">SourceForge</a></li>
+<li><a href="https://androidfilehost.com/?w=files&amp;flid=18823">Android File Host</a> （找最大的版本號）</li>
+</ul>
+</li>
+</ul>
+<p>還有另一個俄國人做的MIUI.EU Based的第三方版本：MIROOM，下載點在此：</p>
+<ul>
+<li>
+<p><a href="https://sourceforge.net/projects/miroom/files/stable/">穩定版</a></p>
+</li>
+<li>
+<p><a href="https://sourceforge.net/projects/miroom/files/">開發版</a></p>
+</li>
+</ul>
+<p>下載完後，請將手機重開進入TWRP，然後用USB接上電腦，將<code>.zip</code>檔案丟入手機的儲存空間，準備開始刷機</p>
+<h2 id="開始刷機">開始刷機</h2>
+<p>剛剛的步驟我們已經透過在關機狀態下按「音量下」+「電源鍵」進入TWRP Recovery系統<br>
+（秘訣：電源鍵只按3秒，音量鍵不放開直到出現TWRP藍色畫面）</p>
+<p>接下來簡單幾步就可以刷機啦！</p>
+<p>首先如果英文介面看不慣的話，可以按以下步驟設定成繁體中文介面：</p>
+<img src="https://i.imgur.com/JH114cu.png" alt="img" style="zoom:50%;" />
+<p>接下來簡單三步驟完成刷機：</p>
+<ol>
+<li>點選「安裝」進入安裝介面</li>
+<li>點選你剛剛從電腦下載、丟入手機的<code>.zip</code>檔案（請不要自作聰明的把ZIP檔案解壓縮）</li>
+<li>把拉桿往右滑，開始刷機啦～</li>
+</ol>
+<img src="https://i.imgur.com/ZxLujKC.png" alt="img" style="zoom:50%;" />
+<p>當TWRP跳出刷機已完成的時候，先不要急著重啟到系統，為了避免升級遇到的各種奇奇怪怪的問題，我們最好還是先手動清除<code>\data</code>、<code>\cache</code>、<code>\dalvik_cache</code>分區比較好（也就是重設設定，俗稱的三清）：</p>
+<img src="https://i.imgur.com/vTmFwHQ.png" alt="img" style="zoom:50%;" />
+<p>最後就可以重啟進入系統了，大約等待5~10分鐘左右就可以進入刷機後的系統啦！</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[在macOS (OSX)上建立APFS的高性能Ramdisk]]></title>
-        <id>http://localhost:4000/post/create-ramdisk-on-macos</id>
-        <link href="http://localhost:4000/post/create-ramdisk-on-macos">
+        <id>http://blog.jhangy.us/post/create-ramdisk-on-macos</id>
+        <link href="http://blog.jhangy.us/post/create-ramdisk-on-macos">
         </link>
         <updated>2019-08-14T07:34:10.000Z</updated>
         <content type="html"><![CDATA[<p>我對Ramdisk的用途主要在轉移暫存檔案和一些不重要的零碎檔案，使用Ramdisk可以降低SSD讀寫次數，增加SSD磁碟壽命。再來Ramdisk也有關機後檔案即消失的特性，我可以不必費心每次都要定期刪除一些零碎檔案，保持資料夾乾淨整齊。（當然壞處是如果重要檔案放在Ramdisk重開機就救不回來了Orz）</p>
@@ -221,8 +274,8 @@ done
     </entry>
     <entry>
         <title type="html"><![CDATA[小米 9T 夜拍分享]]></title>
-        <id>http://localhost:4000/post/xiao-mi-9t-nightshot</id>
-        <link href="http://localhost:4000/post/xiao-mi-9t-nightshot">
+        <id>http://blog.jhangy.us/post/xiao-mi-9t-nightshot</id>
+        <link href="http://blog.jhangy.us/post/xiao-mi-9t-nightshot">
         </link>
         <updated>2019-07-13T09:10:48.000Z</updated>
         <content type="html"><![CDATA[<p>小米9T 的長焦鏡頭應該是第一個可以使用Google Camera多幀降噪強化的等效50mm鏡頭。<br>
@@ -275,8 +328,8 @@ IMX586表現稍微好那麼一點</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[手機的像素越高越好嗎？前後兩千萬到底是不是一個噱頭？]]></title>
-        <id>http://localhost:4000/post/does_pixel_amount_correspond_to_image_quality</id>
-        <link href="http://localhost:4000/post/does_pixel_amount_correspond_to_image_quality">
+        <id>http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality</id>
+        <link href="http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality">
         </link>
         <updated>2019-07-08T06:26:52.000Z</updated>
         <content type="html"><![CDATA[<p>先說結論：以畫質來說，手機的畫素<strong>越低越好</strong>，前後兩千萬就是一個噱頭無誤！</p>
@@ -420,8 +473,8 @@ IMX586表現稍微好那麼一點</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[ Google Camera使用Q&A]]></title>
-        <id>http://localhost:4000/post/google-camera-q&amp;a</id>
-        <link href="http://localhost:4000/post/google-camera-q&amp;a">
+        <id>http://blog.jhangy.us/post/google-camera-q&amp;a</id>
+        <link href="http://blog.jhangy.us/post/google-camera-q&amp;a">
         </link>
         <updated>2019-07-04T15:16:39.000Z</updated>
         <content type="html"><![CDATA[<h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
@@ -539,8 +592,8 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Camera Port (GCam) 技術匯總]]></title>
-        <id>http://localhost:4000/post/google-camera-gcam-tech</id>
-        <link href="http://localhost:4000/post/google-camera-gcam-tech">
+        <id>http://blog.jhangy.us/post/google-camera-gcam-tech</id>
+        <link href="http://blog.jhangy.us/post/google-camera-gcam-tech">
         </link>
         <updated>2019-06-17T04:00:51.000Z</updated>
         <content type="html"><![CDATA[<h1 id="google-camera使用技術簡介">Google Camera使用技術簡介</h1>
