@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-01-30T03:38:49.359Z</updated>
+    <updated>2020-01-31T02:35:49.859Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -164,6 +164,9 @@ https://twrp.me/Devices/</p>
 <img src="https://i.imgur.com/vTmFwHQ.png" alt="img" style="zoom:50%;" />
 <p>（可以點選清除 -&gt; 滑動按鈕確認恢復出廠；或是點選高級清除，點選以上三個分區後滑動按鈕確認清除）</p>
 <p>最後就可以重啟進入系統了，大約等待5~10分鐘左右就可以進入刷機後的系統啦！</p>
+<h1 id="結語">結語</h1>
+<p>基本上除了解鎖的步驟比較難搞之外，如果只需要單純刷機的話在小米系列的手機上只需要幾個步驟就可以完成了，瞬間把一台中國App充斥的系統清洗的乾乾淨淨。</p>
+<p>在往後還有通過Magisk平台獲得Root權限和安裝Edxposed (目前能在Android 10使用的Xposed框架)，可以實現更多神奇的功能。以上步驟要注意到地方就相對繁雜很多，如果之後有空的話再來寫教學吧～</p>
 ]]></content>
     </entry>
     <entry>
