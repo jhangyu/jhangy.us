@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-01-31T02:38:32.568Z</updated>
+    <updated>2020-02-03T16:17:50.040Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -75,7 +75,7 @@ http://www.miui.com/unlock/done.html</p>
 開機進入小米兔維修機器人畫面的Fastboot模式</p>
 <p>然後將手機使用USB線連接上電腦，打開之前下載的<strong>小米解鎖工具</strong>（請注意，不是小米刷機工具）<br>
 按照工具的提示步驟一步步完成就可以完成刷機<br>
-刷機之後工具會直接格式化手機的<code>/data</code>分區，也就是將整隻手機重設，<strong>你之前解鎖之前的資料都將會不見</strong><br>
+刷機之後工具會直接格式化手機的<code>/data</code>分區，也就是將整隻手機重設，<strong>你解鎖之前的資料都將會不見</strong><br>
 之後手機會自動重開機進入歡迎畫面，完成解鎖的步驟</p>
 <h2 id="刷機">刷機</h2>
 <p>完成解鎖動作之後，我們終於可以對這台手機為所欲為了<br>
@@ -106,8 +106,9 @@ https://twrp.me/Devices/</p>
 （<strong>請注意！twrp-3.3.1-0-davinci.img 名稱請替換成你下載的.img檔案名稱！</strong>）<br>
 <code>fastboot flash recovery twrp-3.3.1-0-davinci.img</code><br>
 <img src="https://i.imgur.com/ohhhq1l.png" alt="img" style="zoom:50%;" /><br>
-然後將手機重開到剛剛刷寫的TWRP系統以繼續完成刷機步驟（接下來沒有截圖囉）<br>
-<code>fastboot boot twrp-3.3.1-0-davinci.img</code></p>
+然後將手機重開到剛剛刷寫的TWRP系統以繼續完成刷機步驟<br>
+<code>fastboot boot twrp-3.3.1-0-davinci.img</code><br>
+(理論上輸入以上指令會手機自動重開到recovery，如果沒有請按 「電源+音量下」重開到recovery )</p>
 <h3 id="刷入第三方系統">刷入第三方系統</h3>
 <h4 id="下載國際版rom">下載國際版ROM</h4>
 <p>如果你是一般的使用者，想要一般順順用的話，可以直接下載官方的國際版系統就好</p>
