@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-07-21T15:37:55.630Z</updated>
+    <updated>2020-07-21T15:41:11.419Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.jhangy.us"/>
     <link rel="self" href="https://blog.jhangy.us/atom.xml"/>
@@ -21,20 +21,20 @@
 <p>接著重新啟動回recovery (注意，不是回系統)</p>
 <p>然後在這一部刷入<a href="https://github.com/solohsu/magisk_files/raw/master/custom_builds/Magisk-v20.1.zip">客製版Magisk</a> (一定要先刷入客製版) Github <a href="https://github.com/solohsu/magisk_files/blob/master/README.md">link</a></p>
 <p>（為了阻止ROM將/data分區再次加密）</p>
-<p>刷入後進入系統後刷入<a href="https://github.com/RikkaApps/Riru/releases">Riru Core</a>，完成後重新啟動系統：</p>
-<figure data-type="image" tabindex="1"><img src="https://i.imgur.com/cvvqVpE.jpg" alt="img" loading="lazy"></figure>
-<p>重新啟動完成後刷入<a href="https://ci.appveyor.com/api/buildjobs/do8b8k8js8lm05sh/artifacts/edxp-core/release/EdXposed-SandHook-v0.4.6.3%20(4552)-release.zip">canary版edxposed</a> (我是用sandhook版本)，再重新啟動</p>
-<figure data-type="image" tabindex="2"><img src="https://i.imgur.com/SQd9E4L.jpg" alt="img" loading="lazy"></figure>
+<p>刷入後進入系統後刷入<a href="https://github.com/RikkaApps/Riru/releases">Riru Core</a>，完成後重新啟動系統：<br>
+<img src="https://i.imgur.com/cvvqVpE.jpg" height="600"/></p>
+<p>重新啟動完成後刷入<a href="https://ci.appveyor.com/api/buildjobs/do8b8k8js8lm05sh/artifacts/edxp-core/release/EdXposed-SandHook-v0.4.6.3%20(4552)-release.zip">canary版edxposed</a> (我是用sandhook版本)，再重新啟動<br>
+<img src="https://i.imgur.com/SQd9E4L.jpg" height="600"/></p>
 <p>重新啟動後，Edxpose就就位了<br>
-<img src="https://i.imgur.com/auBkt4l.jpg" alt="img" loading="lazy"><br>
+<img src="https://i.imgur.com/auBkt4l.jpg" height="600"/><br>
 確認Edxposed啟動之後，接下來可以去Magisk從客製版升級成最新的官方版了～<br>
-<img src="https://i.imgur.com/0CoEw8Z.jpg" alt="img" loading="lazy"></p>
+<img src="https://i.imgur.com/0CoEw8Z.jpg" height="600"/></p>
 <p>接下來就可以安裝想要的Xposed App，在Edxposed啟用模組，重新啟動就能用啦～<br>
 如果啟用白名單模式要記得把對象Apps也加入白名單內嘿</p>
 <p>目前我主要使用Xposed的有地圖類App</p>
 <p>配合skyolin helper，可以實現不同App使用不同dpi設定(per app dpi settings)：</p>
-<figure data-type="image" tabindex="3"><img src="https://i.imgur.com/Om0Mkw3.png" alt="img" loading="lazy"></figure>
-<figure data-type="image" tabindex="4"><img src="https://i.imgur.com/t9M6lkI.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://i.imgur.com/Om0Mkw3.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://i.imgur.com/t9M6lkI.png" alt="img" loading="lazy"></figure>
 <p>這樣就可以讓地圖顯示更多細節以供探索了～</p>
 ]]></content>
     </entry>
