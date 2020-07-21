@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-07-21T15:34:21.636Z</updated>
+    <updated>2020-07-21T15:37:01.383Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.jhangy.us"/>
     <link rel="self" href="https://blog.jhangy.us/atom.xml"/>
@@ -27,7 +27,7 @@
 <figure data-type="image" tabindex="2"><img src="https://i.imgur.com/SQd9E4L.jpg" alt="img" loading="lazy"></figure>
 <p>重新啟動後，Edxpose就就位了<br>
 <img src="https://i.imgur.com/auBkt4l.jpg" alt="img" loading="lazy"><br>
-接下來可以去Magisk升級了～<br>
+確認Edxposed啟動之後，接下來可以去Magisk從客製版升級成最新的官方版了～<br>
 <img src="https://i.imgur.com/0CoEw8Z.jpg" alt="img" loading="lazy"></p>
 <p>接下來就可以安裝想要的Xposed App，在Edxposed啟用模組，重新啟動就能用啦～<br>
 如果啟用白名單模式要記得把對象Apps也加入白名單內嘿</p>
