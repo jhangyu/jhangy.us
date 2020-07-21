@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-07-21T15:42:58.289Z</updated>
+    <updated>2020-07-21T15:45:40.108Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.jhangy.us"/>
     <link rel="self" href="https://blog.jhangy.us/atom.xml"/>
@@ -19,7 +19,7 @@
         <content type="html"><![CDATA[<p>前面跟一般刷機一樣，解鎖 -&gt; 刷入TWRP -&gt; 刷入MIUI.EU</p>
 <p>接下來就不一樣了，首先格式化/data分區（注意，不是清除），輸入yes後確認 （為了刪除加密data分區）</p>
 <p>接著重新啟動回recovery (注意，不是回系統)</p>
-<p>然後在這一部刷入<a href="https://github.com/solohsu/magisk_files/raw/master/custom_builds/Magisk-v20.1.zip">客製版Magisk</a> (一定要先刷入客製版) Github <a href="https://github.com/solohsu/magisk_files/blob/master/README.md">link</a></p>
+<p>然後在這一步刷入<a href="https://github.com/solohsu/magisk_files/raw/master/custom_builds/Magisk-v20.1.zip">客製版Magisk</a> (一定要先刷入客製版) Github <a href="https://github.com/solohsu/magisk_files/blob/master/README.md">link</a></p>
 <p>（為了阻止ROM將/data分區再次加密）</p>
 <p>刷入後進入系統後刷入<a href="https://github.com/RikkaApps/Riru/releases">Riru Core</a>，完成後重新啟動系統：<br>
 <img src="https://i.imgur.com/cvvqVpE.jpg" height="800"/></p>
