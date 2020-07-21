@@ -1,0 +1,140 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MIUI刷入Edxposed正確路徑 | Jhangyu</title>
+<link rel="shortcut icon" href="http://blog.jhangy.us/favicon.ico?v=1595345112482">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://blog.jhangy.us/styles/main.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://blog.jhangy.us">
+  <img class="avatar" src="http://blog.jhangy.us/images/avatar.png?v=1595345112482" alt="">
+  </a>
+  <h1 class="site-title">
+    Jhangyu
+  </h1>
+  <p class="site-description">
+    記錄冷門的技術資訊，揭露商業公司的虛假宣傳
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首頁
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          封存
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          標籤
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          關於
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              MIUI刷入Edxposed正確路徑
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2020-07-21 ·
+              </time>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://i.imgur.com/JGNnS8V.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p>前面跟一般刷機一樣，解鎖 -&gt; 刷入TWRP -&gt; 刷入MIUI.EU</p>
+<p>接下來就不一樣了，首先格式化/data分區（注意，不是清除），輸入yes後確認 （為了刪除加密data分區）</p>
+<p>接著重新啟動回recovery (注意，不是回系統)</p>
+<p>然後在這一部刷入<a href="https://github.com/solohsu/magisk_files/raw/master/custom_builds/Magisk-v20.1.zip">客製版Magisk</a> (一定要先刷入客製版) Github <a href="https://github.com/solohsu/magisk_files/blob/master/README.md">link</a></p>
+<p>（為了阻止ROM將/data分區再次加密）</p>
+<p>刷入後進入系統後刷入<a href="https://github.com/RikkaApps/Riru/releases">Riru Core</a>，完成後重新啟動系統：</p>
+<figure data-type="image" tabindex="1"><img src="https://i.imgur.com/cvvqVpE.jpg" alt="img" loading="lazy"></figure>
+<p>重新啟動完成後刷入<a href="https://ci.appveyor.com/api/buildjobs/do8b8k8js8lm05sh/artifacts/edxp-core/release/EdXposed-SandHook-v0.4.6.3%20(4552)-release.zip">canary版edxposed</a> (我是用sandhook版本)，再重新啟動</p>
+<figure data-type="image" tabindex="2"><img src="https://i.imgur.com/SQd9E4L.jpg" alt="img" loading="lazy"></figure>
+<p>重新啟動後，Edxpose就就位了<br>
+<img src="https://i.imgur.com/auBkt4l.jpg" alt="img" loading="lazy"><br>
+接下來可以去Magisk升級了～<br>
+<img src="https://i.imgur.com/0CoEw8Z.jpg" alt="img" loading="lazy"></p>
+<p>接下來就可以安裝想要的Xposed App，在Edxposed啟用模組，重新啟動就能用啦～<br>
+如果啟用白名單模式要記得把對象Apps也加入白名單內嘿</p>
+<p>目前我主要使用Xposed的有地圖類App</p>
+<p>配合skyolin helper，可以實現不同App使用不同dpi設定(per app dpi settings)：</p>
+<figure data-type="image" tabindex="3"><img src="https://i.imgur.com/Om0Mkw3.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://i.imgur.com/t9M6lkI.png" alt="img" loading="lazy"></figure>
+<p>這樣就可以讓地圖顯示更多細節以供探索了～</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones/">
+              <h3 class="post-title">
+                最快速簡便解鎖小米（紅米）並完成刷機的方式
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="http://blog.jhangy.us/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

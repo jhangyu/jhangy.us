@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://blog.jhangy.us</id>
     <title>Jhangyu</title>
-    <updated>2020-02-03T16:17:50.040Z</updated>
+    <updated>2020-07-21T15:25:17.026Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://blog.jhangy.us"/>
     <link rel="self" href="http://blog.jhangy.us/atom.xml"/>
@@ -11,9 +11,37 @@
     <icon>http://blog.jhangy.us/favicon.ico</icon>
     <rights>All rights reserved 2020, Jhangyu</rights>
     <entry>
+        <title type="html"><![CDATA[MIUI刷入Edxposed正確路徑]]></title>
+        <id>http://blog.jhangy.us/post/correct-way-to-flash-edxposed-on-miui/</id>
+        <link href="http://blog.jhangy.us/post/correct-way-to-flash-edxposed-on-miui/">
+        </link>
+        <updated>2020-07-21T14:11:47.000Z</updated>
+        <content type="html"><![CDATA[<p>前面跟一般刷機一樣，解鎖 -&gt; 刷入TWRP -&gt; 刷入MIUI.EU</p>
+<p>接下來就不一樣了，首先格式化/data分區（注意，不是清除），輸入yes後確認 （為了刪除加密data分區）</p>
+<p>接著重新啟動回recovery (注意，不是回系統)</p>
+<p>然後在這一部刷入<a href="https://github.com/solohsu/magisk_files/raw/master/custom_builds/Magisk-v20.1.zip">客製版Magisk</a> (一定要先刷入客製版) Github <a href="https://github.com/solohsu/magisk_files/blob/master/README.md">link</a></p>
+<p>（為了阻止ROM將/data分區再次加密）</p>
+<p>刷入後進入系統後刷入<a href="https://github.com/RikkaApps/Riru/releases">Riru Core</a>，完成後重新啟動系統：</p>
+<figure data-type="image" tabindex="1"><img src="https://i.imgur.com/cvvqVpE.jpg" alt="img" loading="lazy"></figure>
+<p>重新啟動完成後刷入<a href="https://ci.appveyor.com/api/buildjobs/do8b8k8js8lm05sh/artifacts/edxp-core/release/EdXposed-SandHook-v0.4.6.3%20(4552)-release.zip">canary版edxposed</a> (我是用sandhook版本)，再重新啟動</p>
+<figure data-type="image" tabindex="2"><img src="https://i.imgur.com/SQd9E4L.jpg" alt="img" loading="lazy"></figure>
+<p>重新啟動後，Edxpose就就位了<br>
+<img src="https://i.imgur.com/auBkt4l.jpg" alt="img" loading="lazy"><br>
+接下來可以去Magisk升級了～<br>
+<img src="https://i.imgur.com/0CoEw8Z.jpg" alt="img" loading="lazy"></p>
+<p>接下來就可以安裝想要的Xposed App，在Edxposed啟用模組，重新啟動就能用啦～<br>
+如果啟用白名單模式要記得把對象Apps也加入白名單內嘿</p>
+<p>目前我主要使用Xposed的有地圖類App</p>
+<p>配合skyolin helper，可以實現不同App使用不同dpi設定(per app dpi settings)：</p>
+<figure data-type="image" tabindex="3"><img src="https://i.imgur.com/Om0Mkw3.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://i.imgur.com/t9M6lkI.png" alt="img" loading="lazy"></figure>
+<p>這樣就可以讓地圖顯示更多細節以供探索了～</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[最快速簡便解鎖小米（紅米）並完成刷機的方式]]></title>
-        <id>http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones</id>
-        <link href="http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones">
+        <id>http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones/</id>
+        <link href="http://blog.jhangy.us/post/unlock-and-flash-xiaomi-redmi-phones/">
         </link>
         <updated>2020-01-29T13:19:52.000Z</updated>
         <content type="html"><![CDATA[<p>小米手機最吸引人的一點對我來說一直都不是價格<br>
@@ -172,8 +200,8 @@ https://twrp.me/Devices/</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[在macOS (OSX)上建立APFS的高性能Ramdisk]]></title>
-        <id>http://blog.jhangy.us/post/create-ramdisk-on-macos</id>
-        <link href="http://blog.jhangy.us/post/create-ramdisk-on-macos">
+        <id>http://blog.jhangy.us/post/create-ramdisk-on-macos/</id>
+        <link href="http://blog.jhangy.us/post/create-ramdisk-on-macos/">
         </link>
         <updated>2019-08-14T07:34:10.000Z</updated>
         <content type="html"><![CDATA[<p>我對Ramdisk的用途主要在轉移暫存檔案和一些不重要的零碎檔案，使用Ramdisk可以降低SSD讀寫次數，增加SSD磁碟壽命。再來Ramdisk也有關機後檔案即消失的特性，我可以不必費心每次都要定期刪除一些零碎檔案，保持資料夾乾淨整齊。（當然壞處是如果重要檔案放在Ramdisk重開機就救不回來了Orz）</p>
@@ -276,8 +304,8 @@ done
     </entry>
     <entry>
         <title type="html"><![CDATA[小米 9T 夜拍分享]]></title>
-        <id>http://blog.jhangy.us/post/xiao-mi-9t-nightshot</id>
-        <link href="http://blog.jhangy.us/post/xiao-mi-9t-nightshot">
+        <id>http://blog.jhangy.us/post/xiao-mi-9t-nightshot/</id>
+        <link href="http://blog.jhangy.us/post/xiao-mi-9t-nightshot/">
         </link>
         <updated>2019-07-13T09:10:48.000Z</updated>
         <content type="html"><![CDATA[<p>小米9T 的長焦鏡頭應該是第一個可以使用Google Camera多幀降噪強化的等效50mm鏡頭。<br>
@@ -330,8 +358,8 @@ IMX586表現稍微好那麼一點</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[手機的像素越高越好嗎？前後兩千萬到底是不是一個噱頭？]]></title>
-        <id>http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality</id>
-        <link href="http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality">
+        <id>http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality/</id>
+        <link href="http://blog.jhangy.us/post/does_pixel_amount_correspond_to_image_quality/">
         </link>
         <updated>2019-07-08T06:26:52.000Z</updated>
         <content type="html"><![CDATA[<p>先說結論：以畫質來說，手機的畫素<strong>越低越好</strong>，前後兩千萬就是一個噱頭無誤！</p>
@@ -475,8 +503,8 @@ IMX586表現稍微好那麼一點</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[ Google Camera使用Q&A]]></title>
-        <id>http://blog.jhangy.us/post/google-camera-q&amp;a</id>
-        <link href="http://blog.jhangy.us/post/google-camera-q&amp;a">
+        <id>http://blog.jhangy.us/post/google-camera-q&amp;a/</id>
+        <link href="http://blog.jhangy.us/post/google-camera-q&amp;a/">
         </link>
         <updated>2019-07-04T15:16:39.000Z</updated>
         <content type="html"><![CDATA[<h2 id="q我的手機到底能不能使用google-camera">Q：我的手機到底能不能使用Google Camera？</h2>
@@ -594,8 +622,8 @@ AI白平衡在昏暗的黃光環境之中特別有用，拍攝的成果再也不
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Camera Port (GCam) 技術匯總]]></title>
-        <id>http://blog.jhangy.us/post/google-camera-gcam-tech</id>
-        <link href="http://blog.jhangy.us/post/google-camera-gcam-tech">
+        <id>http://blog.jhangy.us/post/google-camera-gcam-tech/</id>
+        <link href="http://blog.jhangy.us/post/google-camera-gcam-tech/">
         </link>
         <updated>2019-06-17T04:00:51.000Z</updated>
         <content type="html"><![CDATA[<h1 id="google-camera使用技術簡介">Google Camera使用技術簡介</h1>
